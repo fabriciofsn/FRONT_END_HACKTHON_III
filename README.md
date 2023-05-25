@@ -1,70 +1,51 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# FRONT_END_HACKTHON_III
+Bem-vindo(a) ao repositório do projeto "FRONT_END_HACKTHON_III"! Neste repositório, você encontrará todos os recursos, código-fonte e informações relacionadas ao projeto desenvolvido durante o Hackathon de Front-end.
 
-## Available Scripts
+## Descrição
+O "FRONT_END_HACKTHON_III" é um projeto desenvolvido como parte do Hackathon de Front-end. Ele tem como objetivo criar uma aplicação web inovadora e funcional que aborda um desafio específico relacionado à área de front-end.
 
-In the project directory, you can run:
+## Recursos
+Neste repositório, você encontrará os seguintes recursos:
 
-### `npm start`
+## Código-fonte: O diretório src contém o código-fonte da aplicação web. Está organizado em módulos e arquivos relevantes para o projeto.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Documentação: O diretório docs contém a documentação do projeto, incluindo manuais, guias de instalação e instruções de uso.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Designs: O diretório designs contém os designs e mockups da interface do usuário. Eles foram criados para auxiliar no desenvolvimento da aplicação.
 
-### `npm test`
+Instalação
+Para instalar e executar o projeto em sua máquina local, siga as etapas abaixo:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Clone este repositório em sua máquina local:
 
-### `npm run build`
+shell
+Copy code
+git clone https://github.com/fabriciofsn/FRONT_END_HACKTHON_III.git
+Acesse o diretório do projeto:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+shell
+Copy code
+cd FRONT_END_HACKTHON_III
+Siga as instruções contidas na documentação para configurar o ambiente de desenvolvimento e instalar as dependências necessárias.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Execute a aplicação web seguindo as instruções fornecidas na documentação.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Contribuição
+Se você deseja contribuir para o projeto "FRONT_END_HACKTHON_III", siga as etapas abaixo:
 
-### `npm run eject`
+Faça um fork deste repositório.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Crie uma branch para sua contribuição:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+shell
+Copy code
+git checkout -b minha-contribuicao
+Faça as alterações desejadas e adicione os commits correspondentes.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Envie as alterações para o repositório remoto:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+shell
+Copie o código
+git push origin minha-contribuicao
+Abra um Pull Request para que possamos revisar suas alterações.
