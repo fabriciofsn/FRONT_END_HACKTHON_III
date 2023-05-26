@@ -15,7 +15,7 @@ const Setor = () => {
   const divRef = useRef();
   const [modal, setModal] = useState(false);
 
-  const departamentos = ["Diretoria", "Gerência", "RH", "Financeiro"];
+  const setores = ["Diretoria", "Gerência", "RH", "Financeiro"];
 
   useEffect(() => {
     if (divRef.current) {
@@ -53,7 +53,7 @@ const Setor = () => {
       {modal && (
         <AdicionarSetor
           title="ADICIONAR SETOR"
-          array={departamentos}
+          array={setores}
           chefe="Cadastrar chefe"
           button="Cadastrar Setor"
           cancelar="Cancelar"
