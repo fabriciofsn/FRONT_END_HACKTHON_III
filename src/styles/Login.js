@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const DivElement = styled.div`
-  background-color: #004964;
+  background-color: #061226;
   width: 100%;
   height: 190px;
   border-bottom-right-radius: 40px;
@@ -54,8 +54,8 @@ export const DivStyleInput = styled.div`
 `;
 
 export const ButtonStyled = styled.button`
-  background-color: #004964;
-  color: white;
+  background-color: #061226;
+  color: #d9d9d9;
   cursor: pointer;
   display: block;
   width: 300px;
