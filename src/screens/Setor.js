@@ -50,6 +50,7 @@ const Setor = () => {
         <p>Logística</p>
         <p>Contábil</p>
       </DivTipos>
+
       {modal && (
         <AdicionarSetor
           title="ADICIONAR SETOR"

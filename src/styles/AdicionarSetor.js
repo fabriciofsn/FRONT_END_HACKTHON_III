@@ -14,7 +14,7 @@ export const DivSetor = styled.div`
   margin: auto;
   overflow: hidden;
 
-  h1 {
+  h2 {
     color: #d9d9d9;
   }
 
@@ -37,11 +37,13 @@ export const DivSetor = styled.div`
     margin: 20px 0;
   }
 
-  p {
+  a {
     width: 100%;
     max-width: 350px;
-    text-align: right;
+    display: flex;
+    justify-content: right;
     margin: 5px auto;
+    text-decoration: none;
   }
 
   i {

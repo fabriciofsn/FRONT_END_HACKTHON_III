@@ -9,7 +9,7 @@ import {
 const AdicionarSetor = (props) => {
   return (
     <DivSetor>
-      <h1>{props.title}</h1>
+      <h2>{props.title}</h2>
       <form>
         <DivInputText>
           <input type="text" placeholder="Nome" required />
@@ -26,9 +26,9 @@ const AdicionarSetor = (props) => {
           </select>
         </DivInputText>
       </form>
-      <p>
+      <a href="#">
         <i>{props.chefe}</i>
-      </p>
+      </a>
       <DivButtonCadastrar>
         <button>{props.button}</button>
       </DivButtonCadastrar>
