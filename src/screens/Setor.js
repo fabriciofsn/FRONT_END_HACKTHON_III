@@ -20,12 +20,10 @@ const Setor = () => {
   useEffect(() => {
     if (divRef.current) {
       const acc = divRef.current.querySelectorAll("p");
-
       function accordion(index) {
         acc.forEach((p) => p.classList.remove("selected"));
         acc[index].classList.add("selected");
       }
-
       acc.forEach((p, index) => {
         p.addEventListener("click", () => {
           accordion(index);
