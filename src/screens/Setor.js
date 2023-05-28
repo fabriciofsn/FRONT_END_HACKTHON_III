@@ -1,20 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { AiOutlineSearch } from "react-icons/ai";
-import {
-  DivAlignCenter,
-  DivInputSearch,
-  HeaderContent,
-  GlobalDiv,
-  DivTipos,
-  DivFooter,
-} from "../styles/Setor";
+
+import { GlobalDiv, DivTipos, DivFooter } from "../styles/Setor";
 import AdicionarSetor from "../components/AdicionarSetor";
+import Modal from "../components/Modal";
+import Header from "../components/Header";
 
 const Setor = () => {
   const divRef = useRef();
   const [modal, setModal] = useState(false);
-
   const setores = ["Diretoria", "Gerência", "RH", "Financeiro"];
 
   useEffect(() => {
@@ -33,15 +26,7 @@ const Setor = () => {
   });
   return (
     <GlobalDiv>
-      <HeaderContent>
-        <DivAlignCenter>
-          <RxHamburgerMenu color="#d9d9d9" size={45} fontWeight="bold" />
-          <DivInputSearch>
-            <input type="search" placeholder="Pesquise aqui" />
-            <AiOutlineSearch size={25} color="#d9d9d9" />
-          </DivInputSearch>
-        </DivAlignCenter>
-      </HeaderContent>
+      <Header />
       <DivTipos ref={divRef}>
         <p>Todos</p>
         <p className="selected">RH</p>
