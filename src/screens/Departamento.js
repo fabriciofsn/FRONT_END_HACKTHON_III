@@ -1,36 +1,34 @@
 import React, { useState } from "react";
-
-import { GlobalDiv, DivFooter } from "../styles/Setor";
-import AdicionarSetor from "../components/AdicionarSetor";
 import Header from "../components/Header";
 import Filtros from "../components/Filtros";
+import AdicionarSetor from "../components/AdicionarSetor";
+import { DivFooter } from "../styles/Setor";
 
-const Setor = () => {
+const Departamento = () => {
   const [modal, setModal] = useState(false);
-  const setores = ["Diretoria", "Gerência", "RH", "Financeiro"];
 
   return (
-    <GlobalDiv>
+    <div>
       <Header />
       <Filtros />
+
       {modal && (
         <AdicionarSetor
-          title="ADICIONAR SETOR"
+          title="ADICIONAR DEPARTAMENTO"
           input={<input type="text" required placeholder="Nome" />}
-          array={setores}
-          chefe="Cadastrar chefe"
-          button="Cadastrar Setor"
+          button="Criar Setor de Direção"
           cancelar="Cancelar"
           handleClick={() => setModal(false)}
         />
       )}
+
       <DivFooter>
         <button onClick={() => setModal(true)}>
-          Adicionar <p>Setor</p>
+          Adicionar <p>Departamento</p>
         </button>
       </DivFooter>
-    </GlobalDiv>
+    </div>
   );
 };
 
-export default Setor;
+export default Departamento;

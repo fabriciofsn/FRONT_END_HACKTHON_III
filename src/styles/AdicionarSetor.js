@@ -6,7 +6,7 @@ const anim = keyframes`
     opacity: 0;
   }
   to{
-    height: 60vh;
+    height: auto;
     opacity: 1;
     transition: .3s;
   }
@@ -18,7 +18,7 @@ export const DivSetor = styled.div`
   bottom: 0;
   background-color: #0a1d3e;
   width: 100%;
-  height: 60vh;
+  height: auto;
   border-top-right-radius: 40px;
   border-top-left-radius: 40px;
   text-align: center;

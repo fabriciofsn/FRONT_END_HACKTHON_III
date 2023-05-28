@@ -14,7 +14,7 @@ const anim = keyframes`
 export const DivModal = styled.div`
   background-color: #061226;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 90px);
   z-index: 1000;
   position: absolute;
   top: 5.5em;

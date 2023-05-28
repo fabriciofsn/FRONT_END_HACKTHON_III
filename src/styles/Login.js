@@ -10,6 +10,7 @@ export const DivElement = styled.div`
   align-items: center;
 
   img {
+    width: 100%;
     max-width: 320px;
   }
 `;

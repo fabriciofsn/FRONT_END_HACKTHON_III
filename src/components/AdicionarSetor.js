@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   DivSetor,
   DivInputText,
@@ -6,35 +6,43 @@ import {
   DivCancelar,
 } from "../styles/AdicionarSetor";
 
-const AdicionarSetor = (props) => {
+const AdicionarSetor = ({
+  title = "",
+  input = null,
+  array = null,
+  chefe = "",
+  button = "",
+  handleClick = () => {},
+  cancelar = "",
+}) => {
   return (
     <DivSetor>
-      <h2>{props.title}</h2>
+      <h2>{title}</h2>
       <form>
-        <DivInputText>
-          <input type="text" placeholder="Nome" required />
-        </DivInputText>
-        <DivInputText>
-          <select>
-            {props.array.map((arr) => {
-              return (
-                <option key={arr} value={arr}>
-                  {arr}
-                </option>
-              );
-            })}
-          </select>
-        </DivInputText>
+        <DivInputText>{input}</DivInputText>
+        {array && (
+          <DivInputText>
+            <select>
+              {array.map((arr) => {
+                return (
+                  <option key={arr} value={arr}>
+                    {arr}
+                  </option>
+                );
+              })}
+            </select>
+          </DivInputText>
+        )}
       </form>
       <a href="#">
-        <i>{props.chefe}</i>
+        <i>{chefe}</i>
       </a>
       <DivButtonCadastrar>
-        <button>{props.button}</button>
+        <button>{button}</button>
       </DivButtonCadastrar>
       <DivCancelar>
-        <button onClick={props.handleClick}>
-          <i>{props.cancelar}</i>
+        <button onClick={handleClick}>
+          <i>{cancelar}</i>
         </button>
       </DivCancelar>
     </DivSetor>

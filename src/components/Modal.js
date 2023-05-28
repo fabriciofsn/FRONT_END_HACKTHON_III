@@ -13,7 +13,7 @@ const Modal = () => {
             <a href="/setor">Setores</a>
           </li>
           <li>
-            <a href="/departamentos">Departamentos</a>
+            <a href="/departamento">Departamentos</a>
           </li>
           <li>
             <a href="/funcionarios">Funcionários</a>
