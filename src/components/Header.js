@@ -12,12 +12,16 @@ import Modal from "./Modal";
 const Header = (props) => {
   const [openModal, setOpenModal] = useState(false);
 
+  const handleMenu = () => {
+    setOpenModal((openModal) => !openModal);
+  };
+
   return (
     <div>
       <HeaderContent>
         <DivAlignCenter>
           <RxHamburgerMenu
-            onClick={(openModal) => setOpenModal(!openModal)}
+            onClick={handleMenu}
             cursor="pointer"
             color="#d9d9d9"
             size={45}
