@@ -11,7 +11,7 @@ export const HeaderContent = styled.header`
   width: 100%;
   height: 150px;
   border-bottom-right-radius: 40px;
-  display: flex;
+  position: relative;
 `;
 
 export const DivAlignCenter = styled.div`
@@ -131,5 +131,24 @@ export const DivFooter = styled.div`
     display: block;
     cursor: pointer;
     border: none;
+  }
+`;
+
+export const DivFilter = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  right: 35px;
+  max-width: 320px;
+  position: absolute;
+  bottom: 2px;
+  margin: 0 auto;
+
+  p {
+    font-size: 1.5rem;
+    color: #d9d9d9;
+  }
+  p.selected {
+    border-bottom: 3px solid #d9d9d9;
   }
 `;

@@ -51,6 +51,10 @@ export const DivAlignCenter = styled.div`
 
 export const DivStyleInput = styled.div`
   border-bottom: 1px solid #004964;
+
+  input {
+    font-size: 1.3rem;
+  }
 `;
 
 export const ButtonStyled = styled.button`

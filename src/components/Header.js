@@ -1,8 +1,13 @@
 import React from "react";
-import { DivAlignCenter, DivInputSearch, HeaderContent } from "../styles/Setor";
+import {
+  DivAlignCenter,
+  DivFilter,
+  DivInputSearch,
+  HeaderContent,
+} from "../styles/Setor";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AiOutlineSearch } from "react-icons/ai";
-const Header = () => {
+const Header = (props) => {
   return (
     <div>
       <HeaderContent>
@@ -18,6 +23,10 @@ const Header = () => {
             <AiOutlineSearch size={25} color="#d9d9d9" />
           </DivInputSearch>
         </DivAlignCenter>
+        <DivFilter>
+          <p>{props.cargo}</p>
+          <p className="selected">{props.departamento}</p>
+        </DivFilter>
       </HeaderContent>
     </div>
   );

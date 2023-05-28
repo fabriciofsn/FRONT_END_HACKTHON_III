@@ -34,7 +34,7 @@ const Login = () => {
         <img src={hackathon_logo} alt="logo" />
       </DivElement>
       <DivAlignCenter>
-        <form>
+        <form method="POST">
           {userFields.map(({ id, label, type }) => {
             return (
               <DivWrapper key={id}>
