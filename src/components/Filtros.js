@@ -3,6 +3,7 @@ import { DivTipos } from "../styles/Setor";
 
 const Filtros = () => {
   const divRef = useRef();
+  const setores = ["Todos", "RH", "Logístico", "Contábil"];
 
   useEffect(() => {
     if (divRef.current) {
@@ -21,10 +22,14 @@ const Filtros = () => {
 
   return (
     <DivTipos ref={divRef}>
-      <p>Todos</p>
-      <p className="selected">RH</p>
-      <p>Logística</p>
-      <p>Contábil</p>
+      {setores.map((setor, index) => {
+        const classList = index == 1 ? "selected" : "";
+        return (
+          <p className={classList} key={setor}>
+            {setor}
+          </p>
+        );
+      })}
     </DivTipos>
   );
 };
