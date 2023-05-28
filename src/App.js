@@ -3,6 +3,7 @@ import Login from "./screens/Login";
 import Setor from "./screens/Setor";
 import Departamento from "./screens/Departamento";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Error404 from "./screens/Error404";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/setor" element={<Setor />} />
         <Route path="/departamento" element={<Departamento />} />
+        <Route path="*" element={<Error404 />} />
       </Routes>
     </BrowserRouter>
   );
