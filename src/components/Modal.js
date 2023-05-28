@@ -2,22 +2,36 @@ import React from "react";
 import { DivModal } from "../styles/Modal";
 
 const Modal = () => {
+  const links = [
+    {
+      nome: "Login",
+      href: "/login",
+    },
+    {
+      nome: "Setores",
+      href: "/setor",
+    },
+    {
+      nome: "Departamentos",
+      href: "/departamento",
+    },
+    {
+      nome: "Funcionários",
+      href: "/funcionarios",
+    },
+  ];
+
   return (
     <DivModal>
       <nav>
         <ul>
-          <li>
-            <a href="/login">Login</a>
-          </li>
-          <li>
-            <a href="/setor">Setores</a>
-          </li>
-          <li>
-            <a href="/departamento">Departamentos</a>
-          </li>
-          <li>
-            <a href="/funcionarios">Funcionários</a>
-          </li>
+          {links.map(({ nome, href }) => {
+            return (
+              <li key={nome}>
+                <a href={href}>{nome}</a>
+              </li>
+            );
+          })}
         </ul>
       </nav>
     </DivModal>

@@ -23,9 +23,9 @@ const Filtros = () => {
   return (
     <DivTipos ref={divRef}>
       {setores.map((setor, index) => {
-        const classList = index == 1 ? "selected" : "";
+        const selected = index == 1 ? "selected" : "";
         return (
-          <p className={classList} key={setor}>
+          <p className={selected} key={setor}>
             {setor}
           </p>
         );
