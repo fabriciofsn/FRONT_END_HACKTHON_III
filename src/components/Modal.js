@@ -10,7 +10,7 @@ const Modal = () => {
             <a href="/login">Login</a>
           </li>
           <li>
-            <a href="/setores">Setores</a>
+            <a href="/setor">Setores</a>
           </li>
           <li>
             <a href="/departamentos">Departamentos</a>

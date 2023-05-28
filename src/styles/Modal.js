@@ -1,16 +1,28 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const anim = keyframes`
+  from{
+    transform: translate3d(-300px,0,0);
+
+  }
+  to{
+    transform: translate3d(0,0,0);
+    transition: .3s;
+  }
+`;
 
 export const DivModal = styled.div`
-  background-color: #004964;
+  background-color: #061226;
   width: 100%;
-  max-width: 300px;
-  height: 80vh;
+  height: 100vh;
+  z-index: 1000;
   position: absolute;
   top: 5.5em;
   left: 0;
   transition: 0.3s;
   padding: 1rem;
   border-radius: 5px;
+  animation: ${anim} 0.3s forwards;
 
   ul {
     list-style: none;

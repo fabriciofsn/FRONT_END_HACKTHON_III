@@ -1,5 +1,17 @@
 import styled, { keyframes } from "styled-components";
 
+const anim = keyframes`
+  from{
+    height: 0;
+    opacity: 0;
+  }
+  to{
+    height: 60vh;
+    opacity: 1;
+    transition: .3s;
+  }
+`;
+
 export const DivSetor = styled.div`
   position: absolute;
   z-index: 999;
@@ -13,6 +25,7 @@ export const DivSetor = styled.div`
   padding: 2rem 0;
   margin: auto;
   overflow: hidden;
+  animation: ${anim} 0.3s forwards;
 
   h2 {
     color: #d9d9d9;
