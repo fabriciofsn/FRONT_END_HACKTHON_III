@@ -12,7 +12,7 @@ const Setor = () => {
   return (
     <GlobalDiv>
       <Header />
-      <Filtros />
+      <Filtros array={setores} />
       {modal && (
         <AdicionarSetor
           title="ADICIONAR SETOR"

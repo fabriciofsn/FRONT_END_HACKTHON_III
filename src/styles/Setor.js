@@ -9,6 +9,7 @@ export const HeaderContent = styled.header`
   background-color: #061226;
   padding: 1rem;
   width: 100%;
+
   height: 150px;
   border-bottom-right-radius: 40px;
   position: relative;
@@ -17,7 +18,8 @@ export const HeaderContent = styled.header`
 export const DivAlignCenter = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 15px 0;
+  align-items: center;
+  margin: 15px auto;
   width: 100%;
   max-width: 320px;
 
@@ -108,6 +110,13 @@ export const DivTipos = styled.div`
       background-color: #0a1d3e;
       color: #d9d9d9;
     }
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5rem;
   }
 `;
 

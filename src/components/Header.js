@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   DivAlignCenter,
   DivFilter,
@@ -11,10 +11,28 @@ import Modal from "./Modal";
 
 const Header = (props) => {
   const [openModal, setOpenModal] = useState(false);
+  const refFilter = useRef();
 
   const handleMenu = () => {
     setOpenModal((openModal) => !openModal);
   };
+
+  useEffect(() => {
+    if (refFilter.current) {
+      const p = refFilter.current.querySelectorAll("p");
+
+      const filter = (index) => {
+        p.forEach((filter) => filter.classList.remove("selected"));
+        p[index].classList.add("selected");
+      };
+
+      p.forEach((fil, index) => {
+        fil.addEventListener("click", () => {
+          filter(index);
+        });
+      });
+    }
+  });
 
   return (
     <div>
@@ -33,9 +51,15 @@ const Header = (props) => {
             <AiOutlineSearch size={25} color="#d9d9d9" />
           </DivInputSearch>
         </DivAlignCenter>
-        <DivFilter>
-          <p>{props.cargo}</p>
-          <p className="selected">{props.departamento}</p>
+        <DivFilter ref={refFilter}>
+          <p>
+            {props.iconCargo}
+            {props.cargo}
+          </p>
+          <p className="selected">
+            {props.iconDep}
+            {props.departamento}
+          </p>
         </DivFilter>
       </HeaderContent>
     </div>

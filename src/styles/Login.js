@@ -42,6 +42,7 @@ export const DivAlignCenter = styled.div`
   form {
     width: 100%;
     max-width: 350px;
+
     a {
       margin: 5px 0;
       font-size: 1.3rem;

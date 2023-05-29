@@ -15,9 +15,10 @@ const Modal = () => {
       nome: "Departamentos",
       href: "/departamento",
     },
+
     {
-      nome: "Funcionários",
-      href: "/funcionarios",
+      nome: "Colaboradores",
+      href: "/colaborador",
     },
   ];
 

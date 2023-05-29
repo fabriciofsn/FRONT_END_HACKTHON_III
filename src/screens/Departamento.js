@@ -6,11 +6,11 @@ import { DivFooter } from "../styles/Setor";
 
 const Departamento = () => {
   const [modal, setModal] = useState(false);
-
+  const setores = ["Todos", "RH", "Logístico", "Contábil"];
   return (
     <div>
       <Header />
-      <Filtros />
+      <Filtros array={setores} />
 
       {modal && (
         <AdicionarSetor

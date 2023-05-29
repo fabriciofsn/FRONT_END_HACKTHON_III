@@ -1,9 +1,8 @@
 import React, { useRef, useEffect } from "react";
 import { DivTipos } from "../styles/Setor";
 
-const Filtros = () => {
+const Filtros = ({ icon = "", title = "", array = null }) => {
   const divRef = useRef();
-  const setores = ["Todos", "RH", "Logístico", "Contábil"];
 
   useEffect(() => {
     if (divRef.current) {
@@ -22,14 +21,21 @@ const Filtros = () => {
 
   return (
     <DivTipos ref={divRef}>
-      {setores.map((setor, index) => {
-        const selected = index == 1 ? "selected" : "";
-        return (
-          <p className={selected} key={setor}>
-            {setor}
-          </p>
-        );
-      })}
+      {icon && title && (
+        <span>
+          {icon}
+          {title}
+        </span>
+      )}
+      {array &&
+        array.map((setor, index) => {
+          const selected = index == 1 ? "selected" : "";
+          return (
+            <p className={selected} key={setor}>
+              {setor}
+            </p>
+          );
+        })}
     </DivTipos>
   );
 };
