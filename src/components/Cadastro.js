@@ -27,7 +27,6 @@ const Cadastro = (props) => {
           <Input type="number" placeholder="CPF" />
           <Input type="email" placeholder="Email" />
           <Input type="password" placeholder="Senha" />
-          <Input type="password" placeholder="Confirmar senha" />
           <Button nome="Avançar" />
           <DivA>
             <a href="#" onClick={props.handleClick}>

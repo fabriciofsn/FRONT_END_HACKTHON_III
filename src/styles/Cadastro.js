@@ -6,7 +6,7 @@ const anim = keyframes`
     opacity: 0;
   }
   to{
-    height: 90vh;
+    height: 80vh;
     opacity: 1;
   }
 `;
@@ -15,7 +15,7 @@ export const DivCadastro = styled.div`
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 100vh;
+  height: 0;
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
   background-color: #ffff;
@@ -27,8 +27,6 @@ export const DivCadastro = styled.div`
 
   form {
     width: 100%;
-    display: flex;
-    justify-content: center;
 
     div {
       width: 100%;
