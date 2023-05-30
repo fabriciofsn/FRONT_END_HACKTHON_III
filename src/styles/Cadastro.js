@@ -59,6 +59,9 @@ export const DivCadastro = styled.div`
 
 export const DivA = styled.div`
   margin-top: 10px;
+  a {
+    font-weight: bold;
+  }
 `;
 
 export const DivInputFile = styled.div`
@@ -100,7 +103,7 @@ export const DivAccordion = styled.div`
   font-weight: bold;
 
   p {
-    opacity: 0.5;
+    opacity: 0.3;
   }
   p.selected {
     opacity: 1;
