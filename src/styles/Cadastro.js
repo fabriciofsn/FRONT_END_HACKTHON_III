@@ -85,3 +85,25 @@ export const DivIcon = styled.div`
   justify-content: center;
   height: 90px;
 `;
+
+export const DivAccordion = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 350px;
+  right: 0;
+  align-items: center;
+  margin: auto;
+  position: relative;
+  bottom: -30px;
+  font-size: 1.3rem;
+  font-weight: bold;
+
+  p {
+    opacity: 0.5;
+  }
+  p.selected {
+    opacity: 1;
+    border-bottom: 3px solid #061226;
+  }
+`;

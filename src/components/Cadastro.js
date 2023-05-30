@@ -6,6 +6,7 @@ import {
   DivAdjustFile,
   DivIcon,
   DivA,
+  DivAccordion,
 } from "../styles/Cadastro";
 import { BiCloudUpload } from "react-icons/bi";
 import Button from "./Button";
@@ -34,6 +35,11 @@ const Cadastro = (props) => {
             </a>
           </DivA>
         </div>
+        <DivAccordion>
+          <p className="selected">Dados</p>
+          <p>Endereço</p>
+          <p>Atributos</p>
+        </DivAccordion>
       </form>
     </DivCadastro>
   );

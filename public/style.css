@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Glacial";
-  src: url("fonts/GlacialIndifference-Regular.otf") format("opentype");
+  src: url("fonts/GlacialIndifference-Regular.otf") format(OpenType);
 }
 
 * {
