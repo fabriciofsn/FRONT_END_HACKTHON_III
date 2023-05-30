@@ -1,11 +1,10 @@
 @font-face {
   font-family: "Glacial";
-  src: local("Glacial"),
-    url("../src/fonts/GlacialIndifference-Regular.otf") format(OpenType);
+  src: url("fonts/GlacialIndifference-Regular.otf") format("opentype");
 }
 
 * {
-  font-family: "Glacial Indifference";
+  font-family: "Glacial";
   margin: 0;
   padding: 0;
   box-sizing: border-box;
