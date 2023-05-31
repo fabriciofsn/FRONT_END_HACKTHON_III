@@ -20,6 +20,8 @@ const Cadastro = (props) => {
   useEffect(() => {
     if (index == form.length - 1) {
       setNomeButton("Criar");
+    } else {
+      setNomeButton("Avançar");
     }
   });
 
