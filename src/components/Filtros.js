@@ -28,11 +28,11 @@ const Filtros = ({ icon = "", title = "", array = null }) => {
         </span>
       )}
       {array &&
-        array.map((setor, index) => {
+        array.map((valor, index) => {
           const selected = index == 1 ? "selected" : "";
           return (
-            <p className={selected} key={setor}>
-              {setor}
+            <p className={selected} key={valor.id}>
+              {valor.nome}
             </p>
           );
         })}
