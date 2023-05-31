@@ -3,7 +3,8 @@ import { DivFlex } from "../styles/Endereco";
 import SelectCargo from "./SelectCargo";
 import Input from "./Input";
 import Photo from "./Photo";
-import { DivOverFlow } from "../styles/Endereco";
+import { DivOverFlow, DivFlexContent, DivSpan } from "../styles/Endereco";
+import CircularButton from "./CircularButton";
 
 const Atributos = () => {
   const cargo = ["Adm", "Supervisor", "Gerente", "Simplório funcionário"];
@@ -33,7 +34,6 @@ const Atributos = () => {
       <SelectCargo array={cargo} />
       <DivFlex>
         <span>Home office?</span>
-
         <label className="selected" htmlFor="homeoffice">
           <input name="homeoffice" type="radio" id="homeoffice" />
           Sim
@@ -42,6 +42,14 @@ const Atributos = () => {
           <input name="homeoffice" type="radio" id="home" />
           Não
         </label>
+      </DivFlex>
+
+      <DivFlex>
+        <label id="bens" htmlFor="cod">
+          Bens em mãos
+          <Input id="cod" type="number" placeholder="Código" />
+        </label>
+        <CircularButton nome="+" />
       </DivFlex>
     </DivOverFlow>
   );

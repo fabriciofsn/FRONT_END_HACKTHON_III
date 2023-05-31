@@ -7,6 +7,7 @@ import Atributos from "./Atributos";
 
 const Cadastro = (props) => {
   const divRef = useRef();
+  const divBtn = useRef();
 
   const [index, setIndex] = useState(0);
   const form = [<Dados />, <Endereco />, <Atributos />];
@@ -19,8 +20,15 @@ const Cadastro = (props) => {
   useEffect(() => {
     if (divRef.current) {
       const filtros = divRef.current.querySelectorAll("p");
-      filtros.forEach((filtro) => filtro.classList.remove("selected"));
+      filtros.forEach((filtro) => {
+        filtro.classList.remove("selected");
+      });
       filtros[index].classList.add("selected");
+      filtros[index].style.fontWeight = "bold";
+      filtros[index].style.opacity = "1";
+      filtros[index].addEventListener("click", () => {
+        setIndex(index);
+      });
     }
   });
 
@@ -29,7 +37,7 @@ const Cadastro = (props) => {
       <form method="POST">
         {form[index]}
         <DivA>
-          <Button nome="Avançar" handleClick={handleClick} />
+          <Button divBtn={divBtn} nome="Avançar" handleClick={handleClick} />
           <a href="#" onClick={props.handleClick}>
             Cancelar
           </a>

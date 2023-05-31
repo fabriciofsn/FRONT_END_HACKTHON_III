@@ -36,4 +36,30 @@ export const DivFlex = styled.div`
     margin-top: 5px;
     font-weight: bold;
   }
+
+  button {
+    margin-top: 50px;
+  }
+
+  #bens {
+    margin-top: 25px;
+  }
+`;
+
+export const DivFlexContent = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const DivSpan = styled.div`
+  margin-top: 20px;
+  span {
+    font-size: 1.3rem;
+    margin-top: 5px;
+  }
+
+  input {
+    margin: 0 15px;
+  }
 `;
