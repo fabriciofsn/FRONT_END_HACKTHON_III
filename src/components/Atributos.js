@@ -5,9 +5,11 @@ import Input from "./Input";
 import Photo from "./Photo";
 import { DivOverFlow, DivFlexContent, DivSpan } from "../styles/Endereco";
 import CircularButton from "./CircularButton";
+import Textarea from "./Textarea";
 
 const Atributos = () => {
   const cargo = ["Adm", "Supervisor", "Gerente", "Simplório funcionário"];
+  const departamento = ["RH", "Financeiro", "Direção"];
   const divRef = useRef();
 
   useEffect(() => {
@@ -51,6 +53,9 @@ const Atributos = () => {
         </label>
         <CircularButton nome="+" />
       </DivFlex>
+      <SelectCargo array={departamento} />
+      <SelectCargo array={cargo} />
+      <Textarea />
     </DivOverFlow>
   );
 };
