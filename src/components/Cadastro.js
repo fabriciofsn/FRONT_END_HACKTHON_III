@@ -7,7 +7,7 @@ import Atributos from "./Atributos";
 
 const Cadastro = (props) => {
   const divRef = useRef();
-  const divBtn = useRef();
+  let [nomeButton, setNomeButton] = useState("Avançar");
 
   const [index, setIndex] = useState(0);
   const form = [<Dados />, <Endereco />, <Atributos />];
@@ -16,6 +16,12 @@ const Cadastro = (props) => {
     event.preventDefault();
     index == form.length - 1 ? setIndex(0) : setIndex(index + 1);
   };
+
+  useEffect(() => {
+    if (index == form.length - 1) {
+      setNomeButton("Criar");
+    }
+  });
 
   useEffect(() => {
     if (divRef.current) {
@@ -37,7 +43,7 @@ const Cadastro = (props) => {
       <form method="POST">
         {form[index]}
         <DivA>
-          <Button divBtn={divBtn} nome="Avançar" handleClick={handleClick} />
+          <Button nome={nomeButton} handleClick={handleClick} />
           <a href="#" onClick={props.handleClick}>
             Cancelar
           </a>

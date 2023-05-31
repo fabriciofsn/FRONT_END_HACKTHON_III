@@ -12,11 +12,7 @@ const ButtonStyle = styled.button`
 `;
 
 const Button = (props) => {
-  return (
-    <ButtonStyle ref={props.divBtn} onClick={props.handleClick}>
-      {props.nome}
-    </ButtonStyle>
-  );
+  return <ButtonStyle onClick={props.handleClick}>{props.nome}</ButtonStyle>;
 };
 
 export default Button;
