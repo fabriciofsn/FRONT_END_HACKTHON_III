@@ -6,7 +6,7 @@ const anim = keyframes`
     opacity: 0;
   }
   to{
-    height: 90vh;
+    height: 80vh;
     opacity: 1;
   }
 `;
@@ -27,6 +27,7 @@ export const DivCadastro = styled.div`
 
   form {
     width: 100%;
+    margin-top: 20px;
 
     div {
       width: 100%;
