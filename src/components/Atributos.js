@@ -6,6 +6,7 @@ import Photo from "./Photo";
 import { DivOverFlow, DivFlexContent, DivSpan } from "../styles/Endereco";
 import CircularButton from "./CircularButton";
 import Textarea from "./Textarea";
+import Title from "./Title";
 
 const Atributos = () => {
   const cargo = ["Adm", "Supervisor", "Gerente", "Simplório funcionário"];
@@ -31,6 +32,7 @@ const Atributos = () => {
   return (
     <DivOverFlow ref={divRef}>
       <Photo />
+      <Title title="adicionar colaborador" />
       <Input type="number" placeholder="Carga horária" />
       <Input type="number" placeholder="Salário" />
       <SelectCargo array={cargo} />
@@ -41,7 +43,7 @@ const Atributos = () => {
           Sim
         </label>
         <label htmlFor="home">
-          <input name="homeoffice" type="radio" id="home" />
+          <input type="radio" id="home" />
           Não
         </label>
       </DivFlex>

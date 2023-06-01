@@ -8,7 +8,11 @@ const Photo = () => {
   return (
     <DivAdjustFile>
       <DivInputFile>
-        <input type="file" onChange={({ target }) => setImg(target.value)} />
+        <input
+          type="file"
+          accept="image/*"
+          onChange={({ target }) => setImg(target.value)}
+        />
         <DivIcon>
           {img ? (
             <img src={img} alt="perfil" />
@@ -17,7 +21,6 @@ const Photo = () => {
           )}
         </DivIcon>
       </DivInputFile>
-      {console.log(img)}
     </DivAdjustFile>
   );
 };
