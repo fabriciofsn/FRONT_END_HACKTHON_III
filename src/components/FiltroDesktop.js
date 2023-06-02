@@ -4,26 +4,29 @@ import { tableSetores } from "../tables/TableSetores";
 
 
 
-export function FiltroDesktop({ icon="", title="", setor= false, array= null}){
+export function FiltroDesktop({ icon="", title="", departamento= false, array= null}){
 
-    let opcaoSelecionada = "";
+    let opcaoSelecionada = ""
 
-    let arrayFilter = array
+    const [arrayFilter, setArrayFilter] = useState(tableSetores)
 
     // const changeRadioSetoresFilter = () => {
-        if(setor === true){arrayFilter = array.filter((setor) => setor.departamentoId === "RH")}
-    
+        // if(setor === true){arrayFilter = array.filter((setor) => setor.departamentoId === opcaoSelecionada)}
+
+        const changeRadioSetoresFilter = () =>{
+           setArrayFilter(tableSetores.filter((setor) => setor.departamentoId === opcaoSelecionada))
+        }  
+
+        useEffect(() => {
+          changeRadioSetoresFilter();
+        }, []);
+          
 
     const handleInputChange = (event) => {
         opcaoSelecionada = event.target.value;
-        console.log(opcaoSelecionada)
-        console.log(arrayFilter)
-        // changeRadioSetoresFilter()
+        changeRadioSetoresFilter()
       };
-
    
-    
-    
 
     return(
         <div>
@@ -34,8 +37,8 @@ export function FiltroDesktop({ icon="", title="", setor= false, array= null}){
                 </span>
             )}<br/>
 
-           {array &&
-        arrayFilter.map((valor) => {
+         {array && departamento &&
+        array.map((valor) => {
           
           return (
             <>
@@ -43,11 +46,24 @@ export function FiltroDesktop({ icon="", title="", setor= false, array= null}){
                <label htmlFor={valor.id}>{valor.nome}</label><br></br>
             </>
           );
-        })}
-                    
+        })
+      
+        }
+
+        <p>{icon}Setor</p> 
+        {arrayFilter.map((setor) =>{
+
+          return(
+            <>
+              <input type="radio" id={setor.id} name={"setor"} value={setor.id} key={setor.id}></input>
+               <label htmlFor={setor.id}>{setor.nome}</label><br></br>
+            </>
+          )
+        })}               
             
         </div>
     );
+      
 }
 
 

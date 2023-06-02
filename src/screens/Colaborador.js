@@ -8,6 +8,8 @@ import Colaboradores from "../components/Colaboradores";
 import {tableSetores} from "../tables/TableSetores";
 import {tableDepartamentos} from "../tables/TableDepartamentos";
 import {FiltroDesktop} from "../components/FiltroDesktop";
+import "../styles/mediaQuery.css"
+import tableColaboradores from "../tables/TableColaboradores";
 
 
 const Colaborador = () => {
@@ -25,10 +27,14 @@ const Colaborador = () => {
         iconDep={<RiFilter2Fill />}
         departamento="Departamento"
       />
+      <div className="showMobile">
       <Filtros array={tableDepartamentos} />
       <Filtros icon={<RiFilter2Fill />} title="Setor" array={tableSetores} />
-      <FiltroDesktop icon={<RiFilter2Fill />} title="Departamentos" array={tableDepartamentos} />
-      <FiltroDesktop icon={<RiFilter2Fill />} title="Setor" array={tableSetores} setor={true}/>
+      </div>
+      <div className="showDesktop">
+      <FiltroDesktop icon={<RiFilter2Fill />} title="Departamentos" array={tableDepartamentos} departamento={true}/>
+      </div>
+      {/* <FiltroDesktop icon={<RiFilter2Fill />} title="Setor" array={tableSetores} setor={true}/> */}
       <Colaboradores />
       {modal && <Cadastro handleClick={handleClick} />}
       <DivFooter>
