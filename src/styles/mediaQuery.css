@@ -2,7 +2,7 @@
     display: none;
 }
 
-@media (min-width: 600px){
+@media (min-width: 684px){
     .showDesktop{
         display: block;
     }
