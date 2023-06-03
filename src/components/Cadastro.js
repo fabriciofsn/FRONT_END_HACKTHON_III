@@ -29,7 +29,7 @@ const Cadastro = (props) => {
       setVerify(false);
     }
 
-    if (nome.length > 2 && testCPF && testEmail && senha.length > 8) {
+    if (nome.length > 2 && testCPF && testEmail && senha.length >= 8) {
       btnRef.current.style.opacity = "1";
       setObjectEmpty(true);
     } else {
