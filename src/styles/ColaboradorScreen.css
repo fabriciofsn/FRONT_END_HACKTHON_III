@@ -1,0 +1,13 @@
+.colaboradorObjectsBody{
+    display: flex;
+    width: 100vw;
+}
+
+.colaboradorDivObjects{
+    width: 100%;
+}
+
+#colaboradorDivFilter{
+    padding: 20px;
+    width: 20vw;
+}
