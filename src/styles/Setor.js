@@ -126,7 +126,7 @@ export const DivFooter = styled.div`
   height: 100px;
   padding: 1.2rem;
   border-top-left-radius: 2em;
-  position: absolute;
+  position: fixed;
   bottom: 0;
 
   button {
@@ -160,4 +160,22 @@ export const DivFilter = styled.div`
   p.selected {
     border-bottom: 3px solid #d9d9d9;
   }
+`;
+
+export const DivButtonDesktop = styled.div`
+widht: 100vw;
+
+button {
+  background-color: #0a1d3e;
+  color: #d9d9d9;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  height: 3em;
+  width: 9em;
+  font-weight: bold;
+  display: block;
+  cursor: pointer;
+  border: none;
+  margin: 10px;
+}
 `;
