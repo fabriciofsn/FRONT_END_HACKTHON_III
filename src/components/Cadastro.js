@@ -7,6 +7,8 @@ import Button from "../components/Button";
 const Cadastro = (props) => {
   const divRef = useRef();
   const btnRef = useRef();
+  const [color, setColor] = useState("red");
+  const [verify, setVerify] = useState(false);
   const [objectEmpty, setObjectEmpty] = useState(false);
 
   const [nome, setNome] = useState("");
@@ -15,7 +17,19 @@ const Cadastro = (props) => {
   const [senha, setSenha] = useState("");
 
   useEffect(() => {
-    if (nome !== "" && cpf !== "" && email !== "" && senha !== "") {
+    const regexCPF = /^\d{3}\.?\d{3}\.?\d{3}\-?\d{2}$/;
+    const testCPF = regexCPF.test(cpf);
+    const regexEmail = /^\S+@\S+\.\S+$/;
+    const testEmail = regexEmail.test(email);
+
+    if (senha.length > 0) {
+      setVerify(true);
+    }
+    if (senha.length >= 8) {
+      setVerify(false);
+    }
+
+    if (nome.length > 2 && testCPF && testEmail && senha.length > 8) {
       btnRef.current.style.opacity = "1";
       setObjectEmpty(true);
     } else {
@@ -43,6 +57,13 @@ const Cadastro = (props) => {
             senha={senha}
             getSenha={({ target }) => setSenha(target.value)}
           />
+          {verify && (
+            <div style={{ textAlign: "left", margin: "0 28px" }}>
+              <p style={{ color: color }}>
+                A senha deve ter, no mínimo, 8 caracteres
+              </p>
+            </div>
+          )}
         </div>
 
         <DivA>

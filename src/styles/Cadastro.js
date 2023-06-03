@@ -6,7 +6,7 @@ const anim = keyframes`
     opacity: 0;
   }
   to{
-    height: calc(90vh - 5px);
+    height: calc(93vh - 5px);
     opacity: 1;
   }
 `;
