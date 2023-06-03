@@ -37,7 +37,7 @@ export function FiltroDesktop({ icon="", title="", departamento= false, array= n
                 </span>
             )}<br/>
 
-         {array && departamento &&
+         {array &&
         array.map((valor) => {
           
           return (
@@ -50,8 +50,8 @@ export function FiltroDesktop({ icon="", title="", departamento= false, array= n
       
         }
 
-        <p>{icon}Setor</p> 
-        {arrayFilter.map((setor) =>{
+        {departamento && <p>{icon}Setor</p> }
+        {departamento && arrayFilter.map((setor) =>{
 
           return(
             <>
