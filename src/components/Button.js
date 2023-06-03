@@ -9,10 +9,15 @@ const ButtonStyle = styled.button`
   border-radius: 40px;
   color: #d9d9d9;
   font-size: 1.3rem;
+  opacity: 0.7;
 `;
 
 const Button = (props) => {
-  return <ButtonStyle onClick={props.handleClick}>{props.nome}</ButtonStyle>;
+  return (
+    <ButtonStyle ref={props.btnRef} onClick={props.handleClick}>
+      {props.nome}
+    </ButtonStyle>
+  );
 };
 
 export default Button;

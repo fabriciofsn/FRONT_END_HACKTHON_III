@@ -1,19 +1,48 @@
 import React from "react";
-import Input from "./Input";
 import Foto from "./Photo";
 import Title from "./Title";
+import { DivInput } from "../styles/Input";
 
-const Dados = () => {
+const Dados = (props) => {
   return (
     <form>
       <Foto />
       <div style={{ textAlign: "center" }}>
         <Title title="adicionar colaborador" />
       </div>
-      <Input type="text" placeholder="Nome" />
-      <Input type="number" placeholder="CPF" />
-      <Input type="email" placeholder="Email" />
-      <Input type="password" placeholder="Senha" />
+      <DivInput>
+        <input
+          value={props.nome}
+          onChange={props.getNome}
+          type="text"
+          placeholder="Nome"
+          required
+        />
+      </DivInput>
+      <DivInput>
+        <input
+          type="text"
+          value={props.CPF}
+          onChange={props.getCPF}
+          placeholder="CPF"
+        />
+      </DivInput>
+      <DivInput>
+        <input
+          type="email"
+          value={props.email}
+          onChange={props.getEmail}
+          placeholder="Email"
+        />
+      </DivInput>
+      <DivInput>
+        <input
+          type="password"
+          value={props.senha}
+          onChange={props.getSenha}
+          placeholder="Senha"
+        />
+      </DivInput>
     </form>
   );
 };

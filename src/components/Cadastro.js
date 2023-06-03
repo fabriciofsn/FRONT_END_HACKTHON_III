@@ -1,51 +1,52 @@
 import React, { useEffect, useRef, useState } from "react";
 import { DivCadastro, DivA, DivAccordion } from "../styles/Cadastro";
-import Button from "./Button";
+import Photo from "./Photo";
 import Dados from "./Dados";
-import Endereco from "./Endereco";
-import Atributos from "./Atributos";
+import Button from "../components/Button";
 
 const Cadastro = (props) => {
   const divRef = useRef();
-  let [nomeButton, setNomeButton] = useState("Avançar");
+  const btnRef = useRef();
+  const [objectEmpty, setObjectEmpty] = useState(false);
 
-  const [index, setIndex] = useState(0);
-  const form = [<Dados />, <Endereco />, <Atributos />];
+  const [nome, setNome] = useState("");
+  const [cpf, setCpf] = useState("");
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+
+  useEffect(() => {
+    if (nome !== "" && cpf !== "" && email !== "" && senha !== "") {
+      btnRef.current.style.opacity = "1";
+      setObjectEmpty(true);
+    } else {
+      btnRef.current.style.opacity = "0.7";
+      setObjectEmpty(false);
+    }
+  }, [nome, cpf, email, senha]);
 
   const handleClick = (event) => {
     event.preventDefault();
-    index == form.length - 1 ? setIndex(0) : setIndex(index + 1);
   };
-
-  useEffect(() => {
-    if (index == form.length - 1) {
-      setNomeButton("Criar");
-    } else {
-      setNomeButton("Avançar");
-    }
-  });
-
-  useEffect(() => {
-    if (divRef.current) {
-      const filtros = divRef.current.querySelectorAll("p");
-      filtros.forEach((filtro) => {
-        filtro.classList.remove("selected");
-      });
-      filtros[index].classList.add("selected");
-      filtros[index].style.fontWeight = "bold";
-      filtros[index].style.opacity = "1";
-      filtros[index].addEventListener("click", () => {
-        setIndex(index);
-      });
-    }
-  });
 
   return (
     <DivCadastro>
       <form method="POST">
-        {form[index]}
+        <Photo />
+        <div>
+          <Dados
+            value={nome}
+            getNome={({ target }) => setNome(target.value)}
+            CPF={cpf}
+            getCPF={({ target }) => setCpf(target.value)}
+            email={email}
+            getEmail={({ target }) => setEmail(target.value)}
+            senha={senha}
+            getSenha={({ target }) => setSenha(target.value)}
+          />
+        </div>
+
         <DivA>
-          <Button nome={nomeButton} handleClick={handleClick} />
+          <Button handleClick={handleClick} btnRef={btnRef} nome="Avançar" />
           <a href="#" onClick={props.handleClick}>
             Cancelar
           </a>
