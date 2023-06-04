@@ -7,8 +7,9 @@ import { DivOverFlow, DivFlexContent, DivSpan } from "../styles/Endereco";
 import CircularButton from "./CircularButton";
 import Textarea from "./Textarea";
 import Title from "./Title";
+import { DivInput } from "../styles/Input";
 
-const Atributos = () => {
+const Atributos = (props) => {
   const cargo = ["Adm", "Supervisor", "Gerente", "Simplório funcionário"];
   const departamento = ["RH", "Financeiro", "Direção"];
   const divRef = useRef();
@@ -33,8 +34,12 @@ const Atributos = () => {
     <DivOverFlow ref={divRef}>
       <Photo />
       <Title title="adicionar colaborador" />
-      <Input type="number" placeholder="Carga horária" />
-      <Input type="number" placeholder="Salário" />
+      <DivInput>
+        <input type="number" placeholder="Carga horária" />
+      </DivInput>
+      <DivInput>
+        <input type="number" placeholder="Salário" />
+      </DivInput>
       <SelectCargo array={cargo} />
       <DivFlex>
         <span>Home office?</span>

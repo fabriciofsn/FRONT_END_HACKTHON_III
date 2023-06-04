@@ -4,24 +4,27 @@ import Photo from "./Photo";
 import Dados from "./Dados";
 import Button from "../components/Button";
 import Endereco from "./Endereco";
+import Atributos from "./Atributos";
 
 const Cadastro = (props) => {
   const divRef = useRef();
   const btnRef = useRef();
+  const [buttonName, setButtonName] = useState("Avançar");
   const [verify, setVerify] = useState(false);
-  const [objectEmpty, setObjectEmpty] = useState(false);
+  const [prosseguir, setProsseguir] = useState(false);
   const [uf, setUf] = useState([]);
-  const [select, setSelect] = useState("");
+  const [select, setSelect] = useState(null);
   const [filtrarCidade, setFiltrarCidade] = useState([]);
   const [valorCidade, setValorCidade] = useState("");
-  const [index, setIndex] = useState(0);
+  const [indexPosition, setIndex] = useState(0);
+
   const [nome, setNome] = useState("");
   const [cpf, setCpf] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [cep, setCep] = useState("");
-  const [bairro, setBairro] = useState("");
-  const [rua, setRua] = useState("");
+  const [bairro, setBairro] = useState(null);
+  const [rua, setRua] = useState(null);
 
   useEffect(() => {
     const regexCPF = /^\d{3}\.?\d{3}\.?\d{3}\-?\d{2}$/;
@@ -38,31 +41,23 @@ const Cadastro = (props) => {
 
     if (nome.length > 2 && testCPF && testEmail && senha.length >= 8) {
       btnRef.current.style.opacity = "1";
-      setObjectEmpty(true);
+      setProsseguir(true);
     } else {
       btnRef.current.style.opacity = "0.7";
-      setObjectEmpty(false);
+      setProsseguir(false);
     }
   }, [nome, cpf, email, senha]);
 
   useEffect(() => {
     const regexCep = /^\d{5}-?\d{3}/;
-    if (
-      regexCep &&
-      bairro.length > 2 &&
-      rua.length > 0 &&
-      select !== "" &&
-      filtrarCidade &&
-      bairro !== "" &&
-      rua !== ""
-    ) {
+    if (regexCep && bairro && rua && select && filtrarCidade && bairro && rua) {
       btnRef.current.style.opacity = "1";
-      setObjectEmpty(true);
+      setProsseguir(true);
     } else {
       btnRef.current.style.opacity = "0.7";
-      setObjectEmpty(false);
+      setProsseguir(false);
     }
-  }, [cep, bairro, rua]);
+  }, [cep, bairro, filtrarCidade, select, rua]);
 
   useEffect(() => {
     const buscarUF = async () => {
@@ -88,8 +83,22 @@ const Cadastro = (props) => {
 
   const handleClick = (event) => {
     event.preventDefault();
-    index == dados.length - 1 ? setIndex(0) : setIndex(index + 1);
+    if (prosseguir) {
+      btnRef.current.style.opacity = "0.7";
+      setProsseguir(false);
+      indexPosition == dados.length - 1
+        ? setIndex(0)
+        : setIndex(indexPosition + 1);
+    }
   };
+
+  useEffect(() => {
+    if (indexPosition == dados.length - 1) {
+      setButtonName("Criar");
+    } else {
+      setButtonName("Avançar");
+    }
+  }, [indexPosition]);
 
   let dados = [
     <Dados
@@ -116,13 +125,38 @@ const Cadastro = (props) => {
       valorCidade={valorCidade}
       setValorCidade={setValorCidade}
     />,
+    <Atributos />,
   ];
+
+  useEffect(() => {
+    if (divRef.current) {
+      const filtros = divRef.current.querySelectorAll("p");
+      filtros.forEach((filtro) => {
+        filtro.classList.remove("selected");
+      });
+      filtros[indexPosition].classList.add("selected");
+      filtros[indexPosition].style.fontWeight = "bold";
+      filtros[indexPosition].style.opacity = "1";
+      filtros[indexPosition].addEventListener("click", () => {
+        if (prosseguir) {
+          setIndex(indexPosition);
+          filtros.forEach((filtro) => {
+            filtro.classList.remove("selected");
+            filtro.style.opacity = "0.5";
+          });
+          filtros[indexPosition].classList.add("selected");
+          filtros[indexPosition].style.fontWeight = "bold";
+          filtros[indexPosition].style.opacity = "1";
+        }
+      });
+    }
+  }, [prosseguir]);
 
   return (
     <DivCadastro>
       <form method="POST">
         <Photo />
-        {dados[index]}
+        {dados[indexPosition]}
         <div>
           {verify && (
             <div style={{ textAlign: "left", margin: "0 28px" }}>
@@ -133,7 +167,7 @@ const Cadastro = (props) => {
           )}
         </div>
         <DivA>
-          <Button handleClick={handleClick} btnRef={btnRef} nome="Avançar" />
+          <Button handleClick={handleClick} btnRef={btnRef} nome={buttonName} />
           <a href="#" onClick={props.handleClick}>
             Cancelar
           </a>
