@@ -1,0 +1,40 @@
+.headerDesktop {
+    background-color: #061226;
+    padding: 1rem;
+    width: 100%;
+    border-bottom-right-radius: 40px;
+    position: relative;
+    display: flex;
+    width: 100vw;
+}
+
+.headerDesktop div{
+    width: 33vw;
+}
+
+.headerDesktopDiv2{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+}
+
+.headerDesktopDiv2 span{
+    display: block;
+    margin-left: 5%;
+    color: #d9d9d9;
+}
+
+.headerDesktopDiv2 img{
+    border-radius: 100%;
+}
+
+.headerDesktopDiv3{
+    text-align: end;
+}
+
+.headerDesktopDiv3 p{
+    margin-right: 20px;
+}
+

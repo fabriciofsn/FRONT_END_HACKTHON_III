@@ -9,10 +9,12 @@ export const HeaderContent = styled.header`
   background-color: #061226;
   padding: 1rem;
   width: 100%;
-
-  height: 150px;
   border-bottom-right-radius: 40px;
   position: relative;
+
+  @media (max-width: 684px) {
+    height: 140px;
+  }
 `;
 
 export const DivAlignCenter = styled.div`
@@ -92,8 +94,10 @@ export const DivTipos = styled.div`
   justify-content: space-between;
   align-items: center;
   margin: 10px auto;
-  width: 100%;
+  width: 100vw;
   font-size: 1.3rem;
+  overflow-y: auto;
+
 
   p {
     color: #0a1d3e;
