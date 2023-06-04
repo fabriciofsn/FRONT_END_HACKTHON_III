@@ -6,7 +6,7 @@ const anim = keyframes`
     opacity: 0;
   }
   to{
-    height: 85vh;
+    height: auto;
     opacity: 1;
   }
 `;
@@ -99,7 +99,7 @@ export const DivAccordion = styled.div`
   align-items: center;
   margin: auto;
   position: relative;
-  bottom: -30px;
+  bottom: -10px;
   font-size: 1.3rem;
   font-weight: bold;
 

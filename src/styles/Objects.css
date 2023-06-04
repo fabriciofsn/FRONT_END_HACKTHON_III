@@ -1,20 +1,20 @@
-.divObjects{
-    background-color: white;
-    color: #0a1d3e;
-    border-radius: 10px;
-    padding: 20px;
-    width: 95%;
-    margin-left: 2.5%;
-    box-shadow: 0px 5px 5px black;
-    margin-bottom: 20px;
-    cursor: pointer;
+.divObjects {
+  background-color: white;
+  color: #0a1d3e;
+  border-radius: 10px;
+  padding: 20px;
+  width: 95%;
+  margin-left: 2.5%;
+  box-shadow: 0px 5px 5px black;
+  margin-bottom: 20px;
+  cursor: pointer;
 }
 
-.bodyObjects{
- display: block;  
- justify-content: center;
- margin-bottom: 100px;
- width: 100%;
- max-height: 60vh;
- overflow-y: auto;
+.bodyObjects {
+  display: block;
+  justify-content: center;
+  margin-bottom: 100px;
+  width: 100%;
+  max-height: 60vh;
+  overflow-y: auto;
 }
