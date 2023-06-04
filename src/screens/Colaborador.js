@@ -56,7 +56,7 @@ const Colaborador = () => {
           <FiltroDesktop icon={<RiFilter2Fill />} title="Cargos" array={TableCargos} departamento={false} />
         </div>
         <div className="colaboradorDivObjects">
-          <Objects object={tableColaboradores} />
+          <Objects object={tableColaboradores} colaborador={true}/>
         </div>
       </div>
       {/* <FiltroDesktop icon={<RiFilter2Fill />} title="Setor" array={tableSetores} setor={true}/> */}
