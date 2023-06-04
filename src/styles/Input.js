@@ -10,10 +10,19 @@ export const DivInput = styled.div`
   display: flex;
   align-items: center;
 
-  input {
+  input,
+  select {
     background-color: transparent;
     border: none;
     outline: none;
     padding: 1rem;
+  }
+  option,
+  select {
+    width: 100%;
+    max-width: 330px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
   }
 `;
