@@ -1,10 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
-import {
-  HeaderContent,
-} from "../styles/Setor";
+import React, { useRef, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { AiOutlineSearch } from "react-icons/ai";
+import { BsBoxArrowInRight } from "react-icons/bs";
 import Modal from "./Modal";
+import perfilJosue from "../assets/perfilJosue.jpg";
+import "../styles/HeaderDesktop.css"
 
 const HeaderDesktop = (props) => {
   const [openModal, setOpenModal] = useState(false);
@@ -17,7 +16,9 @@ const HeaderDesktop = (props) => {
 
   return (
     <div>
-      <HeaderContent>
+
+      <div className="headerDesktop">
+        <div>
           <RxHamburgerMenu
             onClick={handleMenu}
             cursor="pointer"
@@ -26,7 +27,23 @@ const HeaderDesktop = (props) => {
             fontWeight="bold"
           />
           {openModal && <Modal />}
-      </HeaderContent>
+        </div>
+        <div className="headerDesktopDiv2">
+          <img src={perfilJosue} height="40px" widht="40px" />
+          <span>
+            <p><b>Josue Ferreira</b></p>
+            <p>Diretor de RH</p>
+          </span>
+        </div>
+        <div className="headerDesktopDiv3">
+          <p><BsBoxArrowInRight
+            cursor="pointer"
+            color="#d9d9d9"
+            size={30}
+            fontWeight="bold" /></p>
+        </div>
+      </div>
+
     </div>
   );
 };
