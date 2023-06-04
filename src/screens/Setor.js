@@ -4,6 +4,7 @@ import { GlobalDiv, DivFooter } from "../styles/Setor";
 import AdicionarSetor from "../components/AdicionarSetor";
 import Header from "../components/Header";
 import Filtros from "../components/Filtros";
+import {tableDepartamentos} from "../tables/TableDepartamentos";
 
 const Setor = () => {
   const [modal, setModal] = useState(false);
@@ -12,7 +13,7 @@ const Setor = () => {
   return (
     <GlobalDiv>
       <Header />
-      <Filtros array={setores} />
+      <Filtros array={tableDepartamentos} />
       {modal && (
         <AdicionarSetor
           title="ADICIONAR SETOR"
