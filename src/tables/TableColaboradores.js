@@ -7,7 +7,49 @@ const tableColaboradores = [
         setorId: "direcaoRH",
         cargoId: "Diretor",
         imagem: ""
-    }
+    },
+    {
+        id: 1,
+        nome: "Jadson Santos",
+        setorId: "direcaoRH",
+        cargoId: "Diretor",
+        imagem: ""
+    },
+    {
+        id: 1,
+        nome: "Jadson Santos",
+        setorId: "direcaoRH",
+        cargoId: "Diretor",
+        imagem: ""
+    },
+    {
+        id: 1,
+        nome: "Jadson Santos",
+        setorId: "direcaoRH",
+        cargoId: "Diretor",
+        imagem: ""
+    },
+    {
+        id: 1,
+        nome: "Jadson Santos",
+        setorId: "direcaoRH",
+        cargoId: "Diretor",
+        imagem: ""
+    },
+    {
+        id: 1,
+        nome: "Jadson Santos",
+        setorId: "direcaoRH",
+        cargoId: "Diretor",
+        imagem: ""
+    },
+    {
+        id: 1,
+        nome: "Jadson Santos",
+        setorId: "direcaoRH",
+        cargoId: "Diretor",
+        imagem: ""
+    },
 ]; 
 
 export default tableColaboradores;
