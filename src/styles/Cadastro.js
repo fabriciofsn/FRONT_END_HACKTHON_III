@@ -12,7 +12,7 @@ const anim = keyframes`
 `;
 
 export const DivCadastro = styled.div`
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   height: 0;

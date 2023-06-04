@@ -50,7 +50,15 @@ const Cadastro = (props) => {
 
   useEffect(() => {
     const regexCep = /^\d{5}-?\d{3}/;
-    if (regexCep && bairro && rua && select && filtrarCidade && bairro && rua) {
+    if (
+      regexCep &&
+      bairro &&
+      rua &&
+      select &&
+      filtrarCidade &&
+      bairro.length > 2 &&
+      rua
+    ) {
       btnRef.current.style.opacity = "1";
       setProsseguir(true);
     } else {
