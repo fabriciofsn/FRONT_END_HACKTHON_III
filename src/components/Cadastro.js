@@ -53,8 +53,8 @@ const Cadastro = (props) => {
       rua.length > 0 &&
       select !== "" &&
       filtrarCidade &&
-      bairro &&
-      rua
+      bairro !== "" &&
+      rua !== ""
     ) {
       btnRef.current.style.opacity = "1";
       setObjectEmpty(true);
