@@ -1,11 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Header from "../components/Header";
 import { RiFilter2Fill } from "react-icons/ri";
 import Filtros from "../components/Filtros";
-import {
-  DivFooter,
-  DivButtonDesktop
-} from "../styles/Setor";
+import { DivFooter, DivButtonDesktop } from "../styles/Setor";
 import Cadastro from "../components/Cadastro";
 import { tableSetores } from "../tables/TableSetores";
 import { tableDepartamentos } from "../tables/TableDepartamentos";
@@ -19,13 +16,15 @@ import HeaderDesktop from "../components/HeaderDesktop";
 
 const Colaborador = () => {
   const [modal, setModal] = useState(false);
-
+  const divRef = useRef();
   const handleClick = () => {
     setModal(false);
   };
 
+  useEffect(() => {}, [modal]);
+
   return (
-    <div>
+    <div ref={divRef}>
       <div className="showMobile">
         <Header
           iconCargo={<RiFilter2Fill />}
@@ -34,10 +33,9 @@ const Colaborador = () => {
           departamento="Departamento"
         />
       </div>
-      <div className="showDesktop" >
+      <div className="showDesktop">
         <HeaderDesktop />
       </div>
-
 
       <div className="showMobile">
         <Filtros array={tableDepartamentos} />
@@ -52,8 +50,18 @@ const Colaborador = () => {
       </div>
       <div className="colaboradorObjectsBody">
         <div id="colaboradorDivFilter" className="showDesktop">
-          <FiltroDesktop icon={<RiFilter2Fill />} title="Departamentos" array={tableDepartamentos} departamento={true} />
-          <FiltroDesktop icon={<RiFilter2Fill />} title="Cargos" array={TableCargos} departamento={false} />
+          <FiltroDesktop
+            icon={<RiFilter2Fill />}
+            title="Departamentos"
+            array={tableDepartamentos}
+            departamento={true}
+          />
+          <FiltroDesktop
+            icon={<RiFilter2Fill />}
+            title="Cargos"
+            array={TableCargos}
+            departamento={false}
+          />
         </div>
         <div className="colaboradorDivObjects">
           <Objects object={tableColaboradores} />

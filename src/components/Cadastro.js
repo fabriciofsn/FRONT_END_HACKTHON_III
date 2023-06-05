@@ -169,7 +169,7 @@ const Cadastro = (props) => {
           {verify && (
             <div style={{ textAlign: "left", margin: "0 28px" }}>
               <p style={{ color: "red" }}>
-                A senha deve ter, no mínimo, 8 caracteres
+                A senha deve ter, no mínimo, 8 caracteres.
               </p>
             </div>
           )}
