@@ -163,7 +163,7 @@ const Cadastro = (props) => {
   return (
     <DivCadastro>
       <form method="POST">
-        <Photo />
+        <Photo imagemPerfil= {null} />
         {dados[indexPosition]}
         <div>
           {verify && (

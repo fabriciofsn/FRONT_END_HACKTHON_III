@@ -1,0 +1,16 @@
+.divBody{
+    height: 70vh;
+    display: block;
+    width: 80%;
+    text-align: center;
+    align-items: center;
+}
+
+.divBody span{
+    display: flex;
+}
+
+.divBody span p{
+    font-size: 10x;
+    width: 50%;
+}
