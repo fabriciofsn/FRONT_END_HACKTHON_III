@@ -1,15 +1,18 @@
 import { DivCadastro } from "../styles/Cadastro";
+import { Visualizar } from "./Visualizar";
+import Photo from "../components/Photo";
+import "../styles/ModalObject.css";
+import perfilJosue from "../assets/perfilJosue.jpg"
+
 
 
 export function ModalObject(objeto = null) {
 
     objeto = objeto.objeto
-    console.log("ModalObject")
-    console.log(objeto)
     return (
-        <DivCadastro>
-            <p>{objeto.id}</p>
-            <p>teste</p>
+        <DivCadastro className="alteracoes">
+            <Photo imagemPerfil = {perfilJosue}/>
+            <Visualizar objeto= {objeto} />
         </DivCadastro>
     );
 }

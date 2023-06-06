@@ -88,6 +88,10 @@ export const DivIcon = styled.div`
   align-items: center;
   justify-content: center;
   height: 90px;
+
+  img{
+    border-radius: 100%;
+  }
 `;
 
 export const DivAccordion = styled.div`
