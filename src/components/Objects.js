@@ -10,13 +10,13 @@ export function Objects({ object = null, colaborador = false }) {
 
   const handleClickOpenObject = (objeto) =>{
     setPoupupObject(objeto)
-    console.log(poupupObject)
+    console.log(objeto)
   }
   return (
     <div className="bodyObjects">
       {object.map((object) => {
         return (
-          <div className="divObjects" index={object.id} onClick={() => handleClickOpenObject(object)}>
+          <div className="divObjects" key={object.id} onClick={() => handleClickOpenObject(object)}>
             <div className="divObjectsNome">
               <p><b>{object.nome}</b></p>
               <p>{object.cargoId}</p>
