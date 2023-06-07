@@ -5,7 +5,7 @@ const tableColaboradores = [
         id: 1,
         nome: "Jadson Santos",
         setorId: "Direcao",
-        DepartamentoId: "RH",
+        departamentoId: "RH",
         cargoId: "Diretor",
         imagem: ""
     },
@@ -13,7 +13,7 @@ const tableColaboradores = [
         id: 2,
         nome: "Jadson Santos",
         setorId: "direcaoRH",
-        DepartamentoId: "Contabil",
+        departamentoId: "Contabil",
         cargoId: "Diretor",
         imagem: ""
     },
@@ -21,7 +21,7 @@ const tableColaboradores = [
         id: 3,
         nome: "Jadson Santos",
         setorId: "direcaoRH",
-        DepartamentoId: "Gerencia",
+        departamentoId: "Gerencia",
         cargoId: "Diretor",
         imagem: ""
     },
@@ -29,7 +29,7 @@ const tableColaboradores = [
         id: 4,
         nome: "Jadson Santos",
         setorId: "direcaoRH",
-        DepartamentoId: "Diretoria",
+        departamentoId: "Diretoria",
         cargoId: "Diretor",
         imagem: ""
     },
@@ -37,7 +37,7 @@ const tableColaboradores = [
         id: 5,
         nome: "Jadson Santos",
         setorId: "direcaoRH",
-        DepartamentoId: "RH",
+        departamentoId: "RH",
         cargoId: "Diretor",
         imagem: ""
     },
@@ -45,7 +45,7 @@ const tableColaboradores = [
         id: 6,
         nome: "Jadson Santos",
         setorId: "direcaoRH",
-        DepartamentoId: "Gerencia",
+        departamentoId: "Gerencia",
         cargoId: "Auxiliar",
         imagem: ""
     },
@@ -53,7 +53,7 @@ const tableColaboradores = [
         id: 7,
         nome: "Jadson Santos",
         setorId: "direcaoRH",
-        DepartamentoId: "Producao",
+        departamentoId: "Producao",
         cargoId: "Diretor",
         imagem: ""
     },

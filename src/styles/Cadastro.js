@@ -14,7 +14,7 @@ const anim = keyframes`
 export const DivCadastro = styled.div`
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 100vw;
   height: 0;
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;

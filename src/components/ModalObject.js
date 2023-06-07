@@ -7,7 +7,7 @@ import PhotoObject from "./PhotoObject";
 
 
 
-export function ModalObject(objeto = null, closeModal = null) {
+export function ModalObject(objeto = null, closeModal) {
 
     const [content, setContent] = useState("visualizar")
     
@@ -28,7 +28,7 @@ export function ModalObject(objeto = null, closeModal = null) {
         {content === "editar" ? <p className="selected" onClick={() =>handleChangeContent("editar")}>editar</p> : <p onClick={() =>handleChangeContent("editar")}>editar</p>}
         {content === "excluir" ? <p className="selected" onClick={() =>handleChangeContent("excluir")}>excluir</p> : <p onClick={() =>handleChangeContent("excluir")}>excluir</p>}
 
-        {/* <button onClick={closeModal()}>fechar</button> */}
+        <button onClick={closeModal}>fechar</button>
 
         </DivCadastro>
     );

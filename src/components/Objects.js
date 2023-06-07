@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import "../styles/Objects.css";
 import perfilJosue from "../assets/perfilJosue.jpg"
-import { ModalObject } from "./ModalObject";
+import  {ModalObject}  from "./ModalObject";
 
 
 export function Objects({ object = null, colaborador = false }) {
@@ -15,6 +15,7 @@ export function Objects({ object = null, colaborador = false }) {
 
   const handleClickCloseObject = () =>{
     setPoupupObject(null)
+    // console.log(handleClickCloseObject)
   }
   return (
     <div className="bodyObjects">

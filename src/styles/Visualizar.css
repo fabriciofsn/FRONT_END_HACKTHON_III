@@ -1,5 +1,5 @@
 .divBody{
-    height: 70vh;
+    height: 40vh;
     display: block;
     width: 80%;
     text-align: center;
@@ -11,6 +11,14 @@
 }
 
 .divBody span p{
-    font-size: 10x;
     width: 50%;
+    margin-top: 15px;
+}
+
+.p1{
+    text-align: left;
+}
+
+.p2{
+    text-align: end;
 }
