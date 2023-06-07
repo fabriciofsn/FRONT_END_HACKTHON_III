@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { BiCloudUpload } from "react-icons/bi";
 import { DivInputFile, DivIcon } from "../styles/Cadastro";
 import { DivAdjustFile } from "../styles/Cadastro";
+import perfilJosue from "../assets/perfilJosue.jpg"
 
 
-const Photo = (imagemPerfil = null) => {
+const PhotoObject = (imagemPerfil = null) => {
   const [img, setImg] = useState(null);
   return (
     <DivAdjustFile>
@@ -17,7 +17,7 @@ const Photo = (imagemPerfil = null) => {
         <DivIcon>
           {img ? (
             <img src={img} alt="perfil" />
-          ) : (<BiCloudUpload color="#061226" size={60} />)}
+          ) : (<img src={perfilJosue} alt="perfil" width={100} height={100}/>)}
           
             
           
@@ -27,4 +27,4 @@ const Photo = (imagemPerfil = null) => {
   );
 };
 
-export default Photo;
+export default PhotoObject;

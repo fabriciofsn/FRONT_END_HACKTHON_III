@@ -1,3 +1,16 @@
-.alteracoes{
+.ModalObjectContent{
+    margin-top: 50px;
+    text-align: center;
+    width: 90%;
+    margin-left: 20%;
+}
+
+.ModalObject{
     align-items: center;
+    text-align: center;
+}
+
+.selected{
+    text-decoration: underline;
+    color:blue;
 }

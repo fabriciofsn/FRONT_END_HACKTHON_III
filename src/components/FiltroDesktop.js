@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { tableDepartamentos } from "../tables/TableDepartamentos";
 import { tableSetores } from "../tables/TableSetores";
 
 

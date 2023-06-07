@@ -12,6 +12,10 @@ export function Objects({ object = null, colaborador = false }) {
     setPoupupObject(objeto)
     console.log(objeto)
   }
+
+  const handleClickCloseObject = () =>{
+    setPoupupObject(null)
+  }
   return (
     <div className="bodyObjects">
       {object.map((object) => {
@@ -34,7 +38,7 @@ export function Objects({ object = null, colaborador = false }) {
         )
       })}
 
-      {poupupObject && <ModalObject objeto={poupupObject} />}
+      {poupupObject && <ModalObject objeto={poupupObject} closeModal = {handleClickCloseObject}/>}
     </div>
   );
 
