@@ -7,7 +7,7 @@ import PhotoObject from "./PhotoObject";
 
 
 
-export function ModalObject(objeto = null, closeModal) {
+export function ModalObject({objeto =null, closeModal}) {
 
     const [content, setContent] = useState("visualizar")
     
@@ -15,7 +15,6 @@ export function ModalObject(objeto = null, closeModal) {
         setContent(change)
     }
 
-    objeto = objeto.objeto
     return (
         <DivCadastro className="ModalObject">
             <PhotoObject />

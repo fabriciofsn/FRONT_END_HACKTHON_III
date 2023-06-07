@@ -1,8 +1,7 @@
 import "../styles/Visualizar.css"
 
-export function Visualizar(objeto= null){
+export function Visualizar({objeto= null}){
 
-    objeto = objeto.objeto
 
     return(
         <div className="divBody">
