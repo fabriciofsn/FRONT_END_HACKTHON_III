@@ -20,7 +20,6 @@ export const DivCadastro = styled.div`
   border-top-left-radius: 30px;
   background-color: #ffff;
   z-index: 999;
-  display: flex;
   justify-content: center;
   align-items: center;
   animation: ${anim} 0.3s forwards;
