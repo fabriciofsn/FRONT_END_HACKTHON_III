@@ -3,6 +3,7 @@ import Bens from "../components/Bens";
 import Profile from "../components/Profile";
 import { MdOutlineLogout } from "react-icons/md";
 import { HeaderHome } from "../styles/Home";
+import Pessoas from "../components/Pessoas";
 
 const Home = () => {
   const divRef = useRef();
@@ -23,7 +24,7 @@ const Home = () => {
       });
     }
   });
-  const alter = [<Bens />];
+  const alter = [<Bens />, <Pessoas />];
   return (
     <div>
       <HeaderHome>

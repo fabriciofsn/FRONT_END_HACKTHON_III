@@ -55,7 +55,7 @@ export const DivBens = styled.div`
     margin: 5px 4px;
     background-color: #fff;
     width: 100%;
-    max-width: 150px;
+    max-width: 160px;
     height: 150px;
     border-radius: 30px;
     display: flex;
