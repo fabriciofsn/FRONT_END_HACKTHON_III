@@ -47,7 +47,11 @@ const Pessoas = () => {
           <div>
             <div
               className="icon-ocorrencia"
-              style={{ width: "100%", textAlign: "center" }}
+              style={{
+                width: "100%",
+                textAlign: "center",
+                backgroundColor: "#4c75bd",
+              }}
             >
               <FaUsersSlash size={50} color="#004964" />
             </div>
