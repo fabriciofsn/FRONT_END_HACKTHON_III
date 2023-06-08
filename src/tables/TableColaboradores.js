@@ -4,49 +4,56 @@ const tableColaboradores = [
     {
         id: 1,
         nome: "Jadson Santos",
-        setorId: "direcaoRH",
+        setorId: "Direcao",
+        departamentoId: "RH",
         cargoId: "Diretor",
         imagem: ""
     },
     {
-        id: 1,
+        id: 2,
         nome: "Jadson Santos",
         setorId: "direcaoRH",
+        departamentoId: "Contabil",
         cargoId: "Diretor",
         imagem: ""
     },
     {
-        id: 1,
+        id: 3,
         nome: "Jadson Santos",
         setorId: "direcaoRH",
+        departamentoId: "Gerencia",
         cargoId: "Diretor",
         imagem: ""
     },
     {
-        id: 1,
+        id: 4,
         nome: "Jadson Santos",
         setorId: "direcaoRH",
+        departamentoId: "Diretoria",
         cargoId: "Diretor",
         imagem: ""
     },
     {
-        id: 1,
+        id: 5,
         nome: "Jadson Santos",
         setorId: "direcaoRH",
+        departamentoId: "RH",
         cargoId: "Diretor",
         imagem: ""
     },
     {
-        id: 1,
+        id: 6,
         nome: "Jadson Santos",
         setorId: "direcaoRH",
-        cargoId: "Diretor",
+        departamentoId: "Gerencia",
+        cargoId: "Auxiliar",
         imagem: ""
     },
     {
-        id: 1,
+        id: 7,
         nome: "Jadson Santos",
         setorId: "direcaoRH",
+        departamentoId: "Producao",
         cargoId: "Diretor",
         imagem: ""
     },

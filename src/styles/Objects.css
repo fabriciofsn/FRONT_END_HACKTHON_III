@@ -1,20 +1,70 @@
-.divObjects {
-  background-color: white;
-  color: #0a1d3e;
-  border-radius: 10px;
-  padding: 20px;
-  width: 95%;
-  margin-left: 2.5%;
-  box-shadow: 0px 5px 5px black;
-  margin-bottom: 20px;
-  cursor: pointer;
+.divObjects{
+    background-color: white;
+    color: #0a1d3e;
+    border-radius: 10px;
+    padding: 20px;
+    width: 95%;
+    margin-left: 2.5%;
+    box-shadow: 0px 5px 5px black;
+    margin-bottom: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
-.bodyObjects {
-  display: block;
-  justify-content: center;
-  margin-bottom: 100px;
-  width: 100%;
-  max-height: 60vh;
-  overflow-y: auto;
+.bodyObjects{
+ display: block;  
+ justify-content: center;
+ margin-bottom: 100px;
+ width: 100%;
+ max-height: 60vh;
+ overflow-y: auto;
+}
+
+.divObjects div{
+    width: 25%;
+    text-align: center;
+    align-items: center;
+    display: grid;
+}
+
+.divObjectsNome, .divObjectsDepartamento, .divObjectsChefe{
+    justify-content: center;
+}
+
+.divObjectsNome p{
+    text-align: left;
+}
+
+.divObjectsDepartamento p{
+    text-align: left;
+}
+
+.divObjectsImagem{
+    display: grid;
+    justify-content: end;
+}
+
+.divObjectsImagem img{
+    border-radius: 5px;
+}
+
+.cargoDiretor, .cargoChefe{
+    color: white;
+    border-radius: 35px;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    font-size: 12px;
+}
+
+.cargoDiretor{
+    background-color: #2c521c;
+}
+
+.cargoChefe {
+    background-color: #7ed957;
 }

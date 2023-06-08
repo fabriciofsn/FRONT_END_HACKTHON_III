@@ -1,0 +1,24 @@
+.divBody{
+    height: 40vh;
+    display: block;
+    width: 80%;
+    text-align: center;
+    align-items: center;
+}
+
+.divBody span{
+    display: flex;
+}
+
+.divBody span p{
+    width: 50%;
+    margin-top: 15px;
+}
+
+.p1{
+    text-align: left;
+}
+
+.p2{
+    text-align: end;
+}

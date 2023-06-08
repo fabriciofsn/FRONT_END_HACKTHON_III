@@ -14,13 +14,12 @@ const anim = keyframes`
 export const DivCadastro = styled.div`
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 100vw;
   height: 0;
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
   background-color: #ffff;
   z-index: 999;
-  display: flex;
   justify-content: center;
   align-items: center;
   animation: ${anim} 0.3s forwards;
@@ -88,6 +87,10 @@ export const DivIcon = styled.div`
   align-items: center;
   justify-content: center;
   height: 90px;
+
+  img{
+    border-radius: 100%;
+  }
 `;
 
 export const DivAccordion = styled.div`

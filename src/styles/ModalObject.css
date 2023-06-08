@@ -1,0 +1,20 @@
+.ModalObjectContent{
+    margin-top: 50px;
+    text-align: center;
+    width: 90%;
+    margin-left: 10%;
+}
+
+.ModalObject{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    text-align: center;
+}
+
+.selected{
+    text-decoration: underline;
+    color:blue;
+}
