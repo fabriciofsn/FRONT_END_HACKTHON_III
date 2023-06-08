@@ -4,6 +4,10 @@ import { DivModal } from "../styles/Modal";
 const Modal = () => {
   const links = [
     {
+      nome: "Home",
+      href: "/",
+    },
+    {
       nome: "Login",
       href: "/login",
     },
