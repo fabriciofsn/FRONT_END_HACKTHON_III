@@ -35,20 +35,42 @@ const Atributos = (props) => {
       <Photo />
       <Title title="adicionar colaborador" />
       <DivInput>
-        <input type="number" placeholder="Carga horária" />
+        <input
+          value={props.carga_horaria}
+          onChange={({ target }) => props.getCargaHoraria(target.value)}
+          type="number"
+          placeholder="Carga horária"
+        />
       </DivInput>
       <DivInput>
-        <input type="number" placeholder="Salário" />
+        <input
+          value={props.salario}
+          onChange={({ target }) => props.getSalario(target.value)}
+          type="number"
+          placeholder="Salário"
+        />
       </DivInput>
       <SelectCargo array={cargo} />
       <DivFlex>
         <span>Home office?</span>
-        <label className="selected" htmlFor="homeoffice">
-          <input name="homeoffice" type="radio" id="homeoffice" />
+        <label id="sim" className="selected" htmlFor="office">
+          <input
+            onChange={({ target }) => props.getHomeOffice(target.value)}
+            name="homeoffice"
+            type="radio"
+            id="office"
+            value="Sim"
+          />
           Sim
         </label>
         <label htmlFor="home">
-          <input type="radio" id="home" />
+          <input
+            value="Não"
+            onChange={({ target }) => props.getHomeOffice(target.value)}
+            name="homeoffice"
+            type="radio"
+            id="home"
+          />
           Não
         </label>
       </DivFlex>

@@ -26,6 +26,10 @@ const Cadastro = (props) => {
   const [bairro, setBairro] = useState(null);
   const [rua, setRua] = useState(null);
 
+  const [cargaHoraria, setCargaHoraria] = useState("");
+  const [salario, setSalario] = useState("");
+  const [homeOffice, setHomeOffice] = useState("sim");
+
   useEffect(() => {
     const regexCPF = /^\d{3}\.?\d{3}\.?\d{3}\-?\d{2}$/;
     const testCPF = regexCPF.test(cpf);
@@ -133,9 +137,15 @@ const Cadastro = (props) => {
       valorCidade={valorCidade}
       setValorCidade={setValorCidade}
     />,
-    <Atributos />,
+    <Atributos
+      getCargaHoraria={setCargaHoraria}
+      carga_horaria={cargaHoraria}
+      salario={salario}
+      getSalario={setSalario}
+      getHomeOffice={setHomeOffice}
+    />,
   ];
-
+  console.log(homeOffice);
   useEffect(() => {
     if (divRef.current) {
       const filtros = divRef.current.querySelectorAll("p");
