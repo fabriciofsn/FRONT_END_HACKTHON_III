@@ -48,6 +48,7 @@ export const DivBens = styled.div`
   padding: 1rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
   .categorias,
   .gerir-bens,
@@ -115,7 +116,7 @@ export const DivBens = styled.div`
       margin-top: 10px;
     }
   }
-  @media (max-width: 380px) {
+  @media (max-width: 360px) {
     & {
       flex-direction: column;
       align-items: center;
