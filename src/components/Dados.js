@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useRef } from "react";
 import Foto from "./Photo";
 import Title from "./Title";
 import { DivInput } from "../styles/Input";
+import { FaEye } from "react-icons/fa";
 
 const Dados = (props) => {
+  const passRef = useRef();
+
+  const showPassword = () => {
+    if (passRef.current) {
+      passRef.current.setAttribute("type", "text");
+      setTimeout(() => {
+        passRef.current.setAttribute("type", "password");
+      }, 1500);
+    }
+  };
+
   return (
     <form>
       <Foto />
@@ -37,11 +49,15 @@ const Dados = (props) => {
       </DivInput>
       <DivInput>
         <input
+          ref={passRef}
           type="password"
           value={props.senha}
           onChange={props.getSenha}
           placeholder="Senha"
         />
+        <div style={{ width: "100%", textAlign: "right", margin: "0 15px" }}>
+          <FaEye size={20} color="#061226" onClick={showPassword} />
+        </div>
       </DivInput>
     </form>
   );

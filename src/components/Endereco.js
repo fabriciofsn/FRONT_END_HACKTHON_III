@@ -26,9 +26,10 @@ const Endereco = (props) => {
           <option selected disabled value="estado">
             Estado
           </option>
-          {props.UF.map(({ sigla }) => {
-            return <option key={sigla}>{sigla}</option>;
-          })}
+          {props.UF &&
+            props.UF.map((estado, index) => {
+              return <option key={index}>{estado.sigla}</option>;
+            })}
         </select>
       </DivInput>
       <DivInput>
