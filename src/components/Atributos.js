@@ -3,11 +3,12 @@ import { DivFlex } from "../styles/Endereco";
 import SelectCargo from "./SelectCargo";
 import Input from "./Input";
 import Photo from "./Photo";
-import { DivOverFlow, DivFlexContent, DivSpan } from "../styles/Endereco";
+import { DivOverFlow } from "../styles/Endereco";
 import CircularButton from "./CircularButton";
 import Textarea from "./Textarea";
 import Title from "./Title";
 import { DivInput } from "../styles/Input";
+import { Select } from "../styles/Cadastro";
 
 const Atributos = (props) => {
   const cargo = ["Adm", "Supervisor", "Gerente", "Simplório funcionário"];
@@ -35,20 +36,42 @@ const Atributos = (props) => {
       <Photo />
       <Title title="adicionar colaborador" />
       <DivInput>
-        <input type="number" placeholder="Carga horária" />
+        <input
+          value={props.carga_horaria}
+          onChange={({ target }) => props.getCargaHoraria(target.value)}
+          type="number"
+          placeholder="Carga horária"
+        />
       </DivInput>
       <DivInput>
-        <input type="number" placeholder="Salário" />
+        <input
+          value={props.salario}
+          onChange={({ target }) => props.getSalario(target.value)}
+          type="number"
+          placeholder="Salário"
+        />
       </DivInput>
       <SelectCargo array={cargo} />
       <DivFlex>
         <span>Home office?</span>
-        <label className="selected" htmlFor="homeoffice">
-          <input name="homeoffice" type="radio" id="homeoffice" />
+        <label id="sim" className="selected" htmlFor="office">
+          <input
+            onChange={({ target }) => props.getHomeOffice(target.value)}
+            name="homeoffice"
+            type="radio"
+            id="office"
+            value="Sim"
+          />
           Sim
         </label>
         <label htmlFor="home">
-          <input type="radio" id="home" />
+          <input
+            value="Não"
+            onChange={({ target }) => props.getHomeOffice(target.value)}
+            name="homeoffice"
+            type="radio"
+            id="home"
+          />
           Não
         </label>
       </DivFlex>
@@ -56,12 +79,46 @@ const Atributos = (props) => {
       <DivFlex>
         <label id="bens" htmlFor="cod">
           Bens em mãos
-          <Input id="cod" type="number" placeholder="Código" />
+          <DivInput>
+            <input
+              type="number"
+              id="cod"
+              placeholder="Código"
+              value={props.cod}
+              onChange={({ target }) => props.setCod(target.value)}
+            />
+          </DivInput>
         </label>
         <CircularButton nome="+" />
       </DivFlex>
-      <SelectCargo array={departamento} />
-      <SelectCargo array={cargo} />
+      <DivInput>
+        <Select
+          value={props.dep}
+          onChange={({ target }) => props.setDep(target.value)}
+        >
+          {departamento.map((dep) => {
+            return (
+              <option key={dep} value={dep}>
+                {dep}
+              </option>
+            );
+          })}
+        </Select>
+      </DivInput>
+      <DivInput>
+        <Select
+          value={props.car}
+          onChange={({ target }) => props.setCar(target.value)}
+        >
+          {cargo.map((car) => {
+            return (
+              <option key={car} value={car}>
+                {car}
+              </option>
+            );
+          })}
+        </Select>
+      </DivInput>
       <Textarea />
     </DivOverFlow>
   );

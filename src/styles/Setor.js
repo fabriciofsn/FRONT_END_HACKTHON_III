@@ -98,7 +98,6 @@ export const DivTipos = styled.div`
   font-size: 1.3rem;
   overflow-y: auto;
 
-
   p {
     color: #0a1d3e;
     border: 2px solid #0a1d3e;
@@ -167,19 +166,19 @@ export const DivFilter = styled.div`
 `;
 
 export const DivButtonDesktop = styled.div`
-widht: 100vw;
+  widht: 100vw;
 
-button {
-  background-color: #0a1d3e;
-  color: #d9d9d9;
-  border-radius: 25px;
-  font-size: 1.2rem;
-  height: 3em;
-  width: 9em;
-  font-weight: bold;
-  display: block;
-  cursor: pointer;
-  border: none;
-  margin: 10px;
-}
+  button {
+    background-color: #0a1d3e;
+    color: #d9d9d9;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    height: 3em;
+    width: 9em;
+    font-weight: bold;
+    display: block;
+    cursor: pointer;
+    border: none;
+    margin: 10px;
+  }
 `;

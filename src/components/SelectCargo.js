@@ -19,9 +19,9 @@ const SelectCargo = (props) => {
   return (
     <DivInput>
       <Select>
-        {props.array.map((arr) => {
+        {props.array.map((arr, index) => {
           return (
-            <option key={arr} value="arr">
+            <option key={index} value="arr">
               {arr}
             </option>
           );

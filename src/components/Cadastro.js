@@ -12,10 +12,10 @@ const Cadastro = (props) => {
   const [buttonName, setButtonName] = useState("Avançar");
   const [verify, setVerify] = useState(false);
   const [prosseguir, setProsseguir] = useState(false);
-  const [uf, setUf] = useState([]);
+  const [uf, setUf] = useState("");
   const [select, setSelect] = useState(null);
   const [filtrarCidade, setFiltrarCidade] = useState([]);
-  const [valorCidade, setValorCidade] = useState("");
+  const [valorCidade, setValorCidade] = useState(null);
   const [indexPosition, setIndex] = useState(0);
 
   const [nome, setNome] = useState("");
@@ -23,8 +23,26 @@ const Cadastro = (props) => {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [cep, setCep] = useState("");
-  const [bairro, setBairro] = useState(null);
-  const [rua, setRua] = useState(null);
+  const [bairro, setBairro] = useState("");
+  const [rua, setRua] = useState("");
+
+  //ATRIBUTOS
+  const [cargaHoraria, setCargaHoraria] = useState(null);
+  const [salario, setSalario] = useState(null);
+  const [homeOffice, setHomeOffice] = useState("sim");
+  const [cod, setCod] = useState(null);
+  const [dep, setDep] = useState(null);
+  const [car, setCar] = useState(null);
+
+  useEffect(() => {
+    if (cargaHoraria && salario && cod && dep && car) {
+      btnRef.current.style.opacity = "1";
+      setProsseguir(true);
+    } else {
+      btnRef.current.style.opacity = "0.7";
+      setProsseguir(false);
+    }
+  }, [cargaHoraria, salario, homeOffice, cod, dep, car]);
 
   useEffect(() => {
     const regexCPF = /^\d{3}\.?\d{3}\.?\d{3}\-?\d{2}$/;
@@ -50,15 +68,7 @@ const Cadastro = (props) => {
 
   useEffect(() => {
     const regexCep = /^\d{5}-?\d{3}/;
-    if (
-      regexCep &&
-      bairro &&
-      rua &&
-      select &&
-      filtrarCidade &&
-      bairro.length > 2 &&
-      rua
-    ) {
+    if (regexCep && bairro && rua && select && filtrarCidade && bairro && rua) {
       btnRef.current.style.opacity = "1";
       setProsseguir(true);
     } else {
@@ -133,7 +143,19 @@ const Cadastro = (props) => {
       valorCidade={valorCidade}
       setValorCidade={setValorCidade}
     />,
-    <Atributos />,
+    <Atributos
+      getCargaHoraria={setCargaHoraria}
+      carga_horaria={cargaHoraria}
+      salario={salario}
+      getSalario={setSalario}
+      getHomeOffice={setHomeOffice}
+      cod={cod}
+      setCod={setCod}
+      dep={dep}
+      setDep={setDep}
+      car={car}
+      setCar={setCar}
+    />,
   ];
 
   useEffect(() => {
@@ -163,19 +185,32 @@ const Cadastro = (props) => {
   return (
     <DivCadastro>
       <form method="POST">
-        <Photo imagemPerfil= {null} />
+        <Photo imagemPerfil={null} />
         {dados[indexPosition]}
         <div>
           {verify && (
-            <div style={{ textAlign: "left", margin: "0 28px" }}>
+            <div
+              style={{
+                textAlign: "left",
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
               <p style={{ color: "red" }}>
-                A senha deve ter, no mínimo, 8 caracteres
+                A senha deve ter, no mínimo, 8 caracteres.
               </p>
             </div>
           )}
         </div>
         <DivA>
-          <Button handleClick={handleClick} btnRef={btnRef} nome={buttonName} />
+          <div>
+            <Button
+              handleClick={handleClick}
+              btnRef={btnRef}
+              nome={buttonName}
+            />
+          </div>
           <a href="#" onClick={props.handleClick}>
             Cancelar
           </a>

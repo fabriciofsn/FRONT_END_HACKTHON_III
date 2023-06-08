@@ -6,7 +6,7 @@ const anim = keyframes`
     opacity: 0;
   }
   to{
-    height: auto;
+    height: auto ;
     opacity: 1;
   }
 `;
@@ -88,7 +88,7 @@ export const DivIcon = styled.div`
   justify-content: center;
   height: 90px;
 
-  img{
+  img {
     border-radius: 100%;
   }
 `;
@@ -112,5 +112,18 @@ export const DivAccordion = styled.div`
   p.selected {
     opacity: 1;
     border-bottom: 3px solid #061226;
+  }
+`;
+
+export const Select = styled.select`
+  background-color: #d9d9d9;
+  font-size: 1.3rem;
+  border: none;
+  width: 100%;
+  max-width: 320px;
+  margin: auto;
+  outline: none;
+  option {
+    font-size: 1rem;
   }
 `;
