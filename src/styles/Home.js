@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components";
 export const HeaderHome = styled.header`
   background-color: #0a1d3e;
   width: 100%;
-  height: 45vh;
+  height: 43vh;
   border-bottom-right-radius: 40px;
   position: relative;
 
