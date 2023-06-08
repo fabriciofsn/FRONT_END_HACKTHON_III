@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   DivSetor,
   DivInputText,
   DivButtonCadastrar,
   DivCancelar,
 } from "../styles/AdicionarSetor";
+import { CadastrarDiretor } from "./CadastrarDiretor";
 
 const AdicionarSetor = ({
   title = "",
@@ -13,14 +14,19 @@ const AdicionarSetor = ({
   chefe = "",
   button = "",
   handleClick = () => {},
+  handleClickAvancar = () =>{},
+  direcao = false,
   cancelar = "",
 }) => {
+
+  const [cadastrarChefe, setCadastrarChefe] = useState(false);
+
   return (
     <DivSetor>
       <h2>{title}</h2>
-      <form>
-        <DivInputText>{input}</DivInputText>
-        {array && (
+      <form onSubmit={handleClickAvancar}>
+        <DivInputText><p>Direção</p></DivInputText>
+        {array && !direcao ? (
           <DivInputText>
             <select>
               {array.map((arr) => {
@@ -32,20 +38,24 @@ const AdicionarSetor = ({
               })}
             </select>
           </DivInputText>
-        )}
-      </form>
-      <a href="#">
+        ) : ""}
+      
+      <a onClick={() => setCadastrarChefe(true)}>
         <i>{chefe}</i>
       </a>
       <DivButtonCadastrar>
-        <button>{button}</button>
+        <button type="submit">{button}</button>
       </DivButtonCadastrar>
+      </form>
       <DivCancelar>
         <button onClick={handleClick}>
           <i>{cancelar}</i>
         </button>
       </DivCancelar>
+      {cadastrarChefe && (<CadastrarDiretor handleSelecionar = {() => setCadastrarChefe(false)}/>)}
     </DivSetor>
+
+    
   );
 };
 

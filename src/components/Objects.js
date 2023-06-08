@@ -4,7 +4,7 @@ import perfilJosue from "../assets/perfilJosue.jpg"
 import  {ModalObject}  from "./ModalObject";
 
 
-export function Objects({ object = null, colaborador = false }) {
+export function Objects({ object = null, colaborador = false, chefe= false, handleSelecionar}) {
 
   const [poupupObject, setPoupupObject] = useState(null);
 
@@ -15,13 +15,12 @@ export function Objects({ object = null, colaborador = false }) {
 
   const handleClickCloseObject = () =>{
     setPoupupObject(null)
-    // console.log(handleClickCloseObject)
   }
   return (
     <div className="bodyObjects">
       {object.map((object) => {
         return (
-          <div className="divObjects" key={object.id} onClick={() => handleClickOpenObject(object)}>
+            <div className="divObjects" key={object.id} onClick={!chefe ? () => handleClickOpenObject(object) : handleSelecionar}>
             <div className="divObjectsNome">
               <p><b>{object.nome}</b></p>
               <p>{object.cargoId}</p>
