@@ -12,6 +12,10 @@
     align-items: center;
 }
 
+.divObjects:hover{
+    opacity: 0.5;
+}
+
 .bodyObjects{
  display: block;  
  justify-content: center;
