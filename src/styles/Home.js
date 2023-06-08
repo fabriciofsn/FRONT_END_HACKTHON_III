@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components";
 export const HeaderHome = styled.header`
   background-color: #0a1d3e;
   width: 100%;
-  height: 43vh;
+  height: 45vh;
   border-bottom-right-radius: 40px;
   position: relative;
 
@@ -15,7 +15,6 @@ export const HeaderHome = styled.header`
 
   .accordion {
     width: 100%;
-    max-width: 400px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -23,6 +22,7 @@ export const HeaderHome = styled.header`
     bottom: 0;
 
     p {
+      cursor: pointer;
       font-size: 1.5rem;
       margin: auto;
       color: #d9d9d9;
@@ -62,6 +62,7 @@ export const DivBens = styled.div`
     justify-content: center;
     align-items: center;
     animation: ${anim} 0.3s forwards;
+    cursor: pointer;
 
     .icon-categoria {
       background-color: #4c75bd;
@@ -112,6 +113,12 @@ export const DivBens = styled.div`
     .title {
       text-align: center;
       margin-top: 10px;
+    }
+  }
+  @media (max-width: 380px) {
+    & {
+      flex-direction: column;
+      align-items: center;
     }
   }
 `;
