@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { DivFlex } from "../styles/Endereco";
 import SelectCargo from "./SelectCargo";
-import Input from "./Input";
 import Photo from "./Photo";
 import { DivOverFlow } from "../styles/Endereco";
 import CircularButton from "./CircularButton";
@@ -11,7 +10,7 @@ import { DivInput } from "../styles/Input";
 import { Select } from "../styles/Cadastro";
 
 const Atributos = (props) => {
-  const cargo = ["Adm", "Supervisor", "Gerente", "Simplório funcionário"];
+  const cargo = ["Adm", "Supervisor", "Gerente"];
   const departamento = ["RH", "Financeiro", "Direção"];
   const divRef = useRef();
 

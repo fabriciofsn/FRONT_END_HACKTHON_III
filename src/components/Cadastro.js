@@ -160,21 +160,21 @@ const Cadastro = (props) => {
 
   useEffect(() => {
     if (divRef.current) {
-      const filtros = divRef.current.querySelectorAll("p");
+      const filtros = divRef.current.querySelectorAll("span");
       filtros.forEach((filtro) => {
-        filtro.classList.remove("selected");
+        filtro.classList.remove("selected_");
       });
-      filtros[indexPosition].classList.add("selected");
+      filtros[indexPosition].classList.add("selected_");
       filtros[indexPosition].style.fontWeight = "bold";
       filtros[indexPosition].style.opacity = "1";
       filtros[indexPosition].addEventListener("click", () => {
         if (prosseguir) {
           setIndex(indexPosition);
           filtros.forEach((filtro) => {
-            filtro.classList.remove("selected");
+            filtro.classList.remove("selected_");
             filtro.style.opacity = "0.5";
           });
-          filtros[indexPosition].classList.add("selected");
+          filtros[indexPosition].classList.add("selected_");
           filtros[indexPosition].style.fontWeight = "bold";
           filtros[indexPosition].style.opacity = "1";
         }
@@ -186,8 +186,8 @@ const Cadastro = (props) => {
     <DivCadastro>
       <form method="POST">
         <Photo imagemPerfil={null} />
-        {dados[indexPosition]}
-        <div>
+        <div className="form-inputs">
+          {dados[indexPosition]}
           {verify && (
             <div
               style={{
@@ -216,9 +216,9 @@ const Cadastro = (props) => {
           </a>
         </DivA>
         <DivAccordion ref={divRef}>
-          <p className="selected">Dados</p>
-          <p>Endereço</p>
-          <p>Atributos</p>
+          <span className="selected_">Dados</span>
+          <span>Endereço</span>
+          <span>Atributos</span>
         </DivAccordion>
       </form>
     </DivCadastro>

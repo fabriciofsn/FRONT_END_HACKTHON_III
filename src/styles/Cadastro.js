@@ -6,7 +6,7 @@ const anim = keyframes`
     opacity: 0;
   }
   to{
-    height: 85vh;
+    height: 90vh;
     opacity: 1;
   }
 `;
@@ -58,7 +58,7 @@ export const DivCadastro = styled.div`
 `;
 
 export const DivA = styled.div`
-  margin-top: 10px;
+  height: 20px;
   a {
     font-weight: bold;
   }
@@ -95,10 +95,8 @@ export const DivIcon = styled.div`
 
 export const DivAccordion = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
-  max-width: 350px;
-  right: 10px;
   align-items: center;
   margin: auto;
   position: absolute;
@@ -106,12 +104,13 @@ export const DivAccordion = styled.div`
   font-size: 1.3rem;
   font-weight: bold;
 
-  p {
+  span {
     opacity: 0.3;
     position: relative;
     bottom: 0;
+    outline: none;
   }
-  p.selected {
+  span.selected_ {
     opacity: 1;
     border-bottom: 3px solid #061226;
   }
@@ -125,6 +124,7 @@ export const Select = styled.select`
   max-width: 320px;
   margin: auto;
   outline: none;
+
   option {
     font-size: 1rem;
   }
