@@ -32,6 +32,7 @@ const teste = (e) =>{
 {modal2 && (
         <AdicionarSetor
           title="ADICIONAR SETOR"
+          
           input= "Direção"
           array={setores}
           chefe="Cadastrar chefe"
