@@ -32,7 +32,8 @@ const teste = (e) =>{
 {modal2 && (
         <AdicionarSetor
           title="ADICIONAR SETOR"
-          input={<input type="text" required placeholder="Nome" />}
+          
+          input= "Direção"
           array={setores}
           chefe="Cadastrar chefe"
           button="Finalizar"

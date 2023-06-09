@@ -25,7 +25,7 @@ const AdicionarSetor = ({
     <DivSetor>
       <h2>{title}</h2>
       <form onSubmit={handleClickAvancar}>
-        <DivInputText><p>Direção</p></DivInputText>
+        <DivInputText>{input}</DivInputText>
         {array && !direcao ? (
           <DivInputText>
             <select>
