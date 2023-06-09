@@ -37,7 +37,7 @@ const Login = () => {
         <img src={hackathon_logo} alt="logo" />
       </DivElement>
       <DivAlignCenter>
-        <form method="POST">
+        <form method="POST" action="/home">
           {userFields.map(({ id, label, type }) => {
             return (
               <DivWrapper key={id}>
@@ -45,7 +45,7 @@ const Login = () => {
                   <i>{label}</i>
                 </label>
                 <DivStyleInput>
-                  <input required type={type} id={id} name={id} />
+                  <input type={type} id={id} name={id} required />
                 </DivStyleInput>
               </DivWrapper>
             );
@@ -56,9 +56,7 @@ const Login = () => {
             </a>
           </DivLinkHref>
           <DivAlignButton>
-            <ButtonStyled onClick={(e) => e.preventDefault()}>
-              Entrar
-            </ButtonStyled>
+            <ButtonStyled>Entrar</ButtonStyled>
           </DivAlignButton>
         </form>
         {esqueceuSenha && (
