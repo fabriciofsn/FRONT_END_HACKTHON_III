@@ -96,7 +96,7 @@ const EsqueceuSenha = (props) => {
           <div className="input">
             <input
               ref={inputRef}
-              type="text"
+              type="email"
               required
               placeholder="Digite seu email"
             />
