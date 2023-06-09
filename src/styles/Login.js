@@ -37,7 +37,7 @@ export const DivAlignCenter = styled.div`
   justify-content: center;
   align-items: center;
   margin: 50px 0;
-  height: calc(100% - 190px);
+  height: calc(100% - 200px);
 
   form {
     width: 100%;

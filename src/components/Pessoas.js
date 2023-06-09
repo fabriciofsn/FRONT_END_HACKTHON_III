@@ -8,7 +8,7 @@ const Pessoas = () => {
   return (
     <div>
       <DivBens>
-        <div className="categorias">
+        <div className="categorias cargos">
           <div>
             <div
               className="icon-categoria"
@@ -19,7 +19,7 @@ const Pessoas = () => {
             <p>Cargos</p>
           </div>
         </div>
-        <div className="gerir-bens">
+        <div className="gerir-bens colaboradores">
           <div>
             <div
               className="icon-bens"
@@ -30,7 +30,7 @@ const Pessoas = () => {
             <p style={{ fontSize: "1.4rem" }}>Colaboradores</p>
           </div>
         </div>
-        <div className="ocorrencias">
+        <div className="ocorrencias departamentos">
           <div>
             <div
               className="icon-ocorrencia"
@@ -43,7 +43,7 @@ const Pessoas = () => {
             </div>
           </div>
         </div>
-        <div className="ocorrencias">
+        <div className="ocorrencias setores">
           <div>
             <div
               className="icon-ocorrencia"

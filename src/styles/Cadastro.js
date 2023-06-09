@@ -14,7 +14,7 @@ const anim = keyframes`
 export const DivCadastro = styled.div`
   position: fixed;
   bottom: 0;
-  width: 100vw;
+  width: 100%;
   height: 0;
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
@@ -98,16 +98,18 @@ export const DivAccordion = styled.div`
   justify-content: space-between;
   width: 100%;
   max-width: 350px;
-  right: 0;
+  right: 10px;
   align-items: center;
   margin: auto;
-  position: relative;
-  bottom: -10px;
+  position: absolute;
+  bottom: 0;
   font-size: 1.3rem;
   font-weight: bold;
 
   p {
     opacity: 0.3;
+    position: relative;
+    bottom: 0;
   }
   p.selected {
     opacity: 1;
