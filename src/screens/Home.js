@@ -29,7 +29,9 @@ const Home = () => {
     <div>
       <HeaderHome>
         <div className="logout">
-          <MdOutlineLogout size={40} color="#d9d9d9" />
+          <a href="/login">
+            <MdOutlineLogout size={40} color="#d9d9d9" />
+          </a>
         </div>
         <div className="profile">
           <Profile />
