@@ -9,6 +9,8 @@ import {
   DivAlignButton,
   DivLinkHref,
 } from "../styles/Login";
+import { useState } from "react";
+import EsqueceuSenha from "../components/EsqueceuSenha";
 
 const userFields = [
   {
@@ -24,8 +26,9 @@ const userFields = [
 ];
 
 const Login = () => {
+  const [esqueceuSenha, setEsqueceuSenha] = useState(false);
   const handleClick = () => {
-    alert("Problema seu, se vire aí!");
+    setEsqueceuSenha(true);
   };
 
   return (
@@ -34,7 +37,7 @@ const Login = () => {
         <img src={hackathon_logo} alt="logo" />
       </DivElement>
       <DivAlignCenter>
-        <form method="POST">
+        <form method="POST" action="/home">
           {userFields.map(({ id, label, type }) => {
             return (
               <DivWrapper key={id}>
@@ -42,7 +45,7 @@ const Login = () => {
                   <i>{label}</i>
                 </label>
                 <DivStyleInput>
-                  <input type={type} id={id} name={id} />
+                  <input type={type} id={id} name={id} required />
                 </DivStyleInput>
               </DivWrapper>
             );
@@ -56,6 +59,9 @@ const Login = () => {
             <ButtonStyled>Entrar</ButtonStyled>
           </DivAlignButton>
         </form>
+        {esqueceuSenha && (
+          <EsqueceuSenha setFalse={setEsqueceuSenha} close={setEsqueceuSenha} />
+        )}
       </DivAlignCenter>
     </div>
   );

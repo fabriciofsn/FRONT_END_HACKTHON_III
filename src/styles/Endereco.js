@@ -2,8 +2,12 @@ import styled from "styled-components";
 
 export const DivOverFlow = styled.div`
   width: 100%;
-  height: 45vh;
+  height: 55vh;
   overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   label {
     font-weight: bold;
