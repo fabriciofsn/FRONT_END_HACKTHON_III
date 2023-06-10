@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Header from "../components/Header";
 import { DivFooter, DivButtonDesktop } from "../styles/Setor";
-import Cadastro from "../components/Cadastro";
 import "../styles/mediaQuery.css";
 import "../styles/ColaboradorScreen.css";
 import { Objects } from "../components/Objects";
@@ -12,9 +11,6 @@ import AdicionarSetor from "../components/AdicionarSetor";
 const Categoria = () => {
   const [modal, setModal] = useState(false);
   const divRef = useRef();
-  const handleClick = () => {
-    setModal(false);
-  };
 
   useEffect(() => {}, [modal]);
 
@@ -35,7 +31,7 @@ const Categoria = () => {
       </div>
       <div className="ColaboradorObjectsBody">
         <div className="ColaboradorDivObjects">
-          <Objects object={tableCategorias} tipo="categoria" />
+          <Objects object={tableCategorias} tipo="categoria" titulo="CATEGORIA"/>
         </div>
       </div>
       {modal && (

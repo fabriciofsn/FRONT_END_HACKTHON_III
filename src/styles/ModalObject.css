@@ -14,7 +14,50 @@
     text-align: center;
 }
 
+.ModalObject h1{
+    color: white;
+}
+
 .selected{
     text-decoration: underline;
     color:blue;
+}
+
+.pCategoria{
+    color: white;
+}
+
+.changeContentModal{
+    display: flex;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.changeContentModal p{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.ModalObject button{
+    padding: 10px 30px;
+    border-radius: 30px;
+    margin-top: 30px;
+    cursor: pointer;
+    border: none;
+}
+
+.ModalObject button:hover{
+    opacity: 0.7;
+}
+
+.buttonCategoria{
+    background-color: white;
+    color: #061226;
+}
+
+.buttonColaborador{
+    background-color: #061226;
+    color: white;
 }
