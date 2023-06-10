@@ -1,5 +1,22 @@
-#chefeSetor{
-    background-color: #d9d9d9;
+.chefeSetor{
+    background-color: white;
     border: solid 1px #0a1d3e;
     color: #0a1d3e;
+    height: 80vh;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 30px 30px 0px 0px;
 }
+
+.chefeSetor h1{
+    margin-top: 10px;
+}
+
+.chefeSetor span{
+    height: 80%;
+    overflow-y: auto;
+}
+
+

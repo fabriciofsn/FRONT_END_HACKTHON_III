@@ -24,6 +24,10 @@ const Modal = () => {
       nome: "Colaboradores",
       href: "/colaborador",
     },
+    {
+      nome: "Categorias",
+      href: "/categoria",
+    }
   ];
 
   return (

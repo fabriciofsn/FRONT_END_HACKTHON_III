@@ -57,6 +57,31 @@ const tableColaboradores = [
         cargoId: "Diretor",
         imagem: ""
     },
+    {
+        id: 8,
+        nome: "Jobson Barreto",
+        setorId: "Vendas",
+        departamentoId: "Producao",
+        cargoId: "Vendedor",
+        imagem: ""
+    },
+    {
+        id: 9,
+        nome: "Werik Jahel",
+        setorId: "Vendas",
+        departamentoId: "Producao",
+        cargoId: "Vendedor",
+        imagem: ""
+    },
+    {
+        id: 10,
+        nome: "Fabricio Santos",
+        setorId: "Vendas",
+        departamentoId: "Producao",
+        cargoId: "Vendedor",
+        imagem: ""
+    }
+
 ]; 
 
 export default tableColaboradores;

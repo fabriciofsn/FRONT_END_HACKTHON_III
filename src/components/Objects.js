@@ -4,7 +4,7 @@ import perfilJosue from "../assets/perfilJosue.jpg"
 import  {ModalObject}  from "./ModalObject";
 
 
-export function Objects({ object = null, colaborador = false, chefe= false, handleSelecionar}) {
+export function Objects({ object = null, colaborador = false, chefe= false, handleSelecionar, tipo}) {
 
   const [poupupObject, setPoupupObject] = useState(null);
 
@@ -38,7 +38,8 @@ export function Objects({ object = null, colaborador = false, chefe= false, hand
         )
       })}
 
-      {poupupObject && <ModalObject objeto={poupupObject} closeModal = {handleClickCloseObject}/>}
+      {poupupObject && tipo === "colaborador" && <ModalObject objeto={poupupObject} informacao2="Departamento" resposta2= {poupupObject.departamentoId} closeModal = {handleClickCloseObject}/>}
+      {poupupObject && tipo === "categoria" && <ModalObject objeto={poupupObject} />}
     </div>
   );
 
