@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { DivCadastro, DivA, DivAccordion } from "../styles/Cadastro";
+import {EnvolveModal} from "../styles/Modal";
 import Photo from "./Photo";
 import Dados from "./Dados";
 import Button from "../components/Button";
@@ -183,45 +184,47 @@ const Cadastro = (props) => {
   }, [prosseguir]);
 
   return (
-    <DivCadastro>
-      <form method="POST">
-        <Photo imagemPerfil={null} />
-        <div className="form-inputs">
-          {dados[indexPosition]}
-          {verify && (
-            <div
-              style={{
-                textAlign: "left",
-                width: "100%",
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <p style={{ color: "red" }}>
-                A senha deve ter, no mínimo, 8 caracteres.
-              </p>
-            </div>
-          )}
-        </div>
-        <DivA>
-          <div>
-            <Button
-              handleClick={handleClick}
-              btnRef={btnRef}
-              nome={buttonName}
-            />
+    <EnvolveModal>
+      <DivCadastro>
+        <form method="POST">
+          <Photo imagemPerfil={null} />
+          <div className="form-inputs">
+            {dados[indexPosition]}
+            {verify && (
+              <div
+                style={{
+                  textAlign: "left",
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <p style={{ color: "red" }}>
+                  A senha deve ter, no mínimo, 8 caracteres.
+                </p>
+              </div>
+            )}
           </div>
-          <a href="#" onClick={props.handleClick}>
-            Cancelar
-          </a>
-        </DivA>
-        <DivAccordion ref={divRef}>
-          <span className="selected_">Dados</span>
-          <span>Endereço</span>
-          <span>Atributos</span>
-        </DivAccordion>
-      </form>
-    </DivCadastro>
+          <DivA>
+            <div>
+              <Button
+                handleClick={handleClick}
+                btnRef={btnRef}
+                nome={buttonName}
+              />
+            </div>
+            <a href="#" onClick={props.handleClick}>
+              Cancelar
+            </a>
+          </DivA>
+          <DivAccordion ref={divRef}>
+            <span className="selected_">Dados</span>
+            <span>Endereço</span>
+            <span>Atributos</span>
+          </DivAccordion>
+        </form>
+      </DivCadastro>
+    </EnvolveModal>
   );
 };
 

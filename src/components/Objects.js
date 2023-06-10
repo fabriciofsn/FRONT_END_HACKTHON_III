@@ -22,11 +22,11 @@ export function Objects({ object = null, titulo, colaborador = false, chefe= fal
         return (
             <div className="divObjects" key={object.id} onClick={!chefe ? () => handleClickOpenObject(object) : handleSelecionar}>
             <div className="divObjectsNome">
-              <p><b>{object.nome}</b></p>
-              <p>{object.cargoId}</p>
+              {tipo === "colaborador" ? <p><b>{object.nome}</b></p> : <h3>{object.nome}</h3>}
+              {tipo !== "setor" ? <p>{object.cargoId}</p> : <p>{object.departamentoId}</p>}
             </div>
             <div className="divObjectsDepartamento">
-              <p>{object.DepartamentoId}</p>
+            {tipo === "colaborador" && <p>{object.departamentoId}</p>}
               <p>{object.setorId}</p>
             </div>
             <div className="divObjectsChefe">
@@ -40,6 +40,7 @@ export function Objects({ object = null, titulo, colaborador = false, chefe= fal
 
       {poupupObject && tipo === "colaborador" && <ModalObject objeto={poupupObject} informacao2="Departamento" resposta2= {poupupObject.departamentoId} closeModal = {handleClickCloseObject}/>}
       {poupupObject && tipo === "categoria" && <ModalObject objeto={poupupObject} categoria={true} closeModal = {handleClickCloseObject} titulo={titulo}/>}
+      {poupupObject && tipo === "setor" && <ModalObject objeto={poupupObject} categoria={true} informacao2="Departamento" resposta2= {poupupObject.departamentoId} closeModal = {handleClickCloseObject} titulo={titulo}/>}
     </div>
   );
 

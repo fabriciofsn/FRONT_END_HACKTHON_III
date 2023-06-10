@@ -4,6 +4,8 @@ import { Visualizar } from "./Visualizar";
 import "../styles/ModalObject.css";
 import PhotoObject from "./PhotoObject";
 import { DivSetor } from "../styles/AdicionarSetor";
+import {EnvolveModal} from "../styles/Modal";
+import { Excluir } from "./Excluir";
 
 
 
@@ -17,13 +19,15 @@ export function ModalObject({ objeto = null, titulo, categoria = false, closeMod
     }
 
     return (
-        <div>
-            {!categoria && <DivCadastro className="ModalObject">
+        <EnvolveModal>
+            {!categoria && 
+            <DivCadastro className="ModalObject">
                 <PhotoObject />
+                {/* {content === "excluir" && <h1>EXCLUIR {titulo}?</h1>} */}
                 <div className="ModalObjectContent">
                     {content === "visualizar" && <Visualizar objeto={objeto} informacao2={informacao2} resposta2={resposta2} informacao3={informacao3} resposta3={resposta3} informacao4={informacao4} resposta4={resposta4} />}
                     {content === "editar" && <p>editar</p>}
-                    {content === "excluir" && <p>excluir</p>}
+                    {content === "excluir" && <Excluir closeModal={closeModal}/>}
                 </div>
                 <div className="changeContentModal">
                     {content === "visualizar" ? <p className="selected" onClick={() => handleChangeContent("visualizar")}>visualizar</p> : <p onClick={() => handleChangeContent("visualizar")}>visualizar</p>}
@@ -34,11 +38,13 @@ export function ModalObject({ objeto = null, titulo, categoria = false, closeMod
 
             </DivCadastro>}
             {categoria && <DivSetor className="ModalObject">
-                <h1>{titulo}</h1>
+                {content === "visualizar" && <h1>VISUALIZAR{titulo}</h1>}
+                {content === "editar" && <h1>EDITAR {titulo}</h1>}
+                {content === "excluir" && <h1>EXCLUIR {titulo}?</h1>}
                 <div className="ModalObjectContent">
-                    {content === "visualizar" && <Visualizar objeto={objeto} categoria={true} informacao2={informacao2} resposta2={resposta2} informacao3={informacao3} resposta3={resposta3} informacao4={informacao4} resposta4={resposta4} />}
+                    {content === "visualizar" && <Visualizar objeto={objeto} categoria={true} informacao2={informacao2} resposta2={resposta2} informacao3={informacao3} resposta3={resposta3} informacao4={informacao4} resposta4={resposta4}/>}
                     {content === "editar" && <p>editar</p>}
-                    {content === "excluir" && <p>excluir</p>}
+                    {content === "excluir" && <Excluir closeModal={closeModal}/>}
                 </div>
                 <div className="changeContentModal">
                     {content === "visualizar" ? <p className="selected" onClick={() => handleChangeContent("visualizar")}>visualizar</p> : <p onClick={() => handleChangeContent("visualizar")} className="pCategoria">visualizar</p>}
@@ -48,6 +54,6 @@ export function ModalObject({ objeto = null, titulo, categoria = false, closeMod
                 <button className="buttonCategoria" onClick={closeModal}>fechar</button>
 
             </DivSetor>}
-        </div>
+        </EnvolveModal>
     );
 }

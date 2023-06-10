@@ -31,19 +31,19 @@ const Modal = () => {
   ];
 
   return (
-    <DivModal>
-      <nav>
-        <ul>
-          {links.map(({ nome, href }) => {
-            return (
-              <li key={nome}>
-                <a href={href}>{nome}</a>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
-    </DivModal>
+      <DivModal>
+        <nav>
+          <ul>
+            {links.map(({ nome, href }) => {
+              return (
+                <li key={nome}>
+                  <a href={href}>{nome}</a>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      </DivModal>
   );
 };
 

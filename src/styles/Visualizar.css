@@ -5,6 +5,7 @@
     text-align: center;
     align-items: center;
     overflow-y: auto;
+    margin-left: 10%;
 }
 
 .divBody span, .divBodyCategoria span{
@@ -27,3 +28,8 @@
 .p2{
     text-align: end;
 }
+
+/* .divBody h2, .divBodyCategoria h2{
+    margin-top: 0;
+    margin-bottom: 10px;
+} */
