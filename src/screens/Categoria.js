@@ -8,6 +8,7 @@ import HeaderDesktop from "../components/HeaderDesktop";
 import { tableCategorias } from "../tables/TableCategorias";
 import AdicionarSetor from "../components/AdicionarSetor";
 
+
 const Categoria = () => {
   const [modal, setModal] = useState(false);
   const divRef = useRef();
@@ -22,14 +23,7 @@ const Categoria = () => {
       <div className="showDesktop">
         <HeaderDesktop />
       </div>
-      <div className="showDesktop">
-        <DivButtonDesktop>
-          <button onClick={() => setModal(true)}>
-            Adicionar <p>Categoria</p>
-          </button>
-        </DivButtonDesktop>
-      </div>
-      <div className="ColaboradorObjectsBody">
+      <div className="ColaboradorObjectsBody" id="contentSetor">
         <div className="ColaboradorDivObjects">
           <Objects object={tableCategorias} tipo="categoria" titulo="CATEGORIA"/>
         </div>
@@ -43,7 +37,7 @@ const Categoria = () => {
           handleClick={() => setModal(false)}
         />
       )}
-      <DivFooter className="showMobile">
+      <DivFooter>
         <button onClick={() => setModal(true)}>
           Adicionar <p>Categoria</p>
         </button>

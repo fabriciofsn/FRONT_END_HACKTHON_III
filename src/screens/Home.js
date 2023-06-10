@@ -4,6 +4,8 @@ import Profile from "../components/Profile";
 import { MdOutlineLogout } from "react-icons/md";
 import { HeaderHome } from "../styles/Home";
 import Pessoas from "../components/Pessoas";
+import "../styles/mediaQuery.css";
+import HeaderDesktop from "../components/HeaderDesktop";
 
 const Home = () => {
   const divRef = useRef();
@@ -27,21 +29,29 @@ const Home = () => {
   const alter = [<Bens />, <Pessoas />];
   return (
     <div>
-      <HeaderHome>
-        <div className="logout">
-          <a href="/login">
-            <MdOutlineLogout size={40} color="#d9d9d9" />
-          </a>
-        </div>
-        <div className="profile">
-          <Profile />
-        </div>
-        <div ref={divRef} className="accordion">
-          <p className="selected">Bens</p>
-          <p>Pessoas</p>
-        </div>
-      </HeaderHome>
-      {alter[position]}
+      <div className="showMobile">
+        <HeaderHome >
+          <div className="logout">
+            <a href="/login">
+              <MdOutlineLogout size={40} color="#d9d9d9" />
+            </a>
+          </div>
+          <div className="profile">
+            <Profile />
+          </div>
+          <div ref={divRef} className="accordion">
+            <p className="selected">Bens</p>
+            <p>Pessoas</p>
+          </div>
+        </HeaderHome>
+        {alter[position]}
+      </div>
+      <div className="showDesktop">
+        <HeaderDesktop />
+        <Bens />
+        <Pessoas />
+      </div>
+
     </div>
   );
 };

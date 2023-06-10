@@ -1,0 +1,12 @@
+.bodyExcluir{
+    margin-bottom: 30px;
+}
+
+.bodyExcluir button{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.buttonSelecionado{
+    opacity: 0.6;
+}

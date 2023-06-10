@@ -2,11 +2,18 @@ import React from "react";
 import Header from "../components/Header";
 import { DivError } from "../styles/Error404";
 import { BiError } from "react-icons/bi";
+import "../styles/mediaQuery.css";
+import HeaderDesktop from "../components/HeaderDesktop";
 
 const Error404 = () => {
   return (
     <div>
-      <Header />
+      <div className="showMobile">
+        <Header />
+      </div>
+      <div className="showDesktop">
+        <HeaderDesktop />
+      </div>
       <DivError>
         <div>
           <BiError color="#eb7b0a" size={50} />
