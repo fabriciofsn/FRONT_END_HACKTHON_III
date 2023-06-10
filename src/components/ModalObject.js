@@ -38,7 +38,7 @@ export function ModalObject({ objeto = null, titulo, categoria = false, closeMod
 
             </DivCadastro>}
             {categoria && <DivSetor className="ModalObject">
-                {content === "visualizar" && <h1>VISUALIZAR{titulo}</h1>}
+                {content === "visualizar" && <h1>VISUALIZAR {titulo}</h1>}
                 {content === "editar" && <h1>EDITAR {titulo}</h1>}
                 {content === "excluir" && <h1>EXCLUIR {titulo}?</h1>}
                 <div className="ModalObjectContent">
