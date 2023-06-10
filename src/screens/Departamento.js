@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
-import Filtros from "../components/Filtros";
 import AdicionarSetor from "../components/AdicionarSetor";
 import { DivFooter } from "../styles/Setor";
 
@@ -32,7 +31,6 @@ const teste = (e) =>{
 {modal2 && (
         <AdicionarSetor
           title="ADICIONAR SETOR"
-          
           input= "Direção"
           array={setores}
           chefe="Cadastrar chefe"

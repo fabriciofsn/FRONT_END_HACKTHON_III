@@ -7,7 +7,7 @@ import PhotoObject from "./PhotoObject";
 
 
 
-export function ModalObject({objeto =null, closeModal}) {
+export function ModalObject({objeto =null, closeModal, informacao2, resposta2, informacao3, resposta3, informacao4, resposta4}) {
 
     const [content, setContent] = useState("visualizar")
     
@@ -19,7 +19,7 @@ export function ModalObject({objeto =null, closeModal}) {
         <DivCadastro className="ModalObject">
             <PhotoObject />
             <div className="ModalObjectContent">
-            {content === "visualizar" && <Visualizar objeto= {objeto} />}
+            {content === "visualizar" && <Visualizar objeto= {objeto} informacao2={informacao2} resposta2={resposta2} informacao3={informacao3} resposta3={resposta3} informacao4={informacao4} resposta4={resposta4} />}
             {content === "editar" && <p>editar</p>}
             {content === "excluir" && <p>excluir</p>}
             </div>
