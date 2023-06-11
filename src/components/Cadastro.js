@@ -6,6 +6,7 @@ import Dados from "./Dados";
 import Button from "../components/Button";
 import Endereco from "./Endereco";
 import Atributos from "./Atributos";
+import "../styles/ColaboradorScreen.css";
 
 const Cadastro = (props) => {
   const divRef = useRef();
@@ -204,7 +205,7 @@ const Cadastro = (props) => {
                 </p>
               </div>
             )}
-          </div>
+         
           <DivA>
             <div>
               <Button
@@ -217,6 +218,7 @@ const Cadastro = (props) => {
               Cancelar
             </a>
           </DivA>
+          </div>
           <DivAccordion ref={divRef}>
             <span className="selected_">Dados</span>
             <span>Endereço</span>
