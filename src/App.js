@@ -7,6 +7,7 @@ import Error404 from "./screens/Error404";
 import Colaborador from "./screens/Colaborador";
 import Home from "./screens/Home";
 import Categoria from "./screens/Categoria";
+import Bens from "./screens/Bens";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/colaborador" element={<Colaborador />} />
         <Route path="/categoria" element={<Categoria />} /> 
         <Route path="*" element={<Error404 />} />
+        <Route path="/bens" element={<Bens />} />
       </Routes>
     </BrowserRouter>
   );

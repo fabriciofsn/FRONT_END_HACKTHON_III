@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { DivInputFile, DivIcon } from "../styles/Cadastro";
 import { DivAdjustFile } from "../styles/Cadastro";
-import perfilJosue from "../assets/perfilJosue.jpg"
+import perfilJosue from "../assets/perfilJosue.jpg";
+import pc from "../assets/pc.jpg";
 
 
-const PhotoObject = (imagemPerfil = null) => {
+const PhotoObject = ({imagemPerfil = null, photoColaborador= false}) => {
   const [img, setImg] = useState(null);
+  const imagem = photoColaborador ? perfilJosue : pc
+
+  console.log("teste" + photoColaborador)
   return (
     <DivAdjustFile>
       <DivInputFile>
@@ -17,7 +21,7 @@ const PhotoObject = (imagemPerfil = null) => {
         <DivIcon>
           {img ? (
             <img src={img} alt="perfil" />
-          ) : (<img src={perfilJosue} alt="perfil" width={100} height={100}/>)}
+          ) : (<img src={imagem} alt="perfil" width={100} height={100}/>)}
           
             
           

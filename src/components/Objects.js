@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import "../styles/Objects.css";
-import perfilJosue from "../assets/perfilJosue.jpg"
+import perfilJosue from "../assets/perfilJosue.jpg";
+import pc from "../assets/pc.jpg";
 import  {ModalObject}  from "./ModalObject";
 
 
@@ -33,14 +34,15 @@ export function Objects({ object = null, titulo, colaborador = false, chefe= fal
               {object.cargoId === "Diretor" && object.setorId !== "Direcao" ? <p className="cargoChefe">CS</p> : ""}
               {object.cargoId === "Diretor" && object.setorId === "Direcao" ? <p className="cargoDiretor">DD</p> : ""}
             </div>
-            <div className="divObjectsImagem">{colaborador ? <img src={perfilJosue} width="60px" height="70px" /> : ""}</div>
+            <div className="divObjectsImagem">{colaborador && tipo!== "bens" ? <img src={perfilJosue} width="60px" height="70px" /> : ""}{colaborador && tipo=== "bens" ? <img src={pc} width="60px" height="70px" /> : ""}</div>
           </div>
         )
       })}
 
-      {poupupObject && tipo === "colaborador" && <ModalObject objeto={poupupObject} informacao2="Departamento" resposta2= {poupupObject.departamentoId} closeModal = {handleClickCloseObject}/>}
+      {poupupObject && tipo === "colaborador" && <ModalObject objeto={poupupObject} photoColaborador={true} informacao2="Departamento" resposta2= {poupupObject.departamentoId} closeModal = {handleClickCloseObject}/>}
       {poupupObject && tipo === "categoria" && <ModalObject objeto={poupupObject} categoria={true} closeModal = {handleClickCloseObject} titulo={titulo}/>}
       {poupupObject && tipo === "setor" && <ModalObject objeto={poupupObject} categoria={true} informacao2="Departamento" resposta2= {poupupObject.departamentoId} closeModal = {handleClickCloseObject} titulo={titulo}/>}
+      {poupupObject && tipo === "bens" && <ModalObject objeto={poupupObject} informacao2="Departamento" resposta2= {poupupObject.departamentoId} closeModal = {handleClickCloseObject}/>}
     </div>
   );
 
