@@ -27,13 +27,17 @@ export function Objects({ object = null, titulo, colaborador = false, chefe= fal
               {tipo !== "setor" ? <p>{object.cargoId}</p> : <p>{object.departamentoId}</p>}
             </div>
             <div className="divObjectsDepartamento">
-            {tipo === "colaborador" && <p>{object.departamentoId}</p>}
+              <p>{object.codigo}</p>
+            {colaborador && <p>{object.departamentoId}</p>}
               <p>{object.setorId}</p>
             </div>
-            <div className="divObjectsChefe">
+            {colaborador && <div className="divObjectsChefe">
               {object.cargoId === "Diretor" && object.setorId !== "Direcao" ? <p className="cargoChefe">CS</p> : ""}
               {object.cargoId === "Diretor" && object.setorId === "Direcao" ? <p className="cargoDiretor">DD</p> : ""}
-            </div>
+              <p>{object.estado}</p>
+              <p>{object.categoriaId}</p>
+              <p>{object.dataAdiquirido}</p>
+            </div>}
             <div className="divObjectsImagem">{colaborador && tipo!== "bens" ? <img src={perfilJosue} width="60px" height="70px" /> : ""}{colaborador && tipo=== "bens" ? <img src={pc} width="60px" height="70px" /> : ""}</div>
           </div>
         )
