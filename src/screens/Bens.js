@@ -9,10 +9,10 @@ import { tableDepartamentos } from "../tables/TableDepartamentos";
 import { FiltroDesktop } from "../components/FiltroDesktop";
 import "../styles/mediaQuery.css";
 import "../styles/ColaboradorScreen.css";
-import tableColaboradores from "../tables/TableColaboradores";
 import { tableCategorias } from "../tables/TableCategorias";
 import { Objects } from "../components/Objects";
 import HeaderDesktop from "../components/HeaderDesktop";
+import { tableBens } from "../tables/TableBens";
 
 const Bens = () => {
   const [modal, setModal] = useState(false);
@@ -44,7 +44,7 @@ const Bens = () => {
       <div className="showDesktop">
         <DivButtonDesktop>
           <button onClick={() => setModal(true)}>
-            Adicionar <p>Colaborador</p>
+            Adicionar <p>Bem</p>
           </button>
         </DivButtonDesktop>
       </div>
@@ -60,7 +60,7 @@ const Bens = () => {
           />
         </div>
         <div className="colaboradorDivObjects">
-          <Objects object={tableColaboradores} colaborador={true} tipo="bens" />
+          <Objects object={tableBens} colaborador={true} tipo="bens" />
         </div>
       </div>
       {/* <FiltroDesktop icon={<RiFilter2Fill />} title="Setor" array={tableSetores} setor={true}/> */}
@@ -68,7 +68,7 @@ const Bens = () => {
       {modal && <Cadastro handleClick={handleClick} />}
       <DivFooter className="showMobile">
         <button onClick={() => setModal(true)}>
-          Adicionar <p>Colaborador</p>
+          Adicionar <p>Bem</p>
         </button>
       </DivFooter>
     </div>
