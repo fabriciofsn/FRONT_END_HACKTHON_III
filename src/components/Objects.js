@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import "../styles/Objects.css";
+import "../styles/mediaQuery.css";
 import perfilJosue from "../assets/perfilJosue.jpg";
 import pc from "../assets/pc.jpg";
 import  {ModalObject}  from "./ModalObject";
@@ -27,16 +28,16 @@ export function Objects({ object = null, titulo, colaborador = false, chefe= fal
               {tipo !== "setor" ? <p>{object.cargoId}</p> : <p>{object.departamentoId}</p>}
             </div>
             <div className="divObjectsDepartamento">
-              <p>{object.codigo}</p>
+              {tipo === "bens" && <p>Código: {object.codigo}</p>}
             {colaborador && <p>{object.departamentoId}</p>}
-              <p>{object.setorId}</p>
+            <p>{object.setorId}</p>
             </div>
             {colaborador && <div className="divObjectsChefe">
               {object.cargoId === "Diretor" && object.setorId !== "Direcao" ? <p className="cargoChefe">CS</p> : ""}
               {object.cargoId === "Diretor" && object.setorId === "Direcao" ? <p className="cargoDiretor">DD</p> : ""}
-              <p>{object.estado}</p>
-              <p>{object.categoriaId}</p>
-              <p>{object.dataAdiquirido}</p>
+              {tipo=== "bens" && <p className="showDesktop" >Estado: {object.estado}</p>}
+              {tipo=== "bens" && <p className="showDesktop">Categoria: {object.categoriaId}</p>}
+              {tipo=== "bens" && <p className="showDesktop">Adiquirido: {object.dataAdiquirido}</p>}
             </div>}
             <div className="divObjectsImagem">{colaborador && tipo!== "bens" ? <img src={perfilJosue} width="60px" height="70px" /> : ""}{colaborador && tipo=== "bens" ? <img src={pc} width="60px" height="70px" /> : ""}</div>
           </div>
