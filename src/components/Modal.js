@@ -1,5 +1,6 @@
 import React from "react";
 import { DivModal } from "../styles/Modal";
+import { Link } from "react-router-dom";
 
 const Modal = () => {
   const links = [
@@ -31,23 +32,23 @@ const Modal = () => {
     {
       nome: "Bens",
       href: "/bens",
-    }
+    },
   ];
 
   return (
-      <DivModal>
-        <nav>
-          <ul>
-            {links.map(({ nome, href }) => {
-              return (
-                <li key={nome}>
-                  <a href={href}>{nome}</a>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-      </DivModal>
+    <DivModal>
+      <nav>
+        <ul>
+          {links.map(({ nome, href }) => {
+            return (
+              <li key={nome}>
+                <Link to={href}>{nome}</Link>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+    </DivModal>
   );
 };
 

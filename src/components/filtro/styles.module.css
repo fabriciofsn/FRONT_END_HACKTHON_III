@@ -1,0 +1,8 @@
+.filtroContainer > span {
+  display: inline-flex;
+}
+
+.opcao {
+  display: flex;
+  gap: 4px;
+}
