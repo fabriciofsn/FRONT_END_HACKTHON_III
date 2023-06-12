@@ -9,12 +9,12 @@ import { tableDepartamentos } from "../tables/TableDepartamentos";
 import { FiltroDesktop } from "../components/FiltroDesktop";
 import "../styles/mediaQuery.css";
 import "../styles/ColaboradorScreen.css";
-import tableColaboradores from "../tables/TableColaboradores";
-import { TableCargos } from "../tables/TableCargos";
+import { tableCategorias } from "../tables/TableCategorias";
 import { Objects } from "../components/Objects";
 import HeaderDesktop from "../components/HeaderDesktop";
+import { tableBens } from "../tables/TableBens";
 
-const Colaborador = () => {
+const Bens = () => {
   const [modal, setModal] = useState(false);
   const divRef = useRef();
   const handleClick = () => {
@@ -26,7 +26,7 @@ const Colaborador = () => {
       <div className="showMobile">
         <Header
           iconCargo={<RiFilter2Fill />}
-          cargo="Cargo"
+          cargo="Categoria"
           iconDep={<RiFilter2Fill />}
           departamento="Departamento"
         />
@@ -46,7 +46,7 @@ const Colaborador = () => {
       <div className="showDesktop">
         <DivButtonDesktop>
           <button onClick={() => setModal(true)}>
-            Adicionar <p>Colaborador</p>
+            Adicionar <p>Bem</p>
           </button>
         </DivButtonDesktop>
       </div>
@@ -57,16 +57,20 @@ const Colaborador = () => {
             title="Departamentos"
             array={tableDepartamentos}
             departamento={true}
-            title2="Cargo"
-            array2={TableCargos}
+            title2="Categorias"
+            array2={tableCategorias}
           />
         </div>
         <div className="colaboradorDivObjects">
+<<<<<<< HEAD:src/screens/Colaborador.js
           <Objects
             object={tableColaboradores}
             colaborador={true}
             tipo="colaborador"
           />
+=======
+          <Objects object={tableBens} colaborador={true} tipo="bens" />
+>>>>>>> db41e4e2b3b85a743be1aef5e658bfc2958c02a9:src/screens/Bens.js
         </div>
       </div>
       {/* <FiltroDesktop icon={<RiFilter2Fill />} title="Setor" array={tableSetores} setor={true}/> */}
@@ -74,11 +78,11 @@ const Colaborador = () => {
       {modal && <Cadastro handleClick={handleClick} />}
       <DivFooter className="showMobile">
         <button onClick={() => setModal(true)}>
-          Adicionar <p>Colaborador</p>
+          Adicionar <p>Bem</p>
         </button>
       </DivFooter>
     </div>
   );
 };
 
-export default Colaborador;
+export default Bens;

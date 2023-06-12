@@ -182,6 +182,9 @@ export const DivFilter = styled.div`
 
 export const DivButtonDesktop = styled.div`
   widht: 100vw;
+  justify-content: end;
+  display: grid;
+  
 
   button {
     background-color: #0a1d3e;
@@ -195,5 +198,6 @@ export const DivButtonDesktop = styled.div`
     cursor: pointer;
     border: none;
     margin: 10px;
+    margin-right: 20px;
   }
 `;

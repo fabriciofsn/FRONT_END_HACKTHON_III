@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Header from "../components/Header";
 import { DivFooter, DivButtonDesktop } from "../styles/Setor";
-import Cadastro from "../components/Cadastro";
 import "../styles/mediaQuery.css";
 import "../styles/ColaboradorScreen.css";
 import { Objects } from "../components/Objects";
@@ -9,12 +8,10 @@ import HeaderDesktop from "../components/HeaderDesktop";
 import { tableCategorias } from "../tables/TableCategorias";
 import AdicionarSetor from "../components/AdicionarSetor";
 
+
 const Categoria = () => {
   const [modal, setModal] = useState(false);
   const divRef = useRef();
-  const handleClick = () => {
-    setModal(false);
-  };
 
   useEffect(() => {}, [modal]);
 
@@ -26,16 +23,9 @@ const Categoria = () => {
       <div className="showDesktop">
         <HeaderDesktop />
       </div>
-      <div className="showDesktop">
-        <DivButtonDesktop>
-          <button onClick={() => setModal(true)}>
-            Adicionar <p>Categoria</p>
-          </button>
-        </DivButtonDesktop>
-      </div>
-      <div className="ColaboradorObjectsBody">
+      <div className="ColaboradorObjectsBody" id="contentSetor">
         <div className="ColaboradorDivObjects">
-          <Objects object={tableCategorias} tipo="categoria" />
+          <Objects object={tableCategorias} tipo="categoria" titulo="CATEGORIA"/>
         </div>
       </div>
       {modal && (
@@ -47,7 +37,7 @@ const Categoria = () => {
           handleClick={() => setModal(false)}
         />
       )}
-      <DivFooter className="showMobile">
+      <DivFooter>
         <button onClick={() => setModal(true)}>
           Adicionar <p>Categoria</p>
         </button>

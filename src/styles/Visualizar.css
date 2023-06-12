@@ -1,18 +1,24 @@
-.divBody{
-    height: 40vh;
+.divBody, .divBodyCategoria{
+    max-height: 40vh;
     display: block;
     width: 80%;
     text-align: center;
     align-items: center;
+    overflow-y: auto;
+    margin-left: 10%;
 }
 
-.divBody span{
+.divBody span, .divBodyCategoria span{
     display: flex;
 }
 
-.divBody span p{
+.divBody span p, .divBodyCategoria span p{
     width: 50%;
     margin-top: 15px;
+}
+
+.divBodyCategoria span p{
+    color: white;
 }
 
 .p1{
@@ -22,3 +28,8 @@
 .p2{
     text-align: end;
 }
+
+/* .divBody h2, .divBodyCategoria h2{
+    margin-top: 0;
+    margin-bottom: 10px;
+} */
