@@ -101,6 +101,10 @@ export const DivTipos = styled.div`
 
   .setor {
     display: flex;
+
+    span {
+      font-weight: normal;
+    }
   }
 
   .filters {
@@ -184,7 +188,6 @@ export const DivButtonDesktop = styled.div`
   widht: 100vw;
   justify-content: end;
   display: grid;
-  
 
   button {
     background-color: #0a1d3e;

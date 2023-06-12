@@ -62,15 +62,12 @@ const Bens = () => {
           />
         </div>
         <div className="colaboradorDivObjects">
-<<<<<<< HEAD:src/screens/Colaborador.js
           <Objects
             object={tableColaboradores}
             colaborador={true}
             tipo="colaborador"
           />
-=======
           <Objects object={tableBens} colaborador={true} tipo="bens" />
->>>>>>> db41e4e2b3b85a743be1aef5e658bfc2958c02a9:src/screens/Bens.js
         </div>
       </div>
       {/* <FiltroDesktop icon={<RiFilter2Fill />} title="Setor" array={tableSetores} setor={true}/> */}
