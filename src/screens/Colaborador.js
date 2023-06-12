@@ -21,8 +21,6 @@ const Colaborador = () => {
     setModal(false);
   };
 
-  useEffect(() => {}, [modal]);
-
   return (
     <div ref={divRef}>
       <div className="showMobile">
@@ -38,8 +36,12 @@ const Colaborador = () => {
       </div>
 
       <div className="showMobile">
-        <Filtros array={tableDepartamentos} />
-        <Filtros icon={<RiFilter2Fill />} title="Setor" array={tableSetores} />
+        <Filtros
+          array={tableDepartamentos}
+          icon={<RiFilter2Fill />}
+          title="Setor"
+          setores={tableSetores}
+        />
       </div>
       <div className="showDesktop">
         <DivButtonDesktop>
@@ -60,7 +62,11 @@ const Colaborador = () => {
           />
         </div>
         <div className="colaboradorDivObjects">
-          <Objects object={tableColaboradores} colaborador={true} tipo="colaborador" />
+          <Objects
+            object={tableColaboradores}
+            colaborador={true}
+            tipo="colaborador"
+          />
         </div>
       </div>
       {/* <FiltroDesktop icon={<RiFilter2Fill />} title="Setor" array={tableSetores} setor={true}/> */}
