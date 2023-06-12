@@ -97,4 +97,11 @@
     .divObjectsNome{
         width: 25%;
     }
+
+}
+
+@media (max-width: 684px){
+    .divObjectsNome, .divObjectsDepartamento, .divObjectsChefe{
+        font-size: 10px;
+    }
 }
