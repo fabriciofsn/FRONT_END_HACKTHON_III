@@ -1,5 +1,5 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useMemo, useRef, useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps 
+import React, { useMemo, useRef, useState } from "react"
 import Header from "../../components/Header";
 import { RiFilter2Fill } from "react-icons/ri";
 import Filtros from "../../components/Filtros";
@@ -22,7 +22,9 @@ const Colaborador = () => {
     setModal(false);
   };
 
+
   const [pesquisa, setPesquisa] = useState("");
+
 
   const [filtrosLista, setFiltrosLista] = useState({
     departamento: "",
@@ -35,7 +37,7 @@ const Colaborador = () => {
       return undefined;
     }
 
-    // setFiltrosLista.setor(undefined)
+
 
     return tableSetores.filter(
       (setor) => setor.departamentoId === filtrosLista.departamento
@@ -47,6 +49,12 @@ const Colaborador = () => {
   useEffect(() =>{
     setFiltrosLista({ ...filtrosLista, setor: "" })
   }, [filtrosLista.departamento])
+
+    return tableSetores.filter(
+      (setor) => setor.departamentoId === filtrosLista.departamento
+    );
+  }, [filtrosLista.departamento]);
+
 
   const colaboradoresDisponiveis = useMemo(() => {
     return tableColaboradores.filter((colaborador) => {
@@ -63,19 +71,10 @@ const Colaborador = () => {
       if (setor && setor !== colaborador.setorId) {
         return false;
       }
-
-      if (pesquisa && pesquisa.toLowerCase() !== colaborador.nome.toLowerCase()){
-        return false;
-      }
-
       return true;
     });
-  }, [filtrosLista.cargo, filtrosLista.departamento, filtrosLista.setor, pesquisa]);
+  }, [filtrosLista.cargo, filtrosLista.departamento, filtrosLista.setor]);
 
-  const limpar = () => {
-    setFiltrosLista({ filtrosLista, setor: ""});
-    console.log({filtrosLista})
-  }
 
   return (
     <div ref={divRef}>
@@ -104,7 +103,8 @@ const Colaborador = () => {
       </div>
       <div className="colaboradorObjectsBody">
         <div id="colaboradorDivFilter" className="showDesktop">
-          <input onchange={(e) => setPesquisa(e.target.value)}></input>
+
+
           <Filtro
             icon={<RiFilter2Fill />}
             title="Departamentos"
@@ -131,7 +131,8 @@ const Colaborador = () => {
               setFiltrosLista({ ...filtrosLista, cargo: opcaoId })
             }
           />
-          <p onclick={() => limpar()}>Limpar</p>
+
+
         </div>
         <div className="colaboradorDivObjects">
           <Objects
