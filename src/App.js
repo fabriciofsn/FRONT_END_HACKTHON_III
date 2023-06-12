@@ -4,7 +4,7 @@ import Setor from "./screens/Setor";
 import Departamento from "./screens/Departamento";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Error404 from "./screens/Error404";
-import Colaborador from "./screens/Colaborador";
+import Colaborador from "./screens/colaborador";
 import Home from "./screens/Home";
 import Categoria from "./screens/Categoria";
 import Bens from "./screens/Bens";
@@ -18,7 +18,7 @@ function App() {
         <Route path="/setor" element={<Setor />} />
         <Route path="/departamento" element={<Departamento />} />
         <Route path="/colaborador" element={<Colaborador />} />
-        <Route path="/categoria" element={<Categoria />} /> 
+        <Route path="/categoria" element={<Categoria />} />
         <Route path="*" element={<Error404 />} />
         <Route path="/bens" element={<Bens />} />
       </Routes>
