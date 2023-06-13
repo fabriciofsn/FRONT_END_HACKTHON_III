@@ -36,6 +36,18 @@
     justify-content: center;
 }
 
+.divObjectsChefe{
+    width: 5%;
+}
+
+.divObjectsDepartamento{
+    width: 30%;
+}
+
+.divObjectsNome{
+    width: 40%;
+}
+
 .divObjectsNome p{
     text-align: left;
 }
@@ -71,4 +83,25 @@
 
 .cargoChefe {
     background-color: #7ed957;
+}
+
+@media (min-width: 684px){
+    .divObjectsChefe{
+        width: 25%;
+    }
+
+    .divObjectsDepartamento{
+        width: 25%;
+    }
+    
+    .divObjectsNome{
+        width: 25%;
+    }
+
+}
+
+@media (max-width: 684px){
+    .divObjectsNome, .divObjectsDepartamento, .divObjectsChefe{
+        font-size: 10px;
+    }
 }
