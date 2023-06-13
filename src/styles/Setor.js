@@ -90,15 +90,29 @@ export const DivModal = styled.div`
 `;
 
 export const DivTipos = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin: 10px auto;
   width: 100vw;
   font-size: 1.3rem;
   overflow-y: auto;
 
-  p {
+  .wrapper .filtros {
+    display: flex;
+  }
+
+  .setor {
+    display: flex;
+
+    span {
+      font-weight: normal;
+    }
+  }
+
+  .filters {
+    display: flex;
+  }
+
+  p,
+  span.setor {
     color: #0a1d3e;
     border: 2px solid #0a1d3e;
     padding: 3px 5px;
@@ -113,6 +127,11 @@ export const DivTipos = styled.div`
       background-color: #0a1d3e;
       color: #d9d9d9;
     }
+  }
+
+  span.setor {
+    display: flex;
+    justify-content: center;
   }
 
   span {
@@ -169,7 +188,6 @@ export const DivButtonDesktop = styled.div`
   widht: 100vw;
   justify-content: end;
   display: grid;
-  
 
   button {
     background-color: #0a1d3e;

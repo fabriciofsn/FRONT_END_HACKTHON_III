@@ -7,6 +7,10 @@
   width: 100%;
 }
 
+.bodyObjects::-webkit-scrollbar {
+  display: none;
+}
+
 #colaboradorDivFilter {
   padding: 20px;
   width: 20vw;

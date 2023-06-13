@@ -76,9 +76,7 @@ export function FiltroDesktop({
                 key={valor.id}
                 onChange={handleInputChangeDepartamento}
               ></input>
-              <label key={valor.nome} htmlFor={valor.id}>
-                {valor.nome}
-              </label>
+              <label htmlFor={valor.id}>{valor.nome}</label>
               <br></br>
             </>
           );

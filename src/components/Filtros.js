@@ -1,8 +1,11 @@
 import React, { useRef, useEffect } from "react";
 import { DivTipos } from "../styles/Setor";
+import { useState } from "react";
 
-const Filtros = ({ icon = "", title = "", array = null }) => {
+const Filtros = ({ icon = "", title = "", array = null, setores = null }) => {
   const divRef = useRef();
+  const setorRef = useRef();
+  const [id, setID] = useState("Diretoria");
 
   useEffect(() => {
     if (divRef.current) {
@@ -19,23 +22,63 @@ const Filtros = ({ icon = "", title = "", array = null }) => {
     }
   });
 
+  useEffect(() => {
+    if (setorRef.current) {
+      const setores = setorRef.current.querySelectorAll("span");
+      setores.forEach((setor) => setor.classList.remove("selected"));
+      function accordion(index) {
+        setores.forEach((setor) => setor.classList.remove("selected"));
+        setores[index].classList.add("selected");
+      }
+      setores.forEach((setor, index) => {
+        setor.addEventListener("click", () => {
+          accordion(index);
+        });
+      });
+    }
+  });
+
   return (
     <DivTipos ref={divRef}>
-      {icon && title && (
+      <div className="filters">
+        {array &&
+          icon &&
+          title &&
+          setores &&
+          array.map((valor, index) => {
+            const selected = index == 1 ? "selected" : "";
+            return (
+              <DivTipos>
+                <div className="wrapper">
+                  <div className="filtros">
+                    <p
+                      onClick={() => setID(valor.id)}
+                      className={selected}
+                      key={index}
+                    >
+                      {valor.nome}
+                    </p>
+                  </div>
+                </div>
+              </DivTipos>
+            );
+          })}
+      </div>
+      <div ref={setorRef} className="setor">
         <span>
           {icon}
           {title}
         </span>
-      )}
-      {array &&
-        array.map((valor, index) => {
-          const selected = index == 1 ? "selected" : "";
-          return (
-            <p className={selected} key={valor.id}>
-              {valor.nome}
-            </p>
-          );
+        {setores.map((setor) => {
+          if (setor.departamentoId == id) {
+            return (
+              <span className="setor" key={setor.nome}>
+                {setor.nome}
+              </span>
+            );
+          }
         })}
+      </div>
     </DivTipos>
   );
 };
