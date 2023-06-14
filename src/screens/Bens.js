@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useMemo, useRef, useState, useEffect } from "react";
 import Header from "../components/Header";
 import { RiFilter2Fill } from "react-icons/ri";
 import Filtros from "../components/Filtros";
@@ -13,6 +13,7 @@ import { tableCategorias } from "../tables/TableCategorias";
 import { Objects } from "../components/Objects";
 import HeaderDesktop from "../components/HeaderDesktop";
 import { tableBens } from "../tables/TableBens";
+import { Filtro } from "../components/filtro/Filtro";
 
 const Bens = () => {
   const [modal, setModal] = useState(false);
@@ -20,6 +21,66 @@ const Bens = () => {
   const handleClick = () => {
     setModal(false);
   };
+
+  const [filtrosLista, setFiltrosLista] = useState({
+    departamento: "",
+    setor: "",
+    cargo: "",
+  });
+
+  const setoresDisponiveis = useMemo(() => {
+
+    setFiltrosLista({ ...filtrosLista, setor: "" })
+
+    if (!filtrosLista.departamento) {
+      return undefined;
+    }
+
+    return tableSetores.filter(
+      (setor) => setor.departamentoId === filtrosLista.departamento
+    );
+  }, [filtrosLista.departamento]);
+
+  const colaboradoresDisponiveis = useMemo(() => {
+    return tableBens.filter((colaborador) => {
+      const { cargo, departamento, setor } = filtrosLista;
+
+      if (departamento && departamento !== colaborador.departamentoId) {
+        return false;
+      }
+
+      if (cargo && cargo !== colaborador.categoriaId) {
+        return false;
+      }
+
+      if (setor && setor !== colaborador.setorId) {
+        return false;
+      }
+
+      return true;
+    });
+  }, [filtrosLista.cargo, filtrosLista.departamento, filtrosLista.setor]);
+
+  const [searchValue, setSearchValue] = useState("");
+  const [pesquisaColaboradores, setPesquisaColaboradores] = useState(colaboradoresDisponiveis);
+
+  const Search = () => {
+
+    let results = colaboradoresDisponiveis;
+
+    if(searchValue !== ""){
+      results = colaboradoresDisponiveis.filter((colaborador) =>
+        colaborador.nome.toLowerCase().includes(searchValue.toLowerCase())
+      );
+    }
+    
+    setPesquisaColaboradores(results)
+
+  }
+
+  useEffect(() => {
+    Search();
+  }, [searchValue, colaboradoresDisponiveis]);
 
   return (
     <div ref={divRef}>
@@ -51,18 +112,37 @@ const Bens = () => {
         </DivButtonDesktop>
       </div>
       <div className="colaboradorObjectsBody">
-        <div id="colaboradorDivFilter" className="showDesktop">
-          <FiltroDesktop
+      <div id="colaboradorDivFilter" className="showDesktop">
+          <input className="divFilterPesquisa" placeholder="Pesquise aqui" onChange={(e) => setSearchValue(e.target.value)}></input>
+          <Filtro
             icon={<RiFilter2Fill />}
             title="Departamentos"
-            array={tableDepartamentos}
-            departamento={true}
-            title2="Categorias"
-            array2={tableCategorias}
+            opcoes={tableDepartamentos}
+            onChange={(opcaoId) =>
+              setFiltrosLista({ ...filtrosLista, departamento: opcaoId })
+            }
+          />
+          {setoresDisponiveis && (
+            <Filtro
+              icon={<RiFilter2Fill />}
+              title="Setores"
+              opcoes={setoresDisponiveis}
+              onChange={(opcaoId) =>
+                setFiltrosLista({ ...filtrosLista, setor: opcaoId })
+              }
+            />
+          )}
+          <Filtro
+            icon={<RiFilter2Fill />}
+            title="Cargos"
+            opcoes={tableCategorias}
+            onChange={(opcaoId) =>
+              setFiltrosLista({ ...filtrosLista, cargo: opcaoId })
+            }
           />
         </div>
         <div className="colaboradorDivObjects">
-          <Objects object={tableBens} colaborador={true} tipo="bens" />
+          <Objects object={pesquisaColaboradores} colaborador={true} tipo="bens" />
         </div>
       </div>
       {/* <FiltroDesktop icon={<RiFilter2Fill />} title="Setor" array={tableSetores} setor={true}/> */}

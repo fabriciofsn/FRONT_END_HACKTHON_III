@@ -11,11 +11,25 @@ export function Filtro({ icon = "", title = "", onChange, opcoes = [] }) {
           {title}
         </p>
       )}
-
+      {opcoes &&
+        <div className={styles.opcao} id="radio">
+          <input
+            type="radio"
+            id="todos"
+            name={title}
+            value="Todos"
+            key="todos"
+            onChange={() => onChange("")}
+          ></input>
+          <label>
+            TODOS
+          </label>
+        </div>
+      }
       {opcoes &&
         opcoes.map((opcao) => {
           return (
-            <div className={styles.opcao}>
+            <div className={styles.opcao} id="radio">
               <input
                 type="radio"
                 id={opcao.id}

@@ -82,14 +82,6 @@ const Colaborador = () => {
     Search();
   }, [searchValue, colaboradoresDisponiveis]);
 
-  const limpar = () =>{
-    setFiltrosLista({ ...filtrosLista, departamento: "" });
-    setFiltrosLista({ ...filtrosLista, setor: "" });
-    setFiltrosLista({ ...filtrosLista, cargo: "" });
-    // document.getElementById("opcao1").checked = false;
-    // document.getElementById("opcao2").checked = false;
-  }
-
   return (
     <div ref={divRef}>
       <div className="showMobile">
@@ -144,7 +136,6 @@ const Colaborador = () => {
               setFiltrosLista({ ...filtrosLista, cargo: opcaoId })
             }
           />
-          <p onClick={() => limpar}>Limpar filtros</p>
         </div>
         <div className="colaboradorDivObjects">
           <Objects

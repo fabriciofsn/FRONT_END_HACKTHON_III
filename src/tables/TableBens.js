@@ -5,7 +5,7 @@ export const tableBens = [
         id: 1,
         codigo: "00001",
         nome: "Computador velho",
-        categoriaId: "computador",
+        categoriaId: "Computador",
         departamentoId: "RH",
         setorId: "Financeiro",
         dataAdiquirido: "25/11/2022",
