@@ -1,9 +1,5 @@
 export const tableDepartamentos = [
   {
-    id: "TODOS",
-    nome: "Todos",
-  },
-  {
     id: "RH",
     nome: "RH",
   },

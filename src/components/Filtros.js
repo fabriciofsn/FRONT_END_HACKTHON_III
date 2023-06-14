@@ -53,9 +53,7 @@ const Filtros = ({ icon = "", title = "", array, setores }) => {
                 <div className="wrapper">
                   <div className="filtros">
                     <p
-                      onClick={() => {
-                        setID(valor.id);
-                      }}
+                      onClick={() => setID(valor.id)}
                       className={selected}
                       key={index}
                     >
