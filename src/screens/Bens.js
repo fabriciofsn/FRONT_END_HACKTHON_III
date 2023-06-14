@@ -62,11 +62,6 @@ const Bens = () => {
           />
         </div>
         <div className="colaboradorDivObjects">
-          <Objects
-            object={tableColaboradores}
-            colaborador={true}
-            tipo="colaborador"
-          />
           <Objects object={tableBens} colaborador={true} tipo="bens" />
         </div>
       </div>
