@@ -91,12 +91,13 @@ export const DivModal = styled.div`
 
 export const DivTipos = styled.div`
   margin: 10px auto;
-  width: 100vw;
+  width: 100%;
   font-size: 1.3rem;
   overflow-y: auto;
 
   .wrapper .filtros {
     display: flex;
+    width: 100%;
   }
 
   .setor {

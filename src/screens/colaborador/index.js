@@ -29,8 +29,7 @@ const Colaborador = () => {
   });
 
   const setoresDisponiveis = useMemo(() => {
-
-    setFiltrosLista({ ...filtrosLista, setor: "" })
+    setFiltrosLista({ ...filtrosLista, setor: "" });
 
     if (!filtrosLista.departamento) {
       return undefined;
@@ -62,27 +61,28 @@ const Colaborador = () => {
   }, [filtrosLista.cargo, filtrosLista.departamento, filtrosLista.setor]);
 
   const [searchValue, setSearchValue] = useState("");
-  const [pesquisaColaboradores, setPesquisaColaboradores] = useState(colaboradoresDisponiveis);
+  const [pesquisaColaboradores, setPesquisaColaboradores] = useState(
+    colaboradoresDisponiveis
+  );
 
   const Search = () => {
-
     let results = colaboradoresDisponiveis;
 
-    if(searchValue !== ""){
+    if (searchValue !== "") {
       results = colaboradoresDisponiveis.filter((colaborador) =>
         colaborador.nome.toLowerCase().includes(searchValue.toLowerCase())
       );
     }
-    
-    setPesquisaColaboradores(results)
 
-  }
+    setPesquisaColaboradores(results);
+  };
 
   useEffect(() => {
     Search();
   }, [searchValue, colaboradoresDisponiveis]);
 
   return (
+    //HEADER MOBILE
     <div ref={divRef}>
       <div className="showMobile">
         <Header
@@ -90,6 +90,8 @@ const Colaborador = () => {
           cargo="Cargo"
           iconDep={<RiFilter2Fill />}
           departamento="Departamento"
+          search={searchValue}
+          setSearch={setSearchValue}
         />
       </div>
       <div className="showDesktop">
@@ -97,8 +99,20 @@ const Colaborador = () => {
       </div>
 
       <div className="showMobile">
-        <Filtros setores={tableDepartamentos}/>
-        <Filtros icon={<RiFilter2Fill />} title="Setor" array={tableDepartamentos} setores={tableSetores}/>
+        <Filtros setores={tableDepartamentos} />
+        <Filtros
+          icon={<RiFilter2Fill />}
+          title="Setor"
+          array={tableDepartamentos}
+          setores={tableSetores}
+        />
+        <div className="colaboradorDivObjectsMobile">
+          <Objects
+            object={pesquisaColaboradores}
+            colaborador={true}
+            tipo="colaborador"
+          />
+        </div>
       </div>
       <div className="showDesktop">
         <DivButtonDesktop>
@@ -109,7 +123,11 @@ const Colaborador = () => {
       </div>
       <div className="colaboradorObjectsBody">
         <div id="colaboradorDivFilter" className="showDesktop">
-          <input className="divFilterPesquisa" placeholder="Pesquise aqui" onChange={(e) => setSearchValue(e.target.value)}></input>
+          <input
+            className="divFilterPesquisa"
+            placeholder="Pesquise aqui"
+            onChange={(e) => setSearchValue(e.target.value)}
+          ></input>
           <Filtro
             icon={<RiFilter2Fill />}
             title="Departamentos"

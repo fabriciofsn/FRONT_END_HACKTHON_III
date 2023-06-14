@@ -5,7 +5,7 @@ export const DivSetorFilter = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 380px;
+  max-width: 450px;
   margin: 1.5rem auto;
   p {
     font-size: 1.3rem;
@@ -19,7 +19,7 @@ export const DivSetorFilter = styled.div`
     color: #0a1d3e;
     border: 2px solid #0a1d3e;
     padding: 3px 5px;
-    width: 170px;
+    width: auto;
     height: 37px;
     margin: 0 5px;
     text-align: center;

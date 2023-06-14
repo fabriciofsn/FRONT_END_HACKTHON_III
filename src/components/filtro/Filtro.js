@@ -11,7 +11,7 @@ export function Filtro({ icon = "", title = "", onChange, opcoes = [] }) {
           {title}
         </p>
       )}
-      {opcoes &&
+      {opcoes && (
         <div className={styles.opcao} id="radio">
           <input
             type="radio"
@@ -21,13 +21,11 @@ export function Filtro({ icon = "", title = "", onChange, opcoes = [] }) {
             key="todos"
             onChange={() => onChange("")}
           ></input>
-          <label>
-            TODOS
-          </label>
+          <label>TODOS</label>
         </div>
-      }
+      )}
       {opcoes &&
-        opcoes.map((opcao) => {
+        opcoes.map((opcao, index) => {
           return (
             <div className={styles.opcao} id="radio">
               <input
@@ -38,7 +36,7 @@ export function Filtro({ icon = "", title = "", onChange, opcoes = [] }) {
                 key={opcao.id}
                 onChange={() => onChange(opcao.id)}
               ></input>
-              <label key={opcao.nome} htmlFor={opcao.id}>
+              <label key={index} htmlFor={opcao.id}>
                 {opcao.nome}
               </label>
             </div>

@@ -47,7 +47,12 @@ const Header = (props) => {
           />
           {openModal && <Modal />}
           <DivInputSearch>
-            <input type="search" placeholder="Pesquise aqui" />
+            <input
+              value={props.search}
+              onChange={({ target }) => props.setSearch(target.value)}
+              type="search"
+              placeholder="Pesquise aqui"
+            />
             <AiOutlineSearch size={25} color="#d9d9d9" />
           </DivInputSearch>
         </DivAlignCenter>

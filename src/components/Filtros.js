@@ -1,11 +1,12 @@
 import React, { useRef, useEffect } from "react";
 import { DivTipos } from "../styles/Setor";
 import { useState } from "react";
+import { Objects } from "./Objects";
 
-const Filtros = ({ icon = "", title = "", array, setores}) => {
+const Filtros = ({ icon = "", title = "", array, setores }) => {
   const divRef = useRef();
   const setorRef = useRef();
-  const [id, setID] = useState("Diretoria");
+  const [id, setID] = useState("todos");
 
   useEffect(() => {
     if (divRef.current) {
@@ -46,13 +47,15 @@ const Filtros = ({ icon = "", title = "", array, setores}) => {
           title &&
           setores &&
           array.map((valor, index) => {
-            const selected = index == 1 ? "selected" : "";
+            const selected = index == 0 ? "selected" : "";
             return (
-              <DivTipos>
+              <DivTipos key={index}>
                 <div className="wrapper">
                   <div className="filtros">
                     <p
-                      onClick={() => setID(valor.id)}
+                      onClick={() => {
+                        setID(valor.id);
+                      }}
                       className={selected}
                       key={index}
                     >
@@ -64,20 +67,22 @@ const Filtros = ({ icon = "", title = "", array, setores}) => {
             );
           })}
       </div>
+
       <div ref={setorRef} className="setor">
         <span>
           {icon}
           {title}
         </span>
-        {setores && setores.map((setor) => {
-          if (setor.departamentoId == id) {
-            return (
-              <span className="setor" key={setor.nome}>
-                {setor.nome}
-              </span>
-            );
-          }
-        })}
+        {setores &&
+          setores.map((setor) => {
+            if (setor.departamentoId == id) {
+              return (
+                <span className="setor" key={setor.nome}>
+                  {setor.nome}
+                </span>
+              );
+            }
+          })}
       </div>
     </DivTipos>
   );
