@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { DivTipos } from "../styles/Setor";
 import { useState } from "react";
 
-const Filtros = ({ icon = "", title = "", array = null, setores = null }) => {
+const Filtros = ({ icon = "", title = "", array, setores}) => {
   const divRef = useRef();
   const setorRef = useRef();
   const [id, setID] = useState("Diretoria");
@@ -69,7 +69,7 @@ const Filtros = ({ icon = "", title = "", array = null, setores = null }) => {
           {icon}
           {title}
         </span>
-        {setores.map((setor) => {
+        {setores && setores.map((setor) => {
           if (setor.departamentoId == id) {
             return (
               <span className="setor" key={setor.nome}>

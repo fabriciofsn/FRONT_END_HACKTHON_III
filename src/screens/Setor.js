@@ -25,7 +25,7 @@ const Setor = () => {
         <HeaderDesktop />
       </div>
       <div className="showMobile">
-        <Filtros array={tableDepartamentos} />
+        <Filtros  array={tableDepartamentos} setores={tableSetores}/>
       </div>
       <div className="colaboradorObjectsBody" id="contentSetor">
         <div id="colaboradorDivFilter" className="showDesktop">
