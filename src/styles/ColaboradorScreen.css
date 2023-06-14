@@ -25,3 +25,11 @@
 .form-inputs{
   height: 80vh;
 }
+
+.divFilterPesquisa{
+  margin-bottom: 20px;
+  padding: 5px;
+  border: solid 2px #0a1d3e;
+  border-radius: 5px;
+  background-color: transparent;
+}

@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useMemo, useRef, useState } from "react";
+import React, { useMemo, useRef, useState, useEffect } from "react";
 import Header from "../../components/Header";
 import { RiFilter2Fill } from "react-icons/ri";
 import Filtros from "../../components/Filtros";
@@ -29,6 +29,9 @@ const Colaborador = () => {
   });
 
   const setoresDisponiveis = useMemo(() => {
+
+    setFiltrosLista({ ...filtrosLista, setor: "" })
+
     if (!filtrosLista.departamento) {
       return undefined;
     }
@@ -58,6 +61,35 @@ const Colaborador = () => {
     });
   }, [filtrosLista.cargo, filtrosLista.departamento, filtrosLista.setor]);
 
+  const [searchValue, setSearchValue] = useState("");
+  const [pesquisaColaboradores, setPesquisaColaboradores] = useState(colaboradoresDisponiveis);
+
+  const Search = () => {
+
+    let results = colaboradoresDisponiveis;
+
+    if(searchValue !== ""){
+      results = colaboradoresDisponiveis.filter((colaborador) =>
+        colaborador.nome.toLowerCase().includes(searchValue.toLowerCase())
+      );
+    }
+    
+    setPesquisaColaboradores(results)
+
+  }
+
+  useEffect(() => {
+    Search();
+  }, [searchValue, colaboradoresDisponiveis]);
+
+  const limpar = () =>{
+    setFiltrosLista({ ...filtrosLista, departamento: "" });
+    setFiltrosLista({ ...filtrosLista, setor: "" });
+    setFiltrosLista({ ...filtrosLista, cargo: "" });
+    // document.getElementById("opcao1").checked = false;
+    // document.getElementById("opcao2").checked = false;
+  }
+
   return (
     <div ref={divRef}>
       <div className="showMobile">
@@ -85,6 +117,7 @@ const Colaborador = () => {
       </div>
       <div className="colaboradorObjectsBody">
         <div id="colaboradorDivFilter" className="showDesktop">
+          <input className="divFilterPesquisa" placeholder="Pesquise aqui" onChange={(e) => setSearchValue(e.target.value)}></input>
           <Filtro
             icon={<RiFilter2Fill />}
             title="Departamentos"
@@ -111,10 +144,11 @@ const Colaborador = () => {
               setFiltrosLista({ ...filtrosLista, cargo: opcaoId })
             }
           />
+          <p onClick={() => limpar}>Limpar filtros</p>
         </div>
         <div className="colaboradorDivObjects">
           <Objects
-            object={colaboradoresDisponiveis}
+            object={pesquisaColaboradores}
             colaborador={true}
             tipo="colaborador"
           />
