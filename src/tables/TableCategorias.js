@@ -2,19 +2,19 @@
 
 export const tableCategorias = [
     {
-        id: 1,
-        nome: "Computadores"
+        id: "Computador",
+        nome: "Computador"
     },
     {
-        id: 2,
+        id: "Cadeiras",
         nome: "Cadeiras"
     },
     {
-        id: 3,
+        id: "Mesas",
         nome: "Mesas"
     },
     {
-        id: 4,
+        id: "Gabinetes",
         nome: "Gabinetes"
     }
 ]
