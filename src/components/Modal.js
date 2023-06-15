@@ -6,11 +6,7 @@ const Modal = () => {
   const links = [
     {
       nome: "Home",
-      href: "/",
-    },
-    {
-      nome: "Login",
-      href: "/login",
+      href: "/home",
     },
     {
       nome: "Setores",
@@ -32,6 +28,10 @@ const Modal = () => {
     {
       nome: "Bens",
       href: "/bens",
+    },
+    {
+      nome: "Cargos",
+      href: "/cargos",
     },
   ];
 

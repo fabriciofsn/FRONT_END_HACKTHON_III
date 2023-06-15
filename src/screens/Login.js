@@ -27,8 +27,14 @@ const userFields = [
 
 const Login = () => {
   const [esqueceuSenha, setEsqueceuSenha] = useState(false);
+
   const handleClick = () => {
     setEsqueceuSenha(true);
+  };
+
+const handleSubmit = (event) => {
+    event.preventDefault();
+    window.location.href = "/home";
   };
 
   return (
@@ -37,7 +43,7 @@ const Login = () => {
         <img src={hackathon_logo} alt="logo" />
       </DivElement>
       <DivAlignCenter>
-        <form method="POST" action="/home">
+        <form onSubmit={handleSubmit}>
           {userFields.map(({ id, label, type }) => {
             return (
               <DivWrapper key={id}>

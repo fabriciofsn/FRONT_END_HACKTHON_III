@@ -32,7 +32,7 @@ const Home = () => {
       <div className="showMobile">
         <HeaderHome >
           <div className="logout">
-            <a href="/login">
+            <a href="/">
               <MdOutlineLogout size={40} color="#d9d9d9" />
             </a>
           </div>

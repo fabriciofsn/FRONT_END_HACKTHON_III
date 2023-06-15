@@ -51,7 +51,7 @@ export function Objects({
             <div className="divObjectsDepartamento">
               {tipo === "bens" && <p>Código: {object.codigo}</p>}
               {colaborador && <p>{object.departamentoId}</p>}
-              <p>{object.setorId}</p>
+              {tipo === "setor" ? <p>Chefe: {object.chefeId ? object.chefeId : "Sem chefe"}</p> : <p>{object.setorId}</p>}
             </div>
             {colaborador && (
               <div className="divObjectsChefe">
