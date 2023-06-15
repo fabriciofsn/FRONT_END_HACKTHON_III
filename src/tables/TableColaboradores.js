@@ -7,7 +7,18 @@ const tableColaboradores = [
         setorId: "Direcao",
         departamentoId: "RH",
         cargoId: "Diretor",
-        imagem: ""
+        imagem: "",
+        cpf: "954.885.975-00",
+        email: "email@email.com",
+        cidade: "cidade",
+        bairro: "bairro",
+        rua: "rua",
+        numero: 999,
+        salario: "R$4.500,00",
+        cargaHoraria: "54h/semana",
+        homeOfice: "Sim",
+        bem: "00025",
+        observacao: ""
     },
     {
         id: 2,
@@ -15,7 +26,18 @@ const tableColaboradores = [
         setorId: "direcaoRH",
         departamentoId: "Contabil",
         cargoId: "Diretor",
-        imagem: ""
+        imagem: "",
+        cpf: "954.885.975-00",
+        email: "email@email.com",
+        cidade: "cidade",
+        bairro: "bairro",
+        rua: "rua",
+        numero: 999,
+        salario: "R$4.500,00",
+        cargaHoraria: "54h/semana",
+        homeOfice: "Sim",
+        bem: "00025",
+        observacao: ""
     },
     {
         id: 3,
@@ -23,7 +45,18 @@ const tableColaboradores = [
         setorId: "direcaoRH",
         departamentoId: "Gerencia",
         cargoId: "Diretor",
-        imagem: ""
+        imagem: "",
+        cpf: "954.885.975-00",
+        email: "email@email.com",
+        cidade: "cidade",
+        bairro: "bairro",
+        rua: "rua",
+        numero: 999,
+        salario: "R$4.500,00",
+        cargaHoraria: "54h/semana",
+        homeOfice: "Sim",
+        bem: "00025",
+        observacao: ""
     },
     {
         id: 4,
@@ -31,7 +64,18 @@ const tableColaboradores = [
         setorId: "direcaoRH",
         departamentoId: "Diretoria",
         cargoId: "Diretor",
-        imagem: ""
+        imagem: "",
+        cpf: "954.885.975-00",
+        email: "email@email.com",
+        cidade: "cidade",
+        bairro: "bairro",
+        rua: "rua",
+        numero: 999,
+        salario: "R$4.500,00",
+        cargaHoraria: "54h/semana",
+        homeOfice: "Sim",
+        bem: "00025",
+        observacao: ""
     },
     {
         id: 5,
@@ -39,7 +83,18 @@ const tableColaboradores = [
         setorId: "direcaoRH",
         departamentoId: "RH",
         cargoId: "Diretor",
-        imagem: ""
+        imagem: "",
+        cpf: "954.885.975-00",
+        email: "email@email.com",
+        cidade: "cidade",
+        bairro: "bairro",
+        rua: "rua",
+        numero: 999,
+        salario: "R$4.500,00",
+        cargaHoraria: "54h/semana",
+        homeOfice: "Sim",
+        bem: "00025",
+        observacao: ""
     },
     {
         id: 6,
@@ -47,7 +102,18 @@ const tableColaboradores = [
         setorId: "direcaoRH",
         departamentoId: "Gerencia",
         cargoId: "Auxiliar",
-        imagem: ""
+        imagem: "",
+        cpf: "954.885.975-00",
+        email: "email@email.com",
+        cidade: "cidade",
+        bairro: "bairro",
+        rua: "rua",
+        numero: 999,
+        salario: "R$4.500,00",
+        cargaHoraria: "54h/semana",
+        homeOfice: "Sim",
+        bem: "00025",
+        observacao: ""
     },
     {
         id: 7,
@@ -55,7 +121,18 @@ const tableColaboradores = [
         setorId: "direcaoRH",
         departamentoId: "Producao",
         cargoId: "Diretor",
-        imagem: ""
+        imagem: "",
+        cpf: "954.885.975-00",
+        email: "email@email.com",
+        cidade: "cidade",
+        bairro: "bairro",
+        rua: "rua",
+        numero: 999,
+        salario: "R$4.500,00",
+        cargaHoraria: "54h/semana",
+        homeOfice: "Sim",
+        bem: "00025",
+        observacao: ""
     },
     {
         id: 8,
@@ -63,7 +140,18 @@ const tableColaboradores = [
         setorId: "Vendas",
         departamentoId: "Producao",
         cargoId: "Vendedor",
-        imagem: ""
+        imagem: "",
+        cpf: "954.885.975-00",
+        email: "email@email.com",
+        cidade: "cidade",
+        bairro: "bairro",
+        rua: "rua",
+        numero: 999,
+        salario: "R$4.500,00",
+        cargaHoraria: "54h/semana",
+        homeOfice: "Sim",
+        bem: "00025",
+        observacao: ""
     },
     {
         id: 9,
@@ -71,7 +159,18 @@ const tableColaboradores = [
         setorId: "Vendas",
         departamentoId: "Producao",
         cargoId: "Vendedor",
-        imagem: ""
+        imagem: "",
+        cpf: "954.885.975-00",
+        email: "email@email.com",
+        cidade: "cidade",
+        bairro: "bairro",
+        rua: "rua",
+        numero: 999,
+        salario: "R$4.500,00",
+        cargaHoraria: "54h/semana",
+        homeOfice: "Sim",
+        bem: "00025",
+        observacao: ""
     },
     {
         id: 10,
@@ -79,7 +178,18 @@ const tableColaboradores = [
         setorId: "Vendas",
         departamentoId: "Producao",
         cargoId: "Vendedor",
-        imagem: ""
+        imagem: "",
+        cpf: "954.885.975-00",
+        email: "email@email.com",
+        cidade: "cidade",
+        bairro: "bairro",
+        rua: "rua",
+        numero: 999,
+        salario: "R$4.500,00",
+        cargaHoraria: "54h/semana",
+        homeOfice: "Sim",
+        bem: "00025",
+        observacao: ""
     }
 
 ]; 
