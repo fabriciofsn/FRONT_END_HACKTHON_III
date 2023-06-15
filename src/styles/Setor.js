@@ -100,6 +100,7 @@ export const DivTipos = styled.div`
   .wrapper .filtros {
     display: flex;
     align-items: center;
+    justify-content: center;
     overflow: auto;
     width: 100%;
 
