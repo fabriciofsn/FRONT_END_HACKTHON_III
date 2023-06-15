@@ -10,4 +10,32 @@
     .showMobile{
         display: none;
     }
+
+    .cards{
+        display: flex;
+    }
+
+   .categorias div p{
+    margin-left: 20px;
+    
+   }
+
+    
+    .categorias,
+  .gerir-bens,
+  .ocorrencias {
+    margin: 0;
+    background-color: #fff;
+    width: 30%;
+    min-width: 30%;
+    height: 150px;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#divBens{
+    padding: 0;
+}
 }

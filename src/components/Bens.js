@@ -1,16 +1,18 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import { DivBens } from "../styles/Home";
 import { TbCategory } from "react-icons/tb";
 import { FaDesktop } from "react-icons/fa";
 import { FiAlertTriangle } from "react-icons/fi";
+import "../styles/mediaQuery.css";
+
 
 const Bens = () => {
   return (
     <div>
-      <DivBens>
-        <div className="categorias">
-          <div>
+      <DivBens id="divBens">
+        <Link to="/categoria" className="categorias">
+          <div className="cards">
             <div
               className="icon-categoria"
               style={{ width: "100%", textAlign: "center" }}
@@ -19,9 +21,9 @@ const Bens = () => {
             </div>
             <p>Categorias</p>
           </div>
-        </div>
-        <div className="gerir-bens">
-          <div>
+        </Link>
+        <Link to="/bens" className="gerir-bens">
+          <div className="cards">
             <div
               className="icon-bens"
               style={{ width: "100%", textAlign: "center" }}
@@ -30,9 +32,9 @@ const Bens = () => {
             </div>
             <p>Gerir Bens</p>
           </div>
-        </div>
-        <div className="ocorrencias">
-          <div>
+        </Link>
+        <Link to="/ocorrencia" className="ocorrencias">
+          <div className="cards">
             <div
               className="icon-ocorrencia"
               style={{ width: "100%", textAlign: "center" }}
@@ -45,7 +47,7 @@ const Bens = () => {
               </p>
             </div>
           </div>
-        </div>
+        </Link>
       </DivBens>
     </div>
   );
