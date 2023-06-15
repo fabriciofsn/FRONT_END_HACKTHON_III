@@ -55,10 +55,10 @@ const Filtros = ({
           }}
         >
           {icon && title && (
-            <p>
+            <span>
               {icon}
               {title}
-            </p>
+            </span>
           )}
         </div>
         {opcoes && (
