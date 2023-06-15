@@ -94,10 +94,11 @@ const Colaborador = () => {
           setSearch={setSearchValue}
         />
       </div>
+      {/* HEADER DESKTOP */}
       <div className="showDesktop">
         <HeaderDesktop />
       </div>
-
+      {/* FILTROS MOBILE */}
       <div className="showMobile">
         <Filtros setores={tableDepartamentos} />
         <Filtros
@@ -106,14 +107,8 @@ const Colaborador = () => {
           array={tableDepartamentos}
           setores={tableSetores}
         />
-        <div className="colaboradorDivObjectsMobile">
-          <Objects
-            object={pesquisaColaboradores}
-            colaborador={true}
-            tipo="colaborador"
-          />
-        </div>
       </div>
+      {/* EXIBIR PARA DESKTOP */}
       <div className="showDesktop">
         <DivButtonDesktop>
           <button onClick={() => setModal(true)}>

@@ -18,9 +18,3 @@
   height: 80%;
   overflow-y: auto;
 }
-
-@media (max-width: 685px) {
-  .colaboradorDivObjects {
-    display: none;
-  }
-}

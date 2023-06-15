@@ -181,7 +181,7 @@ export const DivFilter = styled.div`
     color: #d9d9d9;
   }
   p.selected {
-    border-bottom: 3px solid #d9d9d9;
+    /* border-bottom: 3px solid #d9d9d9; */
   }
 `;
 
