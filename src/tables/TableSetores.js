@@ -4,37 +4,43 @@ export const tableSetores = [
     {
         id: "direcaoRH",
         nome: "Direção",
-        departamentoId: "RH"
+        departamentoId: "RH",
+        chefeId: "Jadson Santos"
     },
 
     {
         id: "financeiroRH",
         nome: "Financeiro",
-        departamentoId: "RH"
+        departamentoId: "RH",
+        chefeId: "Jobson Soares"
     },
 
     {
         id: "direcaoGerencia",
         nome: "Direção",
-        departamentoId: "Gerencia"
+        departamentoId: "Gerencia",
+        chefeId: "Robert Santos"
     },
 
     {
         id: "financeiroGerencia",
         nome: "Financeiro",
-        departamentoId: "Gerencia"
+        departamentoId: "Gerencia",
+        chefeId: "Fabricio José"
     },
 
     {
         id: "direcaoDiretoria",
         nome: "Direção",
-        departamentoId: "Diretoria"
+        departamentoId: "Diretoria",
+        chefeId: "Fernanda Lima"
     },
 
     {
         id: "financeiroDiretoria",
         nome: "Financeiro",
-        departamentoId: "Diretoria"
+        departamentoId: "Diretoria",
+        chefeId: "Flávio José"
     },
 
     {

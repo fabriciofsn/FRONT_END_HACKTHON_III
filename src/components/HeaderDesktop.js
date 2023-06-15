@@ -5,6 +5,7 @@ import Modal from "./Modal";
 import perfilJosue from "../assets/perfilJosue.jpg";
 import {ModalObject} from "../components/ModalObject";
 import "../styles/HeaderDesktop.css";
+import { Link } from "react-router-dom";
 
 
 const HeaderDesktop = (props) => {
@@ -53,11 +54,11 @@ const HeaderDesktop = (props) => {
           </span>
         </div>
         <div className="headerDesktopDiv3">
-          <p><BsBoxArrowInRight
+          <Link to="/"><BsBoxArrowInRight
             cursor="pointer"
             color="#d9d9d9"
             size={30}
-            fontWeight="bold" /></p>
+            fontWeight="bold" /></Link>
         </div>
       </div>
       {poupupObject && (
