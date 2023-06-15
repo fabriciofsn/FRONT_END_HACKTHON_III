@@ -18,18 +18,26 @@
 
 /* pagina setor, departamento e categoria */
 
-#contentSetor{
+#contentSetor {
   margin-top: 5%;
 }
 
-.form-inputs{
+.form-inputs {
   height: 80vh;
 }
 
-.divFilterPesquisa{
+.divFilterPesquisa {
   margin-bottom: 20px;
   padding: 5px;
   border: solid 2px #0a1d3e;
   border-radius: 5px;
   background-color: transparent;
+}
+
+.departamento,
+.setores {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: red; */
 }

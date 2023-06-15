@@ -3,7 +3,7 @@ import React, { useMemo, useRef, useState, useEffect } from "react";
 import Header from "../../components/Header";
 import { RiFilter2Fill } from "react-icons/ri";
 import Filtros from "../../components/Filtros";
-import { DivFooter, DivButtonDesktop } from "../../styles/Setor";
+import { DivFooter, DivButtonDesktop, DivTipos } from "../../styles/Setor";
 import Cadastro from "../../components/Cadastro";
 import { tableSetores } from "../../tables/TableSetores";
 import { tableDepartamentos } from "../../tables/TableDepartamentos";
@@ -100,13 +100,26 @@ const Colaborador = () => {
       </div>
       {/* FILTROS MOBILE */}
       <div className="showMobile">
-        <Filtros setores={tableDepartamentos} />
-        <Filtros
-          icon={<RiFilter2Fill />}
-          title="Setor"
-          array={tableDepartamentos}
-          setores={tableSetores}
-        />
+        <div className="departamento">
+          <Filtros
+            opcoes={tableDepartamentos}
+            onChange={(opcaoId) =>
+              setFiltrosLista({ ...filtrosLista, departamento: opcaoId })
+            }
+          />
+        </div>
+        <div className="setores">
+          {setoresDisponiveis && (
+            <Filtros
+              icon={<RiFilter2Fill />}
+              title="Setores"
+              opcoes={setoresDisponiveis}
+              onChange={(opcaoId) =>
+                setFiltrosLista({ ...filtrosLista, setor: opcaoId })
+              }
+            />
+          )}
+        </div>
       </div>
       {/* EXIBIR PARA DESKTOP */}
       <div className="showDesktop">

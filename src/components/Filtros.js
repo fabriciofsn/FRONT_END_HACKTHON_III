@@ -1,16 +1,21 @@
 import React, { useRef, useEffect } from "react";
 import { DivTipos } from "../styles/Setor";
 import { useState } from "react";
-import { Objects } from "./Objects";
 
-const Filtros = ({ icon = "", title = "", array, setores }) => {
+const Filtros = ({
+  icon = "",
+  title = "",
+  array,
+  setores,
+  onChange,
+  opcoes = [],
+}) => {
   const divRef = useRef();
   const setorRef = useRef();
-  const [id, setID] = useState("todos");
 
   useEffect(() => {
     if (divRef.current) {
-      const acc = divRef.current.querySelectorAll("p");
+      const acc = divRef.current.querySelectorAll("label");
       function accordion(index) {
         acc.forEach((p) => p.classList.remove("selected"));
         acc[index].classList.add("selected");
@@ -25,7 +30,7 @@ const Filtros = ({ icon = "", title = "", array, setores }) => {
 
   useEffect(() => {
     if (setorRef.current) {
-      const setores = setorRef.current.querySelectorAll("span");
+      const setores = setorRef.current.querySelectorAll("label");
       setores.forEach((setor) => setor.classList.remove("selected"));
       function accordion(index) {
         setores.forEach((setor) => setor.classList.remove("selected"));
@@ -42,44 +47,56 @@ const Filtros = ({ icon = "", title = "", array, setores }) => {
   return (
     <DivTipos ref={divRef}>
       <div className="filters">
-        {array &&
-          icon &&
-          title &&
-          setores &&
-          array.map((valor, index) => {
-            const selected = index == 0 ? "selected" : "";
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          {icon && title && (
+            <p>
+              {icon}
+              {title}
+            </p>
+          )}
+        </div>
+        {opcoes && (
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <input
+              type="radio"
+              id="todos"
+              name="departamento"
+              value="Todos"
+              key="todos"
+              onChange={() => onChange("")}
+            ></input>
+            <label htmlFor="todos">Todos</label>
+          </div>
+        )}
+        {opcoes &&
+          opcoes.map((opcao, index) => {
             return (
-              <DivTipos key={index}>
-                <div className="wrapper">
-                  <div className="filtros">
-                    <p
-                      onClick={() => setID(valor.id)}
-                      className={selected}
-                      key={index}
-                    >
-                      {valor.nome}
-                    </p>
-                  </div>
+              <div key={opcao.id} className="wrapper">
+                <div className="filtros" key={index}>
+                  <input
+                    type="radio"
+                    id={opcao.id}
+                    name="departamento"
+                    value={opcao.id}
+                    key={opcao.id}
+                    onChange={() => onChange(opcao.id)}
+                  ></input>
+                  <label htmlFor={opcao.id}>{opcao.nome}</label>
                 </div>
-              </DivTipos>
+              </div>
             );
-          })}
-      </div>
-
-      <div ref={setorRef} className="setor">
-        <span>
-          {icon}
-          {title}
-        </span>
-        {setores &&
-          setores.map((setor) => {
-            if (setor.departamentoId == id) {
-              return (
-                <span className="setor" key={setor.nome}>
-                  {setor.nome}
-                </span>
-              );
-            }
           })}
       </div>
     </DivTipos>

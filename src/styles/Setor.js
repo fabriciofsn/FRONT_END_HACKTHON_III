@@ -94,17 +94,32 @@ export const DivTipos = styled.div`
   width: 100%;
   font-size: 1.3rem;
   overflow-y: auto;
-
+  input[type="radio"] {
+    visibility: hidden;
+  }
   .wrapper .filtros {
     display: flex;
+    align-items: center;
+    overflow: auto;
     width: 100%;
+
+    input[type="radio"] {
+      visibility: hidden;
+    }
   }
 
   .setor {
     display: flex;
-
+    align-items: center;
+    justify-content: center;
+    .icon {
+      width: 100%;
+      max-width: 150px;
+      text-align: left;
+    }
     span {
       font-weight: normal;
+      text-align: left;
     }
   }
 
@@ -112,17 +127,24 @@ export const DivTipos = styled.div`
     display: flex;
   }
 
-  p,
-  span.setor {
+  label,
+  label.setor {
     color: #0a1d3e;
     border: 2px solid #0a1d3e;
     padding: 3px 5px;
-    width: 170px;
+    width: 190px;
     height: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0 5px;
     text-align: center;
     border-radius: 15px;
     cursor: pointer;
+
+    input[type="radio"] {
+      visibility: hidden;
+    }
 
     &.selected {
       background-color: #0a1d3e;
