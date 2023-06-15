@@ -64,6 +64,7 @@ export const DivBens = styled.div`
     align-items: center;
     animation: ${anim} 0.3s forwards;
     cursor: pointer;
+    text-decoration: none;
 
     .icon-categoria {
       background-color: #4c75bd;
