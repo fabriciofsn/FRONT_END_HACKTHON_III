@@ -1,9 +1,9 @@
-.ModalObjectContent{
+#ModalObjectContent{
     margin-top: 50px;
     text-align: center;
 }
 
-.ModalObject{
+#ModalObject, #ModalObject2{
     position: fixed;
     left: 0;
     right: 0;
@@ -12,7 +12,7 @@
     text-align: center;
 }
 
-.ModalObject h1{
+#ModalObject h1, #ModalObject2 h1{
     color: white;
 }
 
@@ -36,9 +36,10 @@
 .changeContentModal p{
     margin-left: 10px;
     margin-right: 10px;
+    cursor: pointer;
 }
 
-.ModalObject button{
+#ModalObject button, #ModalObject2 button{
     padding: 10px 30px;
     border-radius: 30px;
     margin-top: 30px;
@@ -46,7 +47,7 @@
     border: none;
 }
 
-.ModalObject button:hover{
+#ModalObject button:hover, #ModalObject2 button:hover{
     opacity: 0.7;
 }
 
@@ -58,4 +59,20 @@
 .buttonColaborador{
     background-color: #061226;
     color: white;
+}
+
+@media (min-width: 684px){
+    #ModalObject{
+        width: 80vw;
+        height: 10vh;
+        position: absolute;
+        top:10vh;
+        left:10vw;
+        bottom: 10vh;
+        border-radius: 30px;
+    }
+
+    .ModalObjectContent, .changeContentModal, #ModalObject button{
+        margin-top:50px
+    }
 }

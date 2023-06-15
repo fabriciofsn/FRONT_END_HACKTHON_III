@@ -102,6 +102,26 @@ export function Objects({
           photoColaborador={true}
           informacao2="Departamento"
           resposta2={poupupObject.departamentoId}
+          informacao3="Setor"
+          resposta3={poupupObject.setorId}
+          informacao4="Cargo"
+          resposta4={poupupObject.cargoId}
+          informacao5="CPF"
+          resposta5={poupupObject.cpf}
+          informacao6="Email"
+          resposta6={poupupObject.email}
+          informacao7="Endereço"
+          resposta7={poupupObject.cidade + ", " + poupupObject.bairro + ", " + poupupObject.rua + ", " + poupupObject.numero}
+          informacao8="Salário"
+          resposta8={poupupObject.salario}
+          informacao9="Carga Horária"
+          resposta9={poupupObject.cargaHoraria}
+          informacao10="Home Office?"
+          resposta10={poupupObject.homeOfice}
+          informacao11="Bens em mãos"
+          resposta11={poupupObject.bem}
+          informacao12="Observações"
+          resposta12={poupupObject.observacao}
           closeModal={handleClickCloseObject}
         />
       )}
