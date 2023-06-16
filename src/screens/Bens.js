@@ -29,8 +29,7 @@ const Bens = () => {
   });
 
   const setoresDisponiveis = useMemo(() => {
-
-    setFiltrosLista({ ...filtrosLista, setor: "" })
+    setFiltrosLista({ ...filtrosLista, setor: "" });
 
     if (!filtrosLista.departamento) {
       return undefined;
@@ -62,21 +61,21 @@ const Bens = () => {
   }, [filtrosLista.cargo, filtrosLista.departamento, filtrosLista.setor]);
 
   const [searchValue, setSearchValue] = useState("");
-  const [pesquisaColaboradores, setPesquisaColaboradores] = useState(colaboradoresDisponiveis);
+  const [pesquisaColaboradores, setPesquisaColaboradores] = useState(
+    colaboradoresDisponiveis
+  );
 
   const Search = () => {
-
     let results = colaboradoresDisponiveis;
 
-    if(searchValue !== ""){
+    if (searchValue !== "") {
       results = colaboradoresDisponiveis.filter((colaborador) =>
         colaborador.nome.toLowerCase().includes(searchValue.toLowerCase())
       );
     }
-    
-    setPesquisaColaboradores(results)
 
-  }
+    setPesquisaColaboradores(results);
+  };
 
   useEffect(() => {
     Search();
@@ -90,6 +89,8 @@ const Bens = () => {
           cargo="Categoria"
           iconDep={<RiFilter2Fill />}
           departamento="Departamento"
+          search={searchValue}
+          setSearch={setSearchValue}
         />
       </div>
       <div className="showDesktop">
@@ -97,12 +98,27 @@ const Bens = () => {
       </div>
 
       <div className="showMobile">
-        <Filtros
-          array={tableDepartamentos}
-          icon={<RiFilter2Fill />}
-          title="Setor"
-          setores={tableSetores}
-        />
+        <div className="departamento">
+          <Filtros
+            title="departamentos"
+            opcoes={tableDepartamentos}
+            onChange={(opcaoId) =>
+              setFiltrosLista({ ...filtrosLista, departamento: opcaoId })
+            }
+          />
+        </div>
+        <div className="setores">
+          {setoresDisponiveis && (
+            <Filtros
+              icon={<RiFilter2Fill />}
+              title="Setores"
+              opcoes={setoresDisponiveis}
+              onChange={(opcaoId) =>
+                setFiltrosLista({ ...filtrosLista, setor: opcaoId })
+              }
+            />
+          )}
+        </div>
       </div>
       <div className="showDesktop">
         <DivButtonDesktop>
@@ -112,8 +128,12 @@ const Bens = () => {
         </DivButtonDesktop>
       </div>
       <div className="colaboradorObjectsBody">
-      <div id="colaboradorDivFilter" className="showDesktop">
-          <input className="divFilterPesquisa" placeholder="Pesquise aqui" onChange={(e) => setSearchValue(e.target.value)}></input>
+        <div id="colaboradorDivFilter" className="showDesktop">
+          <input
+            className="divFilterPesquisa"
+            placeholder="Pesquise aqui"
+            onChange={(e) => setSearchValue(e.target.value)}
+          ></input>
           <Filtro
             icon={<RiFilter2Fill />}
             title="Departamentos"
@@ -142,7 +162,11 @@ const Bens = () => {
           />
         </div>
         <div className="colaboradorDivObjects">
-          <Objects object={pesquisaColaboradores} colaborador={true} tipo="bens" />
+          <Objects
+            object={pesquisaColaboradores}
+            colaborador={true}
+            tipo="bens"
+          />
         </div>
       </div>
       {/* <FiltroDesktop icon={<RiFilter2Fill />} title="Setor" array={tableSetores} setor={true}/> */}
