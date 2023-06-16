@@ -85,6 +85,22 @@
     background-color: #7ed957;
 }
 
+.inputEditar, .inputEditarSelect {
+    background-color: transparent;
+    border: none;
+}
+
+.inputEditarSelect{
+    width: 100%;
+}
+
+.inputEditar:focus{
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+    
+}
+
 @media (min-width: 684px){
     .divObjectsChefe{
         width: 25%;

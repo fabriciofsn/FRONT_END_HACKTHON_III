@@ -6,6 +6,8 @@
     align-items: center;
     overflow-y: auto;
     margin-left: 10%;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
 
 .divBody span, .divBodyCategoria span{
