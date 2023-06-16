@@ -6,6 +6,7 @@ import { HeaderHome } from "../styles/Home";
 import Pessoas from "../components/Pessoas";
 import "../styles/mediaQuery.css";
 import HeaderDesktop from "../components/HeaderDesktop";
+import Modal from "../components/Modal";
 
 const Home = () => {
   const divRef = useRef();
@@ -30,7 +31,7 @@ const Home = () => {
   return (
     <div>
       <div className="showMobile">
-        <HeaderHome >
+        <HeaderHome>
           <div className="logout">
             <a href="/">
               <MdOutlineLogout size={40} color="#d9d9d9" />
@@ -51,7 +52,6 @@ const Home = () => {
         <Bens />
         <Pessoas />
       </div>
-
     </div>
   );
 };
