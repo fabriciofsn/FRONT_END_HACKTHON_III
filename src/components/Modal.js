@@ -33,6 +33,10 @@ const Modal = () => {
       nome: "Cargos",
       href: "/cargos",
     },
+    {
+      nome: "Ocorrências",
+      href: "/ocorrencia",
+    },
   ];
 
   return (

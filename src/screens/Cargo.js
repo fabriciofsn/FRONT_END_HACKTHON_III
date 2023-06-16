@@ -8,7 +8,6 @@ import HeaderDesktop from "../components/HeaderDesktop";
 import AdicionarSetor from "../components/AdicionarSetor";
 import { TableCargos } from "../tables/TableCargos";
 
-
 const Categoria = () => {
   const [modal, setModal] = useState(false);
   const divRef = useRef();
@@ -18,14 +17,14 @@ const Categoria = () => {
   return (
     <div ref={divRef}>
       <div className="showMobile">
-        <Header />
+        <Header none="none" />
       </div>
       <div className="showDesktop">
         <HeaderDesktop />
       </div>
       <div className="ColaboradorObjectsBody" id="contentSetor">
         <div className="ColaboradorDivObjects">
-          <Objects object={TableCargos} tipo="categoria" titulo="CARGO"/>
+          <Objects object={TableCargos} tipo="categoria" titulo="CARGO" />
         </div>
       </div>
       {modal && (

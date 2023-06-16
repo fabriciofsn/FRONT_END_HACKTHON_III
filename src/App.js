@@ -9,6 +9,7 @@ import Home from "./screens/Home";
 import Categoria from "./screens/Categoria";
 import Bens from "./screens/Bens";
 import Cargo from "./screens/Cargo";
+import Ocorrencia from "./screens/Ocorrencia";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="*" element={<Error404 />} />
         <Route path="/bens" element={<Bens />} />
         <Route path="/cargos" element={<Cargo />} />
+        <Route path="/ocorrencia" element={<Ocorrencia />} />
       </Routes>
     </BrowserRouter>
   );

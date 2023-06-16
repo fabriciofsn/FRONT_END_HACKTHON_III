@@ -14,7 +14,7 @@ const anim = keyframes`
 export const DivModal = styled.div`
   background-color: #061226;
   width: 100%;
-  height: calc(100vh - 90px);
+  height: auto;
   z-index: 1000;
   position: absolute;
   top: 5.5em;
@@ -40,12 +40,12 @@ export const DivModal = styled.div`
 `;
 
 export const EnvolveModal = styled.div`
-width: 100vw;
-height: 100vh;
-background-color: rgba(0, 0, 0, 0.7);
-position: absolute;
-top: 0;
-bottom: 0;
-left: 0;
-right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 `;

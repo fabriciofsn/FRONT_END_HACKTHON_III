@@ -11,7 +11,6 @@ export const HeaderContent = styled.header`
   width: 100%;
   border-bottom-right-radius: 40px;
   position: relative;
-
   @media (max-width: 684px) {
     height: 140px;
   }

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { DivCadastro, DivA, DivAccordion } from "../styles/Cadastro";
-import {EnvolveModal} from "../styles/Modal";
+import { EnvolveModal } from "../styles/Modal";
 import Photo from "./Photo";
 import Dados from "./Dados";
 import Button from "../components/Button";
@@ -205,19 +205,19 @@ const Cadastro = (props) => {
                 </p>
               </div>
             )}
-         
-          <DivA>
-            <div>
-              <Button
-                handleClick={handleClick}
-                btnRef={btnRef}
-                nome={buttonName}
-              />
-            </div>
-            <a href="#" onClick={props.handleClick}>
-              Cancelar
-            </a>
-          </DivA>
+
+            <DivA>
+              <div>
+                <Button
+                  handleClick={handleClick}
+                  btnRef={btnRef}
+                  nome={buttonName}
+                />
+              </div>
+              <a href="#" onClick={props.handleClick}>
+                Cancelar
+              </a>
+            </DivA>
           </div>
           <DivAccordion ref={divRef}>
             <span className="selected_">Dados</span>

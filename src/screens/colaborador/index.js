@@ -17,6 +17,7 @@ import { Filtro } from "../../components/filtro/Filtro";
 
 const Colaborador = () => {
   const [modal, setModal] = useState(false);
+  const [cargo, setCargo] = useState(false);
   const divRef = useRef();
   const handleClick = () => {
     setModal(false);
@@ -88,6 +89,7 @@ const Colaborador = () => {
         <Header
           iconCargo={<RiFilter2Fill />}
           cargo="Cargo"
+          setCargo={setCargo}
           iconDep={<RiFilter2Fill />}
           departamento="Departamento"
           search={searchValue}
@@ -117,6 +119,18 @@ const Colaborador = () => {
               opcoes={setoresDisponiveis}
               onChange={(opcaoId) =>
                 setFiltrosLista({ ...filtrosLista, setor: opcaoId })
+              }
+            />
+          )}
+        </div>
+        <div className="cargo">
+          {setoresDisponiveis && cargo && (
+            <Filtros
+              icon={<RiFilter2Fill />}
+              title="Cargos"
+              opcoes={TableCargos}
+              onChange={(opcaoId) =>
+                setFiltrosLista({ ...filtrosLista, cargo: opcaoId })
               }
             />
           )}

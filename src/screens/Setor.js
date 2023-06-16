@@ -10,7 +10,7 @@ import "../styles/ColaboradorScreen.css";
 import HeaderDesktop from "../components/HeaderDesktop";
 import { tableSetores } from "../tables/TableSetores";
 import { RiFilter2Fill } from "react-icons/ri";
-import {Objects} from "../components/Objects";
+import { Objects } from "../components/Objects";
 import { Filtro } from "../components/filtro/Filtro";
 
 const Setor = () => {
@@ -24,8 +24,7 @@ const Setor = () => {
   });
 
   const setoresDisponiveis = useMemo(() => {
-
-    setFiltrosLista({ ...filtrosLista, setor: "" })
+    setFiltrosLista({ ...filtrosLista, setor: "" });
 
     if (!filtrosLista.departamento) {
       return undefined;
@@ -57,21 +56,21 @@ const Setor = () => {
   }, [filtrosLista.cargo, filtrosLista.departamento, filtrosLista.setor]);
 
   const [searchValue, setSearchValue] = useState("");
-  const [pesquisaColaboradores, setPesquisaColaboradores] = useState(colaboradoresDisponiveis);
+  const [pesquisaColaboradores, setPesquisaColaboradores] = useState(
+    colaboradoresDisponiveis
+  );
 
   const Search = () => {
-
     let results = colaboradoresDisponiveis;
 
-    if(searchValue !== ""){
+    if (searchValue !== "") {
       results = colaboradoresDisponiveis.filter((colaborador) =>
         colaborador.nome.toLowerCase().includes(searchValue.toLowerCase())
       );
     }
-    
-    setPesquisaColaboradores(results)
 
-  }
+    setPesquisaColaboradores(results);
+  };
 
   useEffect(() => {
     Search();
@@ -80,17 +79,31 @@ const Setor = () => {
   return (
     <GlobalDiv>
       <div className="showMobile">
-        <Header />
+        <Header search={searchValue} setSearch={setSearchValue} />
+        <div className="departamentos">
+          <Filtros
+            icon={<RiFilter2Fill />}
+            title="Departamentos"
+            opcoes={tableDepartamentos}
+            onChange={(opcaoId) =>
+              setFiltrosLista({ ...filtrosLista, departamento: opcaoId })
+            }
+          />
+        </div>
       </div>
       <div className="showDesktop">
         <HeaderDesktop />
       </div>
       <div className="showMobile">
-        <Filtros  array={tableDepartamentos} setores={tableSetores}/>
+        {/* <Filtros array={tableDepartamentos} setores={tableSetores} /> */}
       </div>
       <div className="colaboradorObjectsBody" id="contentSetor">
         <div id="colaboradorDivFilter" className="showDesktop">
-        <input className="divFilterPesquisa" placeholder="Pesquise aqui" onChange={(e) => setSearchValue(e.target.value)}></input>
+          <input
+            className="divFilterPesquisa"
+            placeholder="Pesquise aqui"
+            onChange={(e) => setSearchValue(e.target.value)}
+          ></input>
           <Filtro
             icon={<RiFilter2Fill />}
             title="Departamentos"
@@ -101,7 +114,7 @@ const Setor = () => {
           />
         </div>
         <div className="colaboradorDivObjects">
-          <Objects object={pesquisaColaboradores} tipo="setor" titulo="SETOR"/>
+          <Objects object={pesquisaColaboradores} tipo="setor" titulo="SETOR" />
         </div>
       </div>
       {modal && (

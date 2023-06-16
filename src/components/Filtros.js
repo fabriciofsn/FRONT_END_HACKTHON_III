@@ -9,6 +9,7 @@ const Filtros = ({
   setores,
   onChange,
   opcoes = [],
+  none,
 }) => {
   const divRef = useRef();
   const setorRef = useRef();
@@ -77,7 +78,9 @@ const Filtros = ({
               key="todos"
               onChange={() => onChange("")}
             ></input>
-            <label htmlFor={title}>Todos</label>
+            <label style={{ display: none }} htmlFor={title}>
+              Todos
+            </label>
           </div>
         )}
         {opcoes &&

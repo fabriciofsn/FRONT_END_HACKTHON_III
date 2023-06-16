@@ -46,7 +46,7 @@ const Header = (props) => {
             fontWeight="bold"
           />
           {openModal && <Modal />}
-          <DivInputSearch>
+          <DivInputSearch style={{ display: props.none }}>
             <input
               value={props.search}
               onChange={({ target }) => props.setSearch(target.value)}
@@ -57,11 +57,11 @@ const Header = (props) => {
           </DivInputSearch>
         </DivAlignCenter>
         <DivFilter ref={refFilter}>
-          <p>
+          <p onClick={() => props.setCargo(true)}>
             {props.iconCargo}
             {props.cargo}
           </p>
-          <p className="selected">
+          <p className="selected" onClick={() => props.setCargo(false)}>
             {props.iconDep}
             {props.departamento}
           </p>
