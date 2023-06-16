@@ -95,7 +95,7 @@ export const DivTipos = styled.div`
   font-size: 1.3rem;
   overflow-y: auto;
   input[type="radio"] {
-    /* visibility: hidden; */
+    visibility: hidden;
   }
   .wrapper .filtros {
     display: flex;
@@ -105,7 +105,7 @@ export const DivTipos = styled.div`
     width: 100%;
 
     input[type="radio"] {
-      /* visibility: hidden; */
+      visibility: hidden;
     }
   }
 
