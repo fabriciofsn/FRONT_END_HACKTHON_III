@@ -169,7 +169,7 @@ const Bens = () => {
           )}
           <Filtro
             icon={<RiFilter2Fill />}
-            title="Cargos"
+            title="Categorias"
             opcoes={tableCategorias}
             onChange={(opcaoId) =>
               setFiltrosLista({ ...filtrosLista, cargo: opcaoId })

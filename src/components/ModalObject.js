@@ -11,7 +11,7 @@ import { Editar } from "./Editar";
 
 
 
-export function ModalObject({ objeto = null, chefe, titulo, inputs, photoColaborador, categoria = false, closeModal, informacao2, resposta2, informacao3, resposta3, informacao4, resposta4, informacao5, resposta5, informacao6, resposta6, informacao7, resposta7, informacao8, resposta8, informacao9, resposta9, informacao10, resposta10, informacao11, resposta11, informacao12, resposta12, informacao13, resposta13 }) {
+export function ModalObject({ objeto = null, chefe, titulo, inputs, photoColaborador, categoria = false, bem, closeModal, informacao2, resposta2, informacao3, resposta3, informacao4, resposta4, informacao5, resposta5, informacao6, resposta6, informacao7, resposta7, informacao8, resposta8, informacao9, resposta9, informacao10, resposta10, informacao11, resposta11, informacao12, resposta12, informacao13, resposta13 }) {
 
     const [content, setContent] = useState("visualizar")
 
@@ -37,6 +37,7 @@ export function ModalObject({ objeto = null, chefe, titulo, inputs, photoColabor
                 </div>
                 <div id="botoes">
                 {content === "editar" && <button className="buttonColaborador" onClick={closeModal}>Confirmar Edições</button>}
+                {content === "visualizar" && bem && <button className="buttonColaborador" >Abrir Chamado </button>}
                 <button className="buttonColaborador" onClick={closeModal}>fechar</button>
                 </div>
 

@@ -131,6 +131,7 @@ export function Objects({
           Diretoria
         </option>
       </select>,
+      <input className="inputEditar" type="text" placeholder="Função" defaultValue={poupupObject.funcao} />,
     ];
 
     inputsCategoriaOuDep = [
@@ -258,6 +259,17 @@ export function Objects({
           titulo={titulo}
         />
       )}
+      {poupupObject && tipo === "departamento" && (
+        <ModalObject
+          objeto={poupupObject}
+          inputs={inputsCategoriaOuDep}
+          informacao2="Chefe"
+          resposta2={poupupObject.chefeId}
+          categoria={true}
+          closeModal={handleClickCloseObject}
+          titulo={titulo}
+        />
+      )}
       {poupupObject && tipo === "setor" && (
         <ModalObject
           objeto={poupupObject}
@@ -276,6 +288,7 @@ export function Objects({
       {poupupObject && tipo === "bens" && (
         <ModalObject
           objeto={poupupObject}
+          bem={true}
           inputs={inputsBens}
           informacao2="Departamento"
           resposta2={poupupObject.departamentoId}
