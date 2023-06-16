@@ -71,13 +71,13 @@ const Filtros = ({
           >
             <input
               type="radio"
-              id="todos"
-              name="departamento"
+              id={title}
+              name={title}
               value="Todos"
               key="todos"
               onChange={() => onChange("")}
             ></input>
-            <label htmlFor="todos">Todos</label>
+            <label htmlFor={title}>Todos</label>
           </div>
         )}
         {opcoes &&
@@ -88,7 +88,7 @@ const Filtros = ({
                   <input
                     type="radio"
                     id={opcao.id}
-                    name="departamento"
+                    name={title}
                     value={opcao.id}
                     key={opcao.id}
                     onChange={() => onChange(opcao.id)}

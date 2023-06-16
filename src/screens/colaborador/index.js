@@ -102,6 +102,7 @@ const Colaborador = () => {
       <div className="showMobile">
         <div className="departamento">
           <Filtros
+            title="departamentos"
             opcoes={tableDepartamentos}
             onChange={(opcaoId) =>
               setFiltrosLista({ ...filtrosLista, departamento: opcaoId })
