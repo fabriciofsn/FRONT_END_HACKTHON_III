@@ -1,0 +1,12 @@
+.bodyEditar{
+    overflow-y: auto;
+    margin-left: 10%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    max-height: 40vh;
+}
+
+.bodyEditar p{
+    cursor: pointer;
+    color: rgb(217, 217, 217);
+}
