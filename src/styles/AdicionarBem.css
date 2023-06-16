@@ -1,0 +1,51 @@
+.bodyAdicionarBem{
+    overflow-y: auto;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    max-height: 70vh;
+    text-align: center;
+}
+.cancelarAdicionarBem{
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    display: grid;
+}
+
+.cancelarAdicionarBem a, .cancelarAdicionarBem button{
+    cursor: pointer;
+}
+
+
+.cancelarAdicionarBem button{
+    opacity: 1;
+}
+
+.divCodigoBarras{
+    width: 40vw;
+    position: absolute;
+    top:40vh;
+    left: 30vw;
+    background-color: #0a1d3e;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    color:white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+.divCodigoBarras button{
+    cursor: pointer;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+@media print{
+    button{
+        display: none;
+
+    }
+}

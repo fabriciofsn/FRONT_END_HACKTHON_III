@@ -22,7 +22,6 @@ export function Objects({
   if (poupupObject) {
     inputsBens = [
       <input className="inputEditar" type="text" placeholder="nome" defaultValue={poupupObject.nome} />,
-      <input className="inputEditar" type="number" placeholder="codigo" defaultValue={poupupObject.codigo} />,
       <select className="inputEditarSelect">
         <option key="Gerencia" value="Gerencia" selected={poupupObject.departamentoId === "Gerencia" ? "selected" : ""}>
           Gerência

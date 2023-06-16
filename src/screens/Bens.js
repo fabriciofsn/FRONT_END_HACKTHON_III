@@ -14,6 +14,7 @@ import { Objects } from "../components/Objects";
 import HeaderDesktop from "../components/HeaderDesktop";
 import { tableBens } from "../tables/TableBens";
 import { Filtro } from "../components/filtro/Filtro";
+import { AdicionarBens } from "../components/AdicionarBem";
 
 const Bens = () => {
   const [modal, setModal] = useState(false);
@@ -171,7 +172,7 @@ const Bens = () => {
       </div>
       {/* <FiltroDesktop icon={<RiFilter2Fill />} title="Setor" array={tableSetores} setor={true}/> */}
       {/* <Colaboradores /> */}
-      {modal && <Cadastro handleClick={handleClick} />}
+      {modal && <AdicionarBens handleClick={handleClick}/>}
       <DivFooter className="showMobile">
         <button onClick={() => setModal(true)}>
           Adicionar <p>Bem</p>
