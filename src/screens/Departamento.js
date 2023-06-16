@@ -27,7 +27,7 @@ const Departamento = () => {
       </div>
       <div className="ColaboradorObjectsBody" id="contentSetor">
         <div className="ColaboradorDivObjects">
-          <Objects object={tableDepartamentos} tipo="categoria" titulo="DEPARTAMENTO" />
+          <Objects object={tableDepartamentos} tipo="departamento" titulo="DEPARTAMENTO" />
         </div>
       </div>
 

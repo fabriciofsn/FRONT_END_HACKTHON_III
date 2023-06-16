@@ -27,6 +27,7 @@ const Cadastro = (props) => {
   const [cep, setCep] = useState("");
   const [bairro, setBairro] = useState("");
   const [rua, setRua] = useState("");
+  const [numero, setNumero] = useState("");
 
   //ATRIBUTOS
   const [cargaHoraria, setCargaHoraria] = useState(null);
@@ -70,7 +71,7 @@ const Cadastro = (props) => {
 
   useEffect(() => {
     const regexCep = /^\d{5}-?\d{3}/;
-    if (regexCep && bairro && rua && select && filtrarCidade && bairro && rua) {
+    if (regexCep && bairro && rua && select && filtrarCidade && bairro && rua){
       btnRef.current.style.opacity = "1";
       setProsseguir(true);
     } else {
@@ -138,6 +139,8 @@ const Cadastro = (props) => {
       getBairro={({ target }) => setBairro(target.value)}
       rua={rua}
       getRua={({ target }) => setRua(target.value)}
+      numero={numero}
+      getNumero={({ target }) => setNumero(target.value)}
       UF={uf && uf}
       value={select}
       setValor={setSelect}
